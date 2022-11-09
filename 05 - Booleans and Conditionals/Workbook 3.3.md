@@ -24,7 +24,7 @@ public class Championship {
 ```
 
 ## 1\. Calculate the difference in points.
----------------------------------------
+
 
 Make an `int` variable called `margin`. It will calculate the margin of points `gryffindor` scored over `ravenclaw`.
 
@@ -43,7 +43,7 @@ public class Championship {
 ```
 
 ## 2\. if - else if - else.
-------------------------------
+
 
 If `gryffindor` wins by a margin of 300 points or more, `print`:
 

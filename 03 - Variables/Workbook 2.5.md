@@ -5,7 +5,7 @@ From the `Java-Bootcamp-Resources`, open the **`Workbook 2.5`** folder.
 ![Screen Shot 2022-10-11 at 1.53.18 AM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fb52e3cf0-6e8e-412a-a9e4-39a66840b6cc?alt=media&token=988927d9-69b6-4e66-b823-37fc1554b3f4)
 
 JavaGram
----------
+
 
 In this workbook, you will create a `sign-up` page for JavaGram!
 

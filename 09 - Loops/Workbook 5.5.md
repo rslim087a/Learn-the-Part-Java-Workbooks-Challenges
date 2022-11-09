@@ -5,7 +5,7 @@ From the `Java Bootcamp Resources`, launch **`Workbook 5.5`**.
 ![5.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F321dedc2-2f66-4952-b346-f92ad085b1d8?alt=media&token=866a31a2-50f8-4aef-b432-35ccf20214be)
 
 Counter Tool revisited.
------------------------
+
 
 Your app should let the user choose:
 
@@ -20,7 +20,7 @@ Your app should let the user choose:
 Your program will count from the second number to the third number, in steps of the first.
 
 ## Task 1 - Get integers from the user.
-------------------------------------
+
 
 You'll ask the user three questions:
 
@@ -35,7 +35,7 @@ The user will submit his answer **BESIDE** each question:
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F0e397c79-56c4-447e-9661-9303d781890f?alt=media&token=c9496b85-3748-4865-a355-326b810ff597)
 
 ## Task 2 - Write a loop
----------------------
+
 
 Make a `for` loop that:
 

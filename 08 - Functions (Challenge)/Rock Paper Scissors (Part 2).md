@@ -3,7 +3,7 @@
 Part 2 will determine a winner.
 
 ## Task 4: the game result
------------------------
+
 
 1\. Function name:
 
@@ -96,7 +96,7 @@ Before you move to task 5, this is a good place to test your code. The end resul
 Run it a few more times. It should keep returning the correct result.
 
 ## Task 5: print everything at once
---------------------------------
+
 
 Remove all your print statements from `main()`. Then, create the following function:
 
@@ -168,7 +168,7 @@ Back in the `if` statement, call `printResult()` and you're done!
 ```
 
 ## Run your code
--------------
+
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fdd2570dc-cb51-4b5d-8d60-567413c367f5?alt=media&token=99fc526b-a267-40fd-a1ab-72b1cc76ab61)
 

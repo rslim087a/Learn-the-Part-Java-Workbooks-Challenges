@@ -4,7 +4,7 @@
 This cheat sheet contains the most important takeaways that lead up to section four.
 
 ## **1\. Getting Started**
------------------------
+
 
 -   `class`: contains all of your code.
 
@@ -15,7 +15,7 @@ This cheat sheet contains the most important takeaways that lead up to section f
 -   `java <file-name>`: runs the compiled code.
 
 ## **2\. Variables**
------------------
+
 
 **Data types**
 
@@ -36,7 +36,7 @@ Put math operations in brackets if you wish to embed them inside a `String`.
 -   Example: `"5 + 2 is " + (5 + 2);`
 
 ## **3\. Booleans and Conditionals**
----------------------------------
+
 
 **Comparison Operators**
 
@@ -61,7 +61,7 @@ Do not confuse `=` with `==`
 -   use `==` to compare two values and return a `boolean`.
 
 **4\. Functions**
------------------
+
 
 **Function Parts**
 
@@ -82,19 +82,19 @@ Do not confuse `=` with `==`
 **Rule of thumb:** if a function calculates a value, return it.
 
 Scanner
--------
+
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fea49cedb-8268-4e6a-a933-6932b8ff5395?alt=media&token=821151c5-1d83-4143-983f-5accb6d33360)
 
 ^**The default delimiter is white space.^
 
 ## Coding Pitfalls
----------------
+
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F0ca74498-eea8-4766-8460-18bfcb83f79a?alt=media&token=8ca74ad2-c1d0-4df2-b263-579b7121a941)
 
 ## Good coding habits
-------------------
+
 
 **Conventions**
 
@@ -105,7 +105,7 @@ Scanner
 -   function: `lowerCamelcase`.
 
 ## Tips and tricks
----------------
+
 
 **Terminal**
 

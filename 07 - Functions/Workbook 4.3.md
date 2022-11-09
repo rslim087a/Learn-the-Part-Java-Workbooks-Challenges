@@ -5,7 +5,7 @@ From the `Java Bootcamp Resources`, launch the **`Workbook 4.3`** folder.
 ![4.3.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F45585afb-2d3c-4372-a1ba-174db6fcfc01?alt=media&token=c91a5eda-829d-4bbf-950a-92bcf75db7f4)
 
 ## Weather
--------
+
 These are the temperatures for noon, evening, and midnight in Fahrenheit. We need to convert them to Celsius.
 
 ```java

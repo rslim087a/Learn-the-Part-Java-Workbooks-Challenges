@@ -11,7 +11,6 @@ If you did not download the resources yet, return to the lesson: **Workbooks and
 
 
 ## Launch Workbook 1.1
------------------
 
 
 From the `Java-Bootcamp-Resources`, launch the **`Workbook 1.1`** folder.
@@ -34,17 +33,15 @@ Inside `FirstProgram.java`, you will notice **comments**.
 A comment follows two forward slashes `//`. It has no impact on your code. 
 
 ## Task 1
-----------------------
+
 
 Make a class.
 
 ## Task 2
----------------------------------
 
 Write the `main()` method.
 
 ## Task 3
-----------------------
 
 Inside `main()`, print these messages to the console.
 

@@ -5,12 +5,12 @@ From the `Java Bootcamp Resources`, launch **`Workbook 5.6`**.
 ![6.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F24f1f0fa-d2c9-475a-a4bf-465babf5fc59?alt=media&token=c9cb31a5-6f0f-47c4-aa39-bd4d8f3023e7)
 
 ## Even or odd
------------
+
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F6ada0865-00e7-49c0-92bc-afae35f010bc?alt=media&token=76652ad8-a19c-4fe7-b347-d920c109f42e)
 
 ## Task 1
-------
+
 
 Make a `for` loop that counts from 0 to 19.
 

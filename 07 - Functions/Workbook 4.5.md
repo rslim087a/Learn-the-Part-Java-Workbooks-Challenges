@@ -5,12 +5,12 @@ From the `Java Bootcamp Resources`, launch the **`Workbook 4.5`** folder.
 ![4.5.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F621568d2-4f4c-411d-bc0f-2ba2f4ab8efd?alt=media&token=04511110-9b6f-418b-95b0-a947c764b8bc)
 
 Area Calculator
----------------
+
 
 In this workbook, you will calculate the area of a square, rectangle, triangle, and circle.
 
 ## **Task 1: area of a square**
------------------------------
+
 
 - Function name:
 
@@ -80,7 +80,7 @@ $Area = side²$ ![68747470733a2f2f666972656261736573746f726167652e676f6f676c6561
 Use a `Math` function to calculate side to the power of 2.
 
 ## **Task 2: area of a rectangle**
---------------------------------
+
 
 Write a function that calculates the area of a rectangle.
 
@@ -161,7 +161,7 @@ Inside the function:
 ```
 
 ## **Task 3: area of a triangle**
--------------------------------
+
 
 
 
@@ -183,7 +183,7 @@ Inside the function:
 ```
 
 ## **Task 4: area of a circle**
------------------------------
+
 
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Febebafe5-8cb8-4f18-b060-0f5576fe8091?alt=media&token=a29585de-8fa1-4931-aa32-ac09df74ce27) $Area = π * radius²$
@@ -207,7 +207,7 @@ Then, write a function that calculates the area of a circle.
 ```
 
 ## **Task 5: Calculate the areas**
---------------------------------
+
 
 Using the appropriate function, calculate the area for:
 
@@ -227,7 +227,7 @@ Using the appropriate function, calculate the area for:
 ```
 
 ## **Task 6: Write a function that prints every area**
----------------------------------------------------
+
 
 Instead of cluttering `main()`with 4 `println` statements, write a function that prints every area.
 
@@ -249,12 +249,12 @@ Instead of cluttering `main()`with 4 `println` statements, write a function that
 ```
 
 ## **Task 7: Call the** `printAreas` **function.**
----------------------------------------------------
+
 
 From `main()`, call the printAreas function.
 
 ## Run your code
--------------
+
 
 ```
 Thank you for using the area calculator

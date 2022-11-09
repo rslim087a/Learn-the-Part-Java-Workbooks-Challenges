@@ -5,7 +5,7 @@ From the `Java Bootcamp Resources`, launch **`Workbook 5.2`**.
 ![2.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F24ab92f3-41a6-4f94-b26e-8f5a037b079b?alt=media&token=e8652ea8-fc26-48bb-b1a3-524c4e341770)
 
 Bart's detention.
------------------
+
 
 Bart's teacher wants him to write this line ninety-nine times
 
@@ -14,14 +14,14 @@ Bart's teacher wants him to write this line ninety-nine times
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fc9c272d2-d08d-4118-b165-f1363f59a6cf?alt=media&token=d43122fd-1ae6-450a-8972-d23c8545876c)
 
 ## Task 1: Ask Bart to enter the line.
------------------------------------
+
 
 Ask Bart to enter the line he wants to write.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F4fb320c6-8277-4b53-b4e2-289d5a0a5960?alt=media&token=bdc8f9ce-24b6-479b-a0ee-70df7eb6fa9f)
 
 ## Task 2: Print the line 99 times
---------------------------------
+
 
 Using a loop, print the line 99 times. Number each line starting from **one**.
 

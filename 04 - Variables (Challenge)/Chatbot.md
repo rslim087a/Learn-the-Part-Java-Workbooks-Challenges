@@ -5,21 +5,18 @@
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F4a54dc0a-bb71-4239-90b0-33aa2fe4e123?alt=media&token=0109dc14-ca2c-47fb-8448-79a6a2ac1958)
 
 ## Open the challenge
-------------------
 
 From the `Java-Bootcamp-Resources`, open `Challenge 2`.
 
 ![Screen Shot 2022-10-11 at 11.40.48 PM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Ffb04a622-3205-4d01-983a-d79dd0b37543?alt=media&token=3eea4312-991b-4a5e-ad57-40a6190f1ed3)
 
 ## 1\. Store each answer.
-----------------------
 
 After each question, add code that picks up the user's answer and stores it.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Ff9ea05df-7ab7-4a40-9a98-688c86d90800?alt=media&token=28a23c0c-7336-4801-bdba-fd28d4cfbf9f)
 
 ## **Careful from the** `nextLine()` **trap**
-----------------------------------------------
 
 |`nextLine()` Trap | |
 | --- | --- |
@@ -29,14 +26,12 @@ After each question, add code that picks up the user's answer and stores it.
 
 
 ## 2\. Update each reply.
-----------------------
 
 Update each reply with the user's answer.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F552e517f-df7e-45f7-855a-00d87b57ef9b?alt=media&token=a128b99e-10dd-40d6-b1ae-7a5012270387)
 
 ## 3\. Run your code.
-------------------
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fbfe424ab-e8f5-4fc2-8baf-e56166a9d21c?alt=media&token=7400df03-5c04-4b6b-a32c-eefd11965602)
 
@@ -45,7 +40,6 @@ Why is the cat scared?
 The screaming cat appears when something's wrong or looks bad. In this case, the output is very messy. There should be a line of spacing between each answer and reply (see arrows).
 
 ## 4\. Add a new line
-------------------
 
 Before every reply, add a **new line**.
 

@@ -21,12 +21,12 @@ Pokerito is like Poker, but the rules are a lot simpler.
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Faccfda26-38de-48ec-b322-10c950820536?alt=media&token=826227de-4bd5-4588-83be-44f4f404105c)
 
 Launch the workbook
--------------------
+
 
 From `Java Bootcamp Resources` -> `Module 1` -> `5. Loops`, open Pokerito.
 
 ## Task 1
-------
+
 
 
 Create the function: `randomCard`.
@@ -74,7 +74,7 @@ Call the function and print the return value.
 Keep running your function. If it gives you a random card each time, then you're good to go!
 
 ## Task 2
-------
+
 
 Start the game by explaining the rules.
 
@@ -97,7 +97,7 @@ Start the game by explaining the rules.
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F6f3dfdbd-9c2c-499e-8d97-9951f10407e6?alt=media&token=fa11ab3d-c2f6-4f48-bcb4-86a4807930ee)
 
 ## Task 3
-------
+
 
 Once the user "is ready", present them with a card. Also, show them the computer's card.
 
@@ -116,7 +116,7 @@ Once the user "is ready", present them with a card. Also, show them the computer
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F411f4751-308d-4c58-9f65-9750b46f1838?alt=media&token=62df56f0-c31a-4f65-b72a-02ebd482a725)
 
 ## Task 4
-------
+
 
 Print: `Now, the dealer will draw five cards. Press enter to continue.`
 
@@ -125,7 +125,7 @@ Use a `for` loop to draw a card every time the user presses enter. You must draw
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F4495930a-560f-4dc9-b65e-67db79c4d1eb?alt=media&token=b86f229b-b09e-4548-bcd1-42f513f8de23)
 
 ## Task 5
-------
+
 
 1.  Count how many times your card matches with the river.
 

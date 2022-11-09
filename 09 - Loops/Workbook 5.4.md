@@ -5,14 +5,14 @@ From the `Java Bootcamp Resources`, launch **`Workbook 5.4`**.
 ![4.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fe0e3d7c4-44c7-44bd-a4c4-0a6773ba0502?alt=media&token=a6d3a76c-1fa0-4a5c-8322-bf61f4de5f88)
 
 ## 99 bottles of beer on the wall.
--------------------------------
+
 
 A song as old as time itself.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F4310f3dc-8c5d-4680-a0d1-80a365235010?alt=media&token=e8e8e814-8616-4607-9ef3-99140642e7e7)
 
 ## Task 1 - Write a function
--------------------------
+
 
 1\. Function name:
 

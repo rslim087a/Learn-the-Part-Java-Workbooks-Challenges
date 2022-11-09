@@ -5,19 +5,19 @@ From the `Java Bootcamp Resources`, launch **`Workbook 5.8`**.
 ![8.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F8adf7661-d912-4885-acd6-d791e2a97b17?alt=media&token=77abd85a-353f-49ae-b5ef-c79eb5be2c5f)
 
 Guess the number
-----------------
+
 
 In this workbook, the user has to keep guessing a number until they get it right.
 
 Task 1
-------
+
 
 Store a "secret" number between 1 and 5. Then, prompt the user to enter a guess.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F29b841b2-1c45-4fd1-be4f-111d53a3ca09?alt=media&token=447ded67-8bc2-430f-ade4-f8efb69587e4)
 
 Task 2
-------
+
 
 Set up a loop that keeps the user guessing until they get it right.
 
@@ -26,7 +26,7 @@ Set up a loop that keeps the user guessing until they get it right.
 In other words, the loop should keep running **while** the guess is different from the secret.
 
 Task 3
-------
+
 
 After they guess the number, print:
 

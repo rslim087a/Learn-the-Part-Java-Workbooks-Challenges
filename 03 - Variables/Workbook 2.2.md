@@ -5,7 +5,6 @@ From the `Java-Bootcamp-Resources`, launch the **`Workbook 2.2`** folder.
 ![Screen Shot 2022-10-10 at 7.24.09 PM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F5f9c0a5c-5f84-4830-9803-72e9466da91c?alt=media&token=0263276a-b101-4520-a448-8f2f47ae52cb)
 
 ## Did you download the resources?
-----------------------
 
 If you did not download the resources yet, return to the lesson: **Workbooks and Challenges**.
 
@@ -55,7 +54,7 @@ The **video solution** is inside the course appendix (last section on Udemy).
 ![Screen Shot 2022-10-10 at 7.31.47 PM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fd569b5ee-7e9a-412f-97f7-f7afddfa06db?alt=media&token=e2d608a3-7739-4cbe-8a01-ba1071b7b49c)
 
 ## Good Luck!
--------
+
 
 ##### Associated Course: [The Complete Java Development Bootcamp](https://udemy-redirect-app.herokuapp.com/java)
 ##### Related Course: [The Complete Spring Boot Development Bootcamp – Become a Java Web Developer](https://udemy-redirect-app.herokuapp.com/spring)

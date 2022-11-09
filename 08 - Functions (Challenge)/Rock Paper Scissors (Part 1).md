@@ -3,7 +3,7 @@
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F7b884cfe-1f4e-4c0d-8bc6-eb825ead8eeb?alt=media&token=91f1af42-bbf9-4be9-ada0-ca1d44662f48)
 
 ## Open the challenge
-------------------
+
 
 From `Java Bootcamp Resources`, open the **`Challenge 4`** folder.
 
@@ -11,7 +11,7 @@ From `Java Bootcamp Resources`, open the **`Challenge 4`** folder.
 
 
 ## Task 1: See if the user wants to play
--------------------------------------
+
 
 Use `Scanner` to pick up the user's response.
 
@@ -24,7 +24,7 @@ Use `Scanner` to pick up the user's response.
 `>>Are you ready? Write 'yes' if you are`
 
 ## Task 2: Set up the game.
-------------------------
+
 
 ```
 - if the answer is yes:
@@ -80,7 +80,7 @@ So, you're left with the `else` block. If the user doesn't enter "yes", print: *
 ```
 
 ## **Task 3: Generate a random choice**
-------------------------------------
+
 
 You'll write a function that picks randomly between rock paper scissors.
 
@@ -146,7 +146,7 @@ Call the function and store the computer choice.
 ```
 
 ## Test your code
---------------
+
 
 Add two temporary print statements.
 

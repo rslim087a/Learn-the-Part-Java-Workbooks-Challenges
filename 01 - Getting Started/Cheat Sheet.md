@@ -2,7 +2,7 @@
 
 This cheat sheet contains the most important takeaways that lead up to section one.
 
-## **1\. Getting Started**
+## **1. Getting Started**
 
 
 -   `class`: contains all of your code.

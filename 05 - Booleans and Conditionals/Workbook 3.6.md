@@ -6,7 +6,7 @@ From the `Java Bootcamp Resources`, launch the **`Workbook 3.6`** folder.
 
 
 ## Your Calendar
--------------
+
 
 The code starts with a `day` variable. Your friend wants to hang out on that day.
 

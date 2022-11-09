@@ -5,7 +5,7 @@ From the `Java Bootcamp Resources`, launch the **`Workbook 4.1`** folder.
 ![4.1.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Ffd25dd4b-b35e-494b-8047-538810d195f7?alt=media&token=7958b1a6-d720-43a2-8ca8-751f0dfab896)
 
 ## Bart's detention.
------------------
+
 
 Bart's teacher wants him to write lines on the chalkboard.
 
@@ -46,7 +46,7 @@ public class Detention {
 `>> I will use lower Camel Case when writing variables names.`
 
 ## Task 1 - Write a function
--------------------------
+
 
 Help Bart write a function that does the task for him. The doc comment will guide you.
 
@@ -90,12 +90,12 @@ A doc comment is embedded inside `/** ... */`. They're best at describing the fu
 The doc comment outlines everything you need to make your function.
 
 ## Task 2 - Call the function
---------------------------
+
 
 Once you finish writing it, call the function six times from `main()`.
 
 ## Run your code.
---------------
+
 
 
 ```

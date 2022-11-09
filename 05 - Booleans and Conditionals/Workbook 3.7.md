@@ -5,7 +5,7 @@ From the `Java Bootcamp Resources`, launch the **`Workbook 3.7`** folder.
 ![Screen Shot 2022-10-16 at 7.13.08 PM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F068d35b4-92c6-4d60-89d8-361110d5e737?alt=media&token=7726086e-dc1c-4e77-a7d7-8a6120bc5802)
 
 ## The Royal Bank of Java
-----------------------
+
 
 In this workbook, you work for the Royal Bank of Java. Your job is to approve customers for a loan if they:
 
@@ -74,7 +74,7 @@ Output for `else`:
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Feb74f53a-1cfa-4fba-bbe4-b596f106cf11?alt=media&token=42b982f8-17e6-4d9b-a51e-58176160cab6)
 
 ## Task 3 - Pick up the savings and debt values
---------------------------------------------
+
 
 Pick up and store the savings and debt values.
 
@@ -98,7 +98,7 @@ Careful not to fall into the `nextLine()` trap.
 
 
 ## Task 6 - Logical Operator
--------------------------
+
 
 Use a logical operator to check if the user has
 

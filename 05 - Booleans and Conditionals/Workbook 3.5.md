@@ -7,7 +7,7 @@ From the `Java Bootcamp Resources`, launch the **`Workbook 3.5`** folder.
 
 
 ## Your Work Schedule
-------------------
+
 
 Assume that `day` can be any value between 1 (Monday) and 7 (Sunday). There's also a `boolean` variable: `holiday`.
 
@@ -23,7 +23,7 @@ public class WorkSchedule {
 ```
 
 ## Task 1 - Do I have work that day?
----------------------------------
+
 
 In the event of a holiday, `print`:
 
@@ -38,7 +38,7 @@ Otherwise, `print`:
 > Wake up at 7:00 :(
 
 ## Run your code.
---------------
+
 
 ### Test Case 1:
 ```java

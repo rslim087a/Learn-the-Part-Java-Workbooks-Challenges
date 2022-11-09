@@ -11,7 +11,7 @@ From `Java Bootcamp Resources`, launch `Challenge 3`.
 ![Screen Shot 2022-10-16 at 7.18.41 PM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fb13da05c-82d6-4d42-84c1-734dc0a4dda9?alt=media&token=6e3254de-84a6-4761-9377-3671d5d4f594)
 
 ## 1\. Store each answer.
-----------------------
+
 
 Add code that picks up the user's answer. Use the comments to guide your code.
 
@@ -23,7 +23,7 @@ Add code that picks up the user's answer. Use the comments to guide your code.
 
 
 ## 2\. Check each answer.
-----------------------
+
 
 The correct answers are:
 
@@ -38,7 +38,7 @@ The correct answers are:
 Update the user's score by 5 points for each correct answer.
 
 ## 3\. Print a final message.
---------------------------
+
 
 If `score` is 15 or higher, `print`:
 
@@ -53,7 +53,7 @@ otherwise:
 > better luck next time.
 
 ## Run your code.
---------------
+
 
 Enter the correct answer to each question.
 
@@ -101,7 +101,7 @@ Wow, you know your stuff!
 ```
 
 ## Running test cases
-------------------
+
 
 **Test case 1**
 

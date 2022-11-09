@@ -5,7 +5,7 @@ From the `Java Bootcamp Resources`, launch **`Workbook 5.7`**.
 ![7.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F6182f602-6dd0-424d-b0c6-c0d8af4afc26?alt=media&token=a2d79996-7df1-42b4-a03a-9be631bc7bcb)
 
 Fizz Buzz
----------
+
 
 Your program has to print numbers from 0 to 18.
 
@@ -18,7 +18,7 @@ Your program has to print numbers from 0 to 18.
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F5154ec7f-94ec-41ef-a01d-b935e9928995?alt=media&token=9bfcab69-5b1d-4430-886b-b7ec2f6affb8)
 
 ## Task 1
-------
+
 
 Make a `for` loop that counts from 0 to 18 and print each number.
 
@@ -30,7 +30,7 @@ Make a `for` loop that counts from 0 to 18 and print each number.
 ```
 
 ## Task 2
-------
+
 
 Set up an `if - else if - else` statement.
 
@@ -43,7 +43,7 @@ Set up an `if - else if - else` statement.
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F23bbba9b-d4c4-4c6a-95ed-ef235c65365b?alt=media&token=0ab3ac06-3066-48fb-ab48-38a3282b73e8)
 
 **Hints:**
-----------
+
 
 -   A number is a multiple of X if `number` ÷ `X` results in a remainder of zero.
 

@@ -2,7 +2,7 @@
 
 This cheat sheet contains important takeaways that lead up to section two.
 
-## **1\. Getting Started**
+## **1. Getting Started**
 
 -   `class`: contains all of your code.
 
@@ -41,13 +41,13 @@ There are 6 main data types (we didn't cover `boolean` yet).
 ## Coding Pitfalls
 
 ### Pitfall
----
+
 Put math operations in brackets if you wish to embed them inside a `String`.
 
 -   Example: `"5 + 2 is " + (5 + 2);`
 
 ### Pitfall
-----
+
 |`nextLine()` Trap | |
 | --- | --- |
 | Pitfall  | `nextLine()` gets skipped when placed after `nextInt()` , `nextDouble()`, or `nextLong()`. 

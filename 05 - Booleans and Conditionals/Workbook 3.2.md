@@ -19,7 +19,7 @@ You start with **$100**, and your kids will ask you to buy them stuff.
 ![Screen Shot 2022-10-16 at 5.08.56 PM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fa4ecc375-a09e-4508-b866-6bae97d0ffc4?alt=media&token=5dfd957d-be7f-4d44-a480-99f5430e608a)
 
 ## Run your code
---------------
+
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F04bf497f-cb68-4d19-aca7-7fe63206e682?alt=media&token=0ba7e1fb-9051-4e47-9c2a-00b2dc58087f)
 

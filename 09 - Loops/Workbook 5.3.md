@@ -5,12 +5,12 @@ From the `Java Bootcamp Resources`, launch **`Workbook 5.3`**.
 ![3.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F55c46091-a3e7-4e65-ac2c-f02025e72774?alt=media&token=f0c6b077-9305-4718-933f-b83bac3203ed)
 
 Counting Tool
--------------
+
 
 Timmy's having trouble counting. Let's build a Java app that will help him out.
 
 ## Task 1
-------
+
 
 Ask Timmy what number he'd like to count up to.
 
@@ -19,7 +19,7 @@ Ask Timmy what number he'd like to count up to.
 Make sure Timmy can enter the value **BESIDE** the question.
 
 ## Task 2
-------
+
 
 Count from 0 to that number. If Timmy enters 7, your app should should output: `0 1 2 3 4 5 6 7`
 

@@ -5,7 +5,7 @@ From the `Java Bootcamp Resources`, launch **`Workbook 5.11`**.
 ![11.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F7fdaa8e4-9c26-47be-88aa-e7de6c039712?alt=media&token=602c928a-94a4-48fd-81a1-b8ff83c504d3)
 
 Task 1
-------
+
 
 Print the rules to the user:
 
@@ -27,7 +27,7 @@ Print the rules to the user:
 
 
 Task 2
-------
+
 
 Make a `while` loop that runs forever.
 
@@ -38,7 +38,7 @@ Place your second `scan.nextLine()` from **Task 1** as the first line in your lo
 After testing your code, remove the `hey` print.
 
 Task 3
-------
+
 
 Define the `rollDice` function.
 
@@ -53,14 +53,14 @@ Define the `rollDice` function.
 ```
 
 Task 4
-------
+
 
 During each run, call `rollDice()` and store the value in `diceRoll`. Print each dice roll: `You rolled a <diceRoll>.`.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fda2d821f-3e00-41f8-b6f2-7ef4f804a88a?alt=media&token=8ef6c1fd-d325-4cfb-93ee-9953aa2d8e84)
 
 Task 5
-------
+
 
 Whenever the user rolls a **6**:
    -   print: `End of game.`
@@ -77,7 +77,7 @@ When the user rolls anything else:
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F2dac03b7-ff67-4738-82d0-296d4f4905aa?alt=media&token=db4cda64-8f17-439e-b481-67c67ffb716b)
 
 Task 6
-------
+
 
 After the game ends, check the user's points. If the score is greater than or equal to 3, print:
 

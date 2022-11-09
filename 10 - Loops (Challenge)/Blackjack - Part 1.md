@@ -37,7 +37,7 @@ Blackjack is the most popular table game at casinos. You're going to build a sim
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fc81f4e58-142d-4747-8a98-c363480dcf07?alt=media&token=eaedf962-f3aa-4089-9f36-213562e1158a)
 
 ## Launch the challenge
---------------------
+
 
 From `Java Bootcamp Resources` -> `Module 1` -> `5. Loops`, open `Challenge 5`.
 
@@ -57,19 +57,19 @@ Define the `drawRandomCard` function.
 ```
 
 ## Task 2
-------
+
 
 Make a function that receives a card number and returns the `String` drawing. You can grab the cards from `cards.txt`. Use the doc comment inside the workbook as a guide.
 
 ## Task 3
-------
+
 
 Write code that waits for the user to press enter.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F27a6512b-c2ca-4541-919f-1bfb6ef57539?alt=media&token=1896e076-78ba-4813-9a3d-4247a1ba85b1)
 
 ## Task 4
-------
+
 
 When the game starts, the dealer will give you two cards faceup. Get the code to deal you two random cards and print them:
 
@@ -81,7 +81,7 @@ When the game starts, the dealer will give you two cards faceup. Get the code to
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F7b49ec9b-774c-43cc-8962-5788a71d5df9?alt=media&token=75ccec2e-370f-432b-874c-dad2148c8f3b)
 
 ## Task 5
-------
+
 
 After you print your cards, print the hand value. The hand value is the sum of your card values.
 
@@ -98,7 +98,7 @@ In blackjack, the face cards (Jack, Queen, and King) have values of 10.
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Ff2f3655b-bbe9-4d1b-9657-51dbbf4549e3?alt=media&token=4d6b8516-8860-4931-b0f0-6741b7eeed6d)
 
 ## Task 6
-------
+
 
 The dealer gets two cards as well. Print the dealer's first card, and print the next one facedown. You can find the `String` for a facedown card being returned from a function called: `faceDown()`.
 

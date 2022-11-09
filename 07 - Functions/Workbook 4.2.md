@@ -8,7 +8,7 @@ From the `Java Bootcamp Resources`, launch the **`Workbook 4.2`** folder.
 Your bill was $53.50. It's polite to tip the waiter 15% of your bill.
 
 ## Task 1 - Write a function
--------------------------
+
 
 You will write a function that does this task.
 
@@ -57,12 +57,12 @@ You will write a function that does this task.
 ```
 
 Task 2 - Call the function
---------------------------
+
 
 Call the function from `main()`.
 
 Run your code.
---------------
+
 ```
 Waiter: I hope you enjoyed your meal!
 ```
