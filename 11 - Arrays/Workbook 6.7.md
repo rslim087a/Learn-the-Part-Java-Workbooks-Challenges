@@ -5,7 +5,7 @@ From the `Java Bootcamp Resources`, launch **`Workbook 6.7`**.
 ![7.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F1d8889cf-64f6-41b5-8a1f-d624a0cc4974?alt=media&token=80032e05-63fa-4f35-b1be-47ca563a23ec)
 
 ## Task 1
-------
+
 
 Inside the workbook, an array stores Java's fight record. 
 

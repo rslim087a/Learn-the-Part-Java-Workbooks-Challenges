@@ -5,14 +5,14 @@ This is the most exciting challenge in this course. You're going to build a **tw
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F2e787600-d5f7-4855-b643-bee3714c9d96?alt=media&token=a9772676-799a-46f7-96ad-b38341e1d21d)
 
 Open the challenge
-------------------
+
 
 From `Java Bootcamp Resources` -> `Module 1` -> `6. Array`, open `Challenge 6`.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fdb7a838d-1115-4e12-be18-c544b1a123f7?alt=media&token=2b117380-707e-43b2-a57c-bfc3bc7f83fb)
 
 ## Task 1: Create an array
------------------------
+
 
 The Tic Tac Toe board is a grid with three rows.
 

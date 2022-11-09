@@ -13,7 +13,7 @@ Use `Scanner` to pick up the user's response. Store the response in a `String` v
 ```
 
 ## Task 2
-------
+
 
 Using the `for` loop, check every element in the array. 
 

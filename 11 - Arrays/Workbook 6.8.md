@@ -4,6 +4,7 @@ From the `Java Bootcamp Resources`, launch **`Workbook 6.8`**.
 
 ![8.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F39bdfc91-b7cd-4cd8-b882-7c8542de2a44?alt=media&token=13d519f8-b968-4ffd-90b4-27fe92a4d07c)
 ## Task 1
+
 Create an array that stores three apples you purchased:
 
 ```java

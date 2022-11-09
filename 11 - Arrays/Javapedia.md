@@ -44,7 +44,7 @@ Wh﻿o ﻿do﻿ y﻿ou want infor﻿ma﻿ti﻿on﻿ on? Marco Polo
 ```
 
 Launch the workbook
--------------------
+
 
 First, launch the workbook from Visual Studio Code.
 
@@ -53,14 +53,14 @@ First, launch the workbook from Visual Studio Code.
 From `Java Bootcamp Resources` -> `Module 2` -> `6. Array`, open Javapedia.
 
 Task 1
-------
+
 
 Ask the user: `How many historical figures will you register?`. Store the value in an `int` variable.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F3525fda0-27af-4aa1-a85f-2520815448bf?alt=media&token=ff70843d-511b-4f3a-bcb8-1323cc9049e9)
 
 Task 2
-------
+
 
 Make a 2D array named: `database`. The data we're going to submit will take the form of a table.
 
@@ -71,7 +71,7 @@ So, our array must have as many rows as there are historical figures. Each row a
 **Don't populate the array yet. Leave that for task 3.**
 
 Task 3
-------
+
 
 Create a `for` loop that runs through every row in the database. The user needs to submit three values per row.
 
@@ -80,7 +80,7 @@ Create a `for` loop that runs through every row in the database. The user needs 
 As the user submits each value, you need to store it in the appropriate row. While doing this task, be careful of the `nextLine` pitfall (see cheat sheet).
 
 Task 4
-------
+
 
 Print the contents of `database`. Create a function called `print2DArray`.
 
@@ -109,7 +109,7 @@ Once you finish writing the function, use it to print `database`:
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F6a1efdc4-29d8-4c3b-ba5b-aeff5104766a?alt=media&token=9974b5c1-5011-40b1-964e-41b3aa7a5c90)
 
 Task 5
-------
+
 
 The final task is to let the user search the database by name. If the search matches a name in `database`, print that row's information.
 

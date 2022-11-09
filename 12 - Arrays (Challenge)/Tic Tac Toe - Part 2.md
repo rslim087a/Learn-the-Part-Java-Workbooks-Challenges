@@ -22,7 +22,7 @@ public class TicTacToe {
 ```
 
 Task 3: Taking turns
---------------------
+
 
 The maximum number of turns is 9. Set up a `for` loop that runs 9 times and prints the counter.
 
@@ -37,7 +37,7 @@ Each run represents a turn, such that X goes first.
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fa3b86a73-b641-4f22-a247-38d01ee3f645?alt=media&token=fa61bbba-0a62-4bd6-9125-7f1372c7292c)
 
 Task 4: Write a function
-------------------------
+
 
 Write a function that asks the user to choose a spot. As you write the function, call it for each turn.
 
@@ -140,14 +140,14 @@ Ignore the second step for now. You can move on to task 5.
 ```
 
 ## Task 5: Populate the board
---------------------------
+
 
 The function call returns the player's spot. Use that return value to index the board and populate it. Then, print the board:
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fed6c8f02-a925-43f9-bcff-b10263ce51cf?alt=media&token=3913fad2-893e-485e-99cf-de0660bf169c)
 
 ## Task 4: Revisited
------------------
+
 
 We can't let the player pick a spot that's already taken.
 

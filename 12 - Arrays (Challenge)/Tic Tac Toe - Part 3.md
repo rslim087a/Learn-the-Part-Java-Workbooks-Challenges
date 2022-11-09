@@ -11,7 +11,7 @@ It also doesn't let them pick a spot that's already taken.
 Onto the most exciting part! You will write code that determines the winner.
 
 The `checkWin()` function
--------------------------
+
 
 This function has to check for a win in every row:
 
@@ -30,7 +30,7 @@ and the right diagonal:
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F36a66a47-bafb-4fa8-b154-3aa779ddaf1d?alt=media&token=e66ed809-1df0-491b-a36c-0b6143321efe)
 
 ## Task 6: Write the function
---------------------------
+
 
 1\. Function name: The name of the function is `checkWin()`. It will determine the winner.
 
@@ -116,7 +116,7 @@ Task 6 - Call the function﻿.
 In essence, this checks for a winner after every turn.
 
 ## Task 7: Checking every row
---------------------------
+
 
 Everything inside the function is its own task. First, the function will check every row for a straight X or straight O.
 
@@ -156,7 +156,7 @@ If `count` is 3 **OR** -3, break the `checkWin` function by returning `count`.
 Notice that the game stops after a win.
 
 ## Task 8: Checking every column
------------------------------
+
 
 If none of the rows result in a count of 3 or -3, reset the count to 0 **(important)**.
 
@@ -192,7 +192,7 @@ A player wins if one of the columns results in a `count` of 3 or -3:
 Test every column before you move to Task 9.
 
 ## Task 9: Checking the left diagonal
-----------------------------------
+
 
 If none of the rows or columns result in a count of 3 or -3, reset the count to 0.
 
@@ -268,12 +268,12 @@ Compare the bolded numbers from the hint to the indices below:
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fc5a8d128-408b-43de-91c8-53bdfe8a0000?alt=media&token=141058d6-a1ee-4f71-bef7-22c47ccb40a3)
 
 ## Task 11: What if it's a tie?
-----------------------------
+
 
 If the game goes all nine turns and nobody wins, print: "it's a tie!".
 
 ## Task 12: Test your code!
-------------------------
+
 
 Test your code for every type of win:
 

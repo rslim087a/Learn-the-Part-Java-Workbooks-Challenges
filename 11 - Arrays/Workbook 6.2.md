@@ -5,7 +5,7 @@ From the `Java Bootcamp Resources`, launch **`Workbook 6.2`**.
 ![Untitled3.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F81a93ee6-3996-48ae-8172-a08549b94da4?alt=media&token=5756ba0a-6ec6-4e6f-a37a-8fddb3bf559f)
 
 Exams (Revisited)
-----------------
+
 
 Another wave of students needs to write their exams.
 
@@ -17,7 +17,7 @@ Create a new array of five students.
 "Malfoy", "Crabbe", "Goyle", "Pansy", "Dean"
 ```
 ## Task 2
-------
+
 
 Create a `for` loop that runs through the array, and prints a message for each element.
 
