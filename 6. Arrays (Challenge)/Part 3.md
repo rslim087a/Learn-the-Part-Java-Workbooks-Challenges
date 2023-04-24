@@ -97,25 +97,25 @@ Tasks 7 - 10 are function calls that return an int.
 Copy their definitions inside your class.
 
 ```java
-public static int checkRows() {
+public static int checkRows(char[][] board) {
     int count = 0;
     return count;
 }
 
 
-public static int checkColumns() {
+public static int checkColumns(char[][] board) {
     int count = 0;
     return count;
 }
 
 
-public static int checkLeft() {
+public static int checkLeft(char[][] board) {
     int count = 0;
     return count;
 }
 
 
-public static int checkRight() {
+public static int checkRight(char[][] board) {
     int count = 0;
     return count;
 }
@@ -124,19 +124,19 @@ public static int checkRight() {
 Call each function inside checkWin().
 
 ```java
-public static int checkWin() {    
-    int rows = checkRows(); 
+public static int checkWin(char[][] board) {    
+    int rows = checkRows(board); 
     
     // Math.abs returns the absolute value of a given number, removing any negative sign. 
     if (Math.abs(rows) == 3) return rows; // If the block of code consists of only one line, you can omit the curly braces.
     
-    int columns = checkColumns();
+    int columns = checkColumns(board);
     if (Math.abs(columns) == 3) return columns;  
     
-    int leftDiagonal = checkLeft();
+    int leftDiagonal = checkLeft(board);
     if (Math.abs(leftDiagonal) == 3) return leftDiagonal; 
     
-    int rightDiagonal = checkRight();
+    int rightDiagonal = checkRight(board);
     if (Math.abs(rightDiagonal) == 3) return rightDiagonal;
     
 }
@@ -147,10 +147,10 @@ public static int checkWin() {
 
 Call `checkWin` from your for loop in main. The loop should break if the returned count is 3 or -3.
 ```
-     if (returned count == 3﻿) {
+     if (returned count == 3) {
         // 1. print: X wins
         // 2. break the loop
-      } else if (returned count == -﻿3﻿) {
+      } else if (returned count == -3) {
         // 1. print: O wins
         // 2. break the loop
        }
