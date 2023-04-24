@@ -32,7 +32,7 @@ and the right diagonal:
 ## Task 6: Write the function
 --------------------------
 
-1\. Function name: The name of the function is `checkWin()`. It will determine the winner.
+1. Create a function called checkWin.
 
 ```java
 /**
@@ -41,15 +41,14 @@ and the right diagonal:
  * @return count (int)
  *
  * Inside the function:
- *   1. Make a count variable that starts at 0.
- *   2. Check every row for a straight X/O  (Task 7)
- *   3. Check every column for a straight X/O  (Task 8)
- *   4. Check the left diagonal for a straight X/O  (Task 9).
- *   5. Check the right diagonal for a straight X/O  (Task 10).
+ *   1. checkRows(): Check every row for a straight X/O  (Task 7)
+ *   2. checkColumns(): Check every column for a straight X/O  (Task 8)
+ *   3. checkLeft(): Check the left diagonal for a straight X/O  (Task 9).
+ *   4. checkRight(): Check the right diagonal for a straight X/O  (Task 10).
  */
 ```
 
-2\. Parameters: The function takes one parameter: `char[][] board`.
+2. Parameters: The function takes one parameter: char[][] board.
 
 ```java
 /**
@@ -58,11 +57,10 @@ and the right diagonal:
  * @return count (int)
  *
  * Inside the function:
- *   1. Make a count variable that starts at 0.
- *   2. Check every row for a straight X/O  (Task 7)
- *   3. Check every column for a straight X/O  (Task 8)
- *   4. Check the left diagonal for a straight X/O  (Task 9).
- *   5. Check the right diagonal for a straight X/O  (Task 10).
+ *   1. checkRows(): Check every row for a straight X/O  (Task 7)
+ *   2. checkColumns(): Check every column for a straight X/O  (Task 8)
+ *   3. checkLeft(): Check the left diagonal for a straight X/O  (Task 9).
+ *   4. checkRight(): Check the right diagonal for a straight X/O  (Task 10).
  */
 ```
 
@@ -75,16 +73,14 @@ and the right diagonal:
  * @return count (int) <----------
  *
  * Inside the function:
- *   1. Make a count variable that starts at 0.
- *   2. Check every row for a straight X/O  (Task 7)
- *   3. Check every column for a straight X/O  (Task 8)
- *   4. Check the left diagonal for a straight X/O  (Task 9).
- *   5. Check the right diagonal for a straight X/O  (Task 10).
+ *   1. checkRows(): Check every row for a straight X/O  (Task 7)
+ *   2. checkColumns(): Check every column for a straight X/O  (Task 8)
+ *   3. checkLeft(): Check the left diagonal for a straight X/O  (Task 9).
+ *   4. checkRight(): Check the right diagonal for a straight X/O  (Task 10).
  */
 ```
 
-Inside the function, make a count variable that starts at `0`. This count will determine who won the game.
-
+Tasks 7 - 10 are function calls that return an int. 
 ```java
 /**
  * Function name - checkWin
@@ -92,33 +88,78 @@ Inside the function, make a count variable that starts at `0`. This count will d
  * @return count (int)
  *
  * Inside the function:
- *   1. Make a count variable that starts at 0. <-------
- *   2. Check every row for a straight X/O  (Task 7)
- *   3. Check every column for a straight X/O  (Task 8)
- *   4. Check the left diagonal for a straight X/O  (Task 9).
- *   5. Check the right diagonal for a straight X/O  (Task 10).
+ *   1. checkRows(): Check every row for a straight X/O  (Task 7) <————
+ *   2. checkColumns(): Check every column for a straight X/O  (Task 8) <————
+ *   3. checkLeft(): Check the left diagonal for a straight X/O  (Task 9). <————
+ *   4. checkRight(): Check the right diagonal for a straight X/O  (Task 10). <————
  */
 ```
+Copy their definitions inside your class.
 
-As you write the function, you'll need to call it from your `for` loop in `main`. The loop should break if the returned count is 3 or -3.
+```java
+public static int checkRows() {
+    int count = 0;
+    return count;
+}
 
+
+public static int checkColumns() {
+    int count = 0;
+    return count;
+}
+
+
+public static int checkLeft() {
+    int count = 0;
+    return count;
+}
+
+
+public static int checkRight() {
+    int count = 0;
+    return count;
+}
 ```
-Task 6 - Call the function﻿.
+
+Call each function inside checkWin().
+
+```java
+public static int checkWin() {    
+    int rows = checkRows(); 
+    
+    // Math.abs returns the absolute value of a given number, removing any negative sign. 
+    if (Math.abs(rows) == 3) return rows; // If the block of code consists of only one line, you can omit the curly braces.
+    
+    int columns = checkColumns();
+    if (Math.abs(columns) == 3) return columns;  
+    
+    int leftDiagonal = checkLeft();
+    if (Math.abs(leftDiagonal) == 3) return leftDiagonal; 
+    
+    int rightDiagonal = checkRight();
+    if (Math.abs(rightDiagonal) == 3) return rightDiagonal;
+    
+}
+```
+
+## Task 7
+
+
+Call `checkWin` from your for loop in main. The loop should break if the returned count is 3 or -3.
+```
      if (returned count == 3﻿) {
-        1. print: X wins
-        2. break the loop
+        // 1. print: X wins
+        // 2. break the loop
       } else if (returned count == -﻿3﻿) {
-        1. print: O wins
-        2. break the loop
+        // 1. print: O wins
+        // 2. break the loop
        }
 ```
 
-In essence, this checks for a winner after every turn.
-
-## Task 7: Checking every row
+## Task 8: Checking every row
 --------------------------
 
-Everything inside the function is its own task. First, the function will check every row for a straight X or straight O.
+Tasks 7 - 10 are function calls that receive and return `int`.
 
 ```java
 /**
@@ -127,17 +168,16 @@ Everything inside the function is its own task. First, the function will check e
  * @return count (int)
  *
  * Inside the function:
- *   1. Make a count variable that starts at 0.
- *   2. Check every row for a straight X/O  (Task 7) <-----
- *   3. Check every column for a straight X/O  (Task 8)
- *   4. Check the left diagonal for a straight X/O  (Task 9).
- *   5. Check the right diagonal for a straight X/O  (Task 10).
+ *   1. checkRows(): Check every row for a straight X/O  (Task 7) <——
+ *   2. checkColumns(): Check every column for a straight X/O  (Task 8)
+ *   3. checkLeft(): Check the left diagonal for a straight X/O  (Task 9).
+ *   4. checkRight(): Check the right diagonal for a straight X/O  (Task 10).
  */
 ```
 
-Your outer loop must run through each row while the inner loop runs through every character in that row.
-
-In each row, add 1 to `count` if there's an X. Subtract 1 if there's an O.
+`checkRows():` will check every row for a straight X or straight O:
+ - In each row, add 1 to `count` if there's an X. 
+ - Subtract 1 if there's an O.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fa6bf9e15-3738-466c-816a-dc7beefddf3b?alt=media&token=76aeac14-202e-4cca-b948-e58755109d84)
 
@@ -155,12 +195,8 @@ If `count` is 3 **OR** -3, break the `checkWin` function by returning `count`.
 
 Notice that the game stops after a win.
 
-## Task 8: Checking every column
+## Task 9: Checking every column
 -----------------------------
-
-If none of the rows result in a count of 3 or -3, reset the count to 0 **(important)**.
-
-Now, check every **column** for a count of 3 or -3.
 
 ```java
 /**
@@ -169,18 +205,14 @@ Now, check every **column** for a count of 3 or -3.
  * @return count (int)
  *
  * Inside the function:
- *   1. Make a count variable that starts at 0.
- *   2. Check every row for a straight X/O  (Task 7)
- *   3. Check every column for a straight X/O  (Task 8) <------
- *   4. Check the left diagonal for a straight X/O  (Task 9).
- *   5. Check the right diagonal for a straight X/O  (Task 10).
+ *   1. checkRows(): Check every row for a straight X/O  (Task 7) 
+ *   2. checkColumns(): Check every column for a straight X/O  (Task 8) <———
+ *   3. checkLeft(): Check the left diagonal for a straight X/O  (Task 9).
+ *   4. checkRight(): Check the right diagonal for a straight X/O  (Task 10).
  */
 ```
-
-Hints:
-
+`checkColumns()`:  will check every column for a straight X or straight O:
 -   The outer loop picks a column. The inner loop will index each row for that column.
-
 -   When looking at the image below, think of `i` and `j`.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fab7708fb-fde2-4c0b-b431-1c8f076360dd?alt=media&token=323ef4d3-5a85-4000-9be4-266c7290f50f)
@@ -191,12 +223,10 @@ A player wins if one of the columns results in a `count` of 3 or -3:
 
 Test every column before you move to Task 9.
 
-## Task 9: Checking the left diagonal
+## Task 10: Checking the left diagonal
 ----------------------------------
 
 If none of the rows or columns result in a count of 3 or -3, reset the count to 0.
-
-Now, check the left diagonal for a straight X or O.
 
 ```java
 /**
@@ -205,18 +235,14 @@ Now, check the left diagonal for a straight X or O.
  * @return count (int)
  *
  * Inside the function:
- *   1. Make a count variable that starts at 0.
- *   2. Check every row for a straight X/O  (Task 7)
- *   3. Check every column for a straight X/O  (Task 8)
- *   4. Check the left diagonal for a straight X/O  (Task 9). <-------
- *   5. Check the right diagonal for a straight X/O  (Task 10).
+ *   1. checkRows(): Check every row for a straight X/O  (Task 7) 
+ *   2. checkColumns(): Check every column for a straight X/O  (Task 8) 
+ *   3. checkLeft(): Check the left diagonal for a straight X/O  (Task 9). <———
+ *   4. checkRight(): Check the right diagonal for a straight X/O  (Task 10).
  */
 ```
-
-**Hints:**
-
+`checkLeft()`: will check the left diagonal for a straight X or O:
 -   Do you see a pattern in the indices?
-
 -   You don't need a nested loop. Use a single `for` loop.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fa300009e-ddb2-497a-a78a-bb31bc4ee5b6?alt=media&token=cbcba0e8-d872-4ca2-a0b9-7c451332f38b)
@@ -225,7 +251,7 @@ Now, check the left diagonal for a straight X or O.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F0a037bcc-3cae-4344-8347-80f1d2a86910?alt=media&token=9c96feb4-d9be-423e-9668-fbce66a5ea27)
 
-## Task 10: Checking the right diagonal
+## Task 11: Checking the right diagonal
 ------------------------------------
 
 If none of the rows, columns, or left diagonal result in a win, reset the count to 0.
@@ -239,24 +265,20 @@ Now, check the right diagonal for a straight X or O.
  * @return count (int)
  *
  * Inside the function:
- *   1. Make a count variable that starts at 0.
- *   2. Check every row for a straight X/O  (Task 7)
- *   3. Check every column for a straight X/O  (Task 8)
- *   4. Check the left diagonal for a straight X/O  (Task 9).
- *   5. Check the right diagonal for a straight X/O  (Task 10). <------
+ *   1. checkRows(): Check every row for a straight X/O  (Task 7) 
+ *   2. checkColumns(): Check every column for a straight X/O  (Task 8) 
+ *   3. checkLeft(): Check the left diagonal for a straight X/O  (Task 9). 
+ *   4. checkRight(): Check the right diagonal for a straight X/O  (Task 10). <———
  */
 ```
 
-Hint:
+`checkRight():` will check the right diagonal for a straight X or O:
 
 -   You don't need a nested loop. Use a single `for` loop.
-
 -   The pattern here is a bit tricky:
 
     -   2 - **0** = **2**
-
     -   2 - **1** = **1**
-
     -   2 - **2** = **0**
 
 Compare the bolded numbers from the hint to the indices below:
