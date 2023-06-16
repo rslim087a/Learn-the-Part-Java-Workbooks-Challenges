@@ -142,9 +142,6 @@ public static int checkWin(char[][] board) {
 }
 ```
 
-## Task 7
-
-
 Call `checkWin` from your for loop in main. The loop should break if the returned count is 3 or -3.
 ```
      if (returned count == 3) {
@@ -156,7 +153,7 @@ Call `checkWin` from your for loop in main. The loop should break if the retur
        }
 ```
 
-## Task 8: Checking every row
+## Task 7: Checking every row
 --------------------------
 
 Tasks 7 - 10 are function calls that receive and return `int`.
@@ -176,8 +173,8 @@ Tasks 7 - 10 are function calls that receive and return `int`.
 ```
 
 `checkRows():` will check every row for a straight X or straight O:
- - In each row, add 1 to `count` if there's an X. 
- - Subtract 1 if there's an O.
+    - The outer loop must run through each row while the inner loop runs through every character in that row.
+    - In each row, add 1 to count if there's an X. Subtract 1 if there's an O.
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fa6bf9e15-3738-466c-816a-dc7beefddf3b?alt=media&token=76aeac14-202e-4cca-b948-e58755109d84)
 
@@ -195,7 +192,7 @@ If `count` is 3 **OR** -3, break the `checkWin` function by returning `count`.
 
 Notice that the game stops after a win.
 
-## Task 9: Checking every column
+## Task 8: Checking every column
 -----------------------------
 
 ```java
@@ -223,7 +220,7 @@ A player wins if one of the columns results in a `count` of 3 or -3:
 
 Test every column before you move to Task 9.
 
-## Task 10: Checking the left diagonal
+## Task 9: Checking the left diagonal
 ----------------------------------
 
 If none of the rows or columns result in a count of 3 or -3, reset the count to 0.
@@ -251,7 +248,7 @@ If none of the rows or columns result in a count of 3 or -3, reset the count to 
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F0a037bcc-3cae-4344-8347-80f1d2a86910?alt=media&token=9c96feb4-d9be-423e-9668-fbce66a5ea27)
 
-## Task 11: Checking the right diagonal
+## Task 10: Checking the right diagonal
 ------------------------------------
 
 If none of the rows, columns, or left diagonal result in a win, reset the count to 0.
@@ -297,7 +294,7 @@ If the game goes all nine turns and nobody wins, print: "it's a tie!".
 ## Task 12: Test your code!
 ------------------------
 
-Test your code for every type of win:
+Test your code by verifying the output for:
 
 -   straight row
 
@@ -307,7 +304,8 @@ Test your code for every type of win:
 
 -   right diagonal.
 
-Test each case for X and O. Also, see if your code works in the event of a tie.
+-   Tie.
+
 
 If everything works, you have my sincere congratulations! Tic tac toe is not an easy project, and going through this challenge is a strong testament to your growth.
 
