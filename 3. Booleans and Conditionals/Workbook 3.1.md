@@ -46,4 +46,4 @@ The solution code is inside the same folder as the starter project.
 ![Screen Shot 2022-10-16 at 4.03.59 PM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F4d727614-a15c-4651-a3e0-639836b495e1?alt=media&token=b6b6bd26-e460-4ab2-8fac-5e116e17e3fe)
 
 -------
-##### Subscribe to our [YouTube Channel](https://www.youtube.com/@RayanSlim087?sub_confirmation=1) and Discover More Valuable Content!
+##### Become a Java Web Developer with our [Spring Boot Course](https://udemy-redirect-app.herokuapp.com/spring) (86% Sale).

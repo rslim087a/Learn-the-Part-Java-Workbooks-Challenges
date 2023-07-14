@@ -61,4 +61,4 @@ The **video solution** is on Udemy.
 ![Screen Shot 2022-10-09 at 5.00.51 PM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F378e76e6-6330-4420-99e4-8f915ec8f4d0?alt=media&token=f81a5bfa-0604-4530-b6a3-c8c4bab07d9f)
 
 -------
-##### Subscribe to our [YouTube Channel](https://www.youtube.com/@RayanSlim087?sub_confirmation=1) and Discover More Valuable Content!
+##### Become a Java Web Developer with our [Spring Boot Course](https://udemy-redirect-app.herokuapp.com/spring) (86% Sale).

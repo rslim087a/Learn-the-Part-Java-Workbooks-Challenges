@@ -62,4 +62,4 @@ If a `class` has fields, you need to add:
 
 ![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Ff7f41501-9295-49c1-bba4-6dd81ece1ca7?alt=media&token=9ba5af9b-5caa-4afa-8ff2-f0eff7fd39cf)
 -------
-##### Subscribe to our [YouTube Channel](https://www.youtube.com/@RayanSlim087?sub_confirmation=1) and Discover More Valuable Content!
+##### Become a Java Web Developer with our [Spring Boot Course](https://udemy-redirect-app.herokuapp.com/spring) (86% Sale).

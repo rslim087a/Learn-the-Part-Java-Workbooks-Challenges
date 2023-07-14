@@ -149,4 +149,4 @@ Compile and run the `LabEquipmentTester` class to test your implementation. The 
 Use breakpoints to visualize the runtime of your code and gain a deeper understanding of the flow of execution.
 
 -----
-##### Subscribe to our [YouTube Channel](https://www.youtube.com/@RayanSlim087?sub_confirmation=1) and Discover More Valuable Content!
+##### Become a Java Web Developer with our [Spring Boot Course](https://udemy-redirect-app.herokuapp.com/spring) (86% Sale).
