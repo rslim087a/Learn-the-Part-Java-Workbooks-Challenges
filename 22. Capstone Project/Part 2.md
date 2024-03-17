@@ -20,7 +20,13 @@ The `datastore` field will be used to store `TradeAccount` objects using their `
 ## Task 3
 - Create a method called `retrieveTradeAccount` in the `TradeAccountRepository` class. 
 - The method should have one parameter, a `String id`, and return a `TradeAccount` object.
-- The retrieveTradeAccount method should return a clone of the `TradeAccount` object stored in the datastore with the specified `id`.
+- The retrieveTradeAccount method should return null or a clone of the TradeAccount object stored in the datastore with the specified id. Use the line of code below (or something similar) to ensure that clone doesn't potentially get called on a null, thereby causing a NullPointerException.
+
+```java
+this.datastore.get(id) == null ? null : this.datastore.get(id).clone();
+```
+
+
 
 ## Task 4
 - Create a method called `updateTradeAccount` in the `TradeAccountRepository` class. 
