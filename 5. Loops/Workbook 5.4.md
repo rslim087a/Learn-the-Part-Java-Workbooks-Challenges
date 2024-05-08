@@ -40,7 +40,7 @@ A song as old as time itself.
  * Inside the function:
  *  1. print:
  *      <i> bottles of beer on the wall, <i> bottles of beer!
- *      take one down, pass it around <i-1>, bottles of beer on the wall!
+ *      take one down, pass it around, <i-1> bottles of beer on the wall!
  */
 ```
 
