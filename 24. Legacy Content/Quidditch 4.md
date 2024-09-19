@@ -10,8 +10,6 @@ When you add an `equals()` method, you **must** also add a `hashCode()` method t
 1. `HashMap` uses the `hashCode` to find which bucket the key is in.
 2. **After it finds the bucket**, `equals()` can compare your object against the key.
 
-![Untitled.gif](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F547e6d87-a2c7-47c4-bf81-973f771e095a?alt=media&token=4d8a9afc-f604-4795-8ef2-af161a341037)
-
 ## **Task 1**
 ---
 Inside `Team.java`, add a `hashCode` method that assigns equal objects the same `hashCode`. 
