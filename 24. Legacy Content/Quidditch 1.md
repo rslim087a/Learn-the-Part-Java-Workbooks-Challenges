@@ -10,7 +10,7 @@ The Quidditch application will cover:
 
 ## Setup
 
-![Screenshot](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F3e8a4cf2-0581-4074-9fa6-3f107a7dd696?alt=media&token=b73d699e-ca61-4da8-ad58-37876aeb829f)
+Launch the project inside **Java Bootcamp Resources** > **Module 2** > **9. Unit Testing** > **Workbooks** > **quidditch**
 
 ## `requirements.txt`
 -----
