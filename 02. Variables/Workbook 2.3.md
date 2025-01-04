@@ -58,4 +58,7 @@ The **video solution** is inside the appendix (last section on Udemy).
 ![Screen Shot 2022-10-10 at 11.46.23 PM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F1cc87304-986d-4158-8a78-eba79b0138cd?alt=media&token=3151f5c4-9c0c-4a11-a43a-ed0516c754aa)
 
 -------
-##### Become a Java Web Developer with our [Spring Boot Course](https://udemy-redirect-app.herokuapp.com/spring) (86% Sale).
+##### Your Path to Cloud-Native Engineering (After Learning Java)
+###### 1. Create Enterprise Java Apps With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
+###### 2. Ship Code Like A Tech Giant With Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
+###### 3. Build Production-Grade Cloud Systems → [Kubernetes Bootcamp](https://kubernetestraining.io/)

@@ -119,4 +119,7 @@ Apply the same quality control inside every setter. Use the following function f
 ![Screen Shot 2021-07-13 at 3.58.46 PM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F79a6be41-8f1a-4509-99e9-57308ffa201d?alt=media&token=4b32bf70-1c36-492c-b628-1f436a0e0b0e)
 
 --------
-##### Become a Java Web Developer with our [Spring Boot Course](https://udemy-redirect-app.herokuapp.com/spring) (86% Sale).
+##### Your Path to Cloud-Native Engineering (After Learning Java)
+###### 1. Create Enterprise Java Apps With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
+###### 2. Ship Code Like A Tech Giant With Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
+###### 3. Build Production-Grade Cloud Systems → [Kubernetes Bootcamp](https://kubernetestraining.io/)
