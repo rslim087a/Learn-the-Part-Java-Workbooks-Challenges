@@ -6,106 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
 
-    <style>
-      body {
-        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
-          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
-          segoe ui emoji, segoe ui symbol;
-        font-weight: 400;
-        line-height: 22.4px;
-        font-size: 16px;
-      }
-      p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      ul,
-      ol {
-        font-size: 16px;
-        font-weight: 400;
-      }
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        max-width: none;
-      }
-      code {
-        background-color: #fff;
-        border: 1px solid #d1d7dc;
-        color: #b4690e;
-        font-size: 90%;
-        padding: 0.2rem 0.4rem;
-      }
-      .quiz-content {
-        padding: 2.4rem;
-        word-break: break-word;
-        max-width: 86rem;
-        margin: 0 auto;
-      }
-      .quiz-container {
-        margin: 0 auto;
-        max-width: 84rem;
-        padding: 0;
-      }
-      .question {
-        margin-bottom: 5rem;
-      }
-      .question span {
-        font-size: 24px;
-        font-weight: 700;
-      }
-      .question-prompt {
-        margin-top: 0.8rem;
-        font-weight: 700;
-      }
-      .question-answer {
-        margin-top: 1.6rem;
-        padding-left: 0;
-        box-sizing: border-box;
-      }
-      .question-answer label {
-        max-width: 80rem;
-        position: relative;
-        cursor: pointer;
-        display: flex;
-        min-width: 18rem;
-        border: solid #1c1d1f 2px;
-      }
-      .question-answer div {
-        display: flex;
-        align-items: center;
-        padding: 0.5rem;
-        width: 100%;
-      }
-      .question-answer div:hover {
-        background-color: #f5f5f5;
-      }
-      .question-answer input {
-        display: none;
-      }
-      .question-answer span {
-        width: 1rem;
-        height: 1rem;
-        margin-right: 1.6rem;
-        top: 0;
-        border-radius: 50%;
-        display: inline-block;
-        flex-shrink: 0;
-        border: 0.2rem solid #1c1d1f;
-        position: relative;
-      }
-      .selected {
-        background: #1c1d1f;
-        box-shadow: 0 0 0 0.4rem #fff inset;
-      }
-      .score {
-              position: fixed;
-            }
-    </style>
+    <link rel="stylesheet" href="quiz-styles.css">
   </head>
 
   <body onload="main()">
@@ -207,7 +108,7 @@
             var answers = questionElement.getElementsByClassName("answer");
             for (var i = 0; i < answers.length; i++) {
               console.log(answers[i]);
-              answers[i].children[0].style.borderColor = "#1c1d1f";
+              answers[i].children[0].classList.remove("correct", "incorrect");
             }
 
             var answer = questionElement.querySelector(
@@ -217,14 +118,13 @@
               var answerIndex = answer.value;
               var answerText = question.answers[answerIndex];
               if (answerText == question.correctAnswer) {
-                answer.parentElement.parentElement.style.borderColor =
-                  "limegreen";
-                // alert("Correct!");
+                answer.parentElement.parentElement.classList.add("correct");
+                // 
                 correct++;
                 updateScore();
               } else {
-                answer.parentElement.parentElement.style.borderColor = "red";
-                // alert("Incorrect!");
+                answer.parentElement.parentElement.classList.add("incorrect");
+                // 
               }
             } else {
               alert("Please select an answer.");
