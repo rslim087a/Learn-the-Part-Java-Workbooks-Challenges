@@ -124,19 +124,6 @@ pre {
     background-color: var(--secondary-color);
 }
 
-.score {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: white;
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-weight: 500;
-    font-variant-numeric: tabular-nums;
-    font-feature-settings: "tnum";
-}
-
 img {
     max-width: 100%;
     height: auto;
@@ -162,4 +149,15 @@ ul.answers {
     font-weight: 500;
     font-variant-numeric: tabular-nums;
     font-feature-settings: "tnum";
+}
+
+.answers li {
+    list-style: none;
+}
+
+/* and to be extra safe, add this too */
+.question-answer {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
