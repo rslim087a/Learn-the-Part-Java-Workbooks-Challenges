@@ -161,3 +161,5 @@ ul.answers {
     padding: 0;
     margin: 0;
 }
+
+.back-button { position: fixed; top: 20px; left: 20px; padding: 10px 20px; background: #4a90e2; color: white; border: none; border-radius: 5px; text-decoration: none; }
