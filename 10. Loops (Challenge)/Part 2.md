@@ -2,7 +2,7 @@
 
 In part 1, you wrote the logic for starting the game.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F6dab8e0f-4f4f-42ef-a092-40d7d9571d78?alt=media&token=8b016f96-ab2e-465f-9185-7e16986b599a)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-17-56-f64571187f7dcded6c963119737241f3.gif)
 
 In part 2, you will write the logic for playing the game. Recall:
 
@@ -26,7 +26,7 @@ In part 2, you will write the logic for playing the game. Recall:
 
 **Final output:**
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F6aaeebfa-1824-497a-be53-81ec2cea8bf6?alt=media&token=6ba7057d-efde-46d9-81cb-5ca07ec49384)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-17-57-68a1f51207930ee744ecd8267f6661ee.gif)
 
 ## Task 7
 ------
@@ -55,7 +55,7 @@ If the user doesn't enter "hit" or "stay", keep asking them to try again by prin
 
 The condition for this while loop is kind of tricky. I recommend using a while loop that runs forever and breaking it when it's appropriate. Test your function by calling it from `main()`.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F4def7840-d792-4366-b0e1-9617e3c33497?alt=media&token=2aa0f178-46dd-4c36-91a6-59cd54f8d224)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-17-57-fa090f9aa33b03d5c7accfb57352cd50.gif)
 
 ## Task 8
 ------
@@ -66,18 +66,18 @@ In Task 8, you will keep asking the player to hit or stay. In other words, make 
 
 - ` your new total is <total>`
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F2a057fac-7aae-4507-8fc6-3be0a7315ff9?alt=media&token=88113175-aaa0-4508-8f26-66725eeabbac)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-17-57-a4b897c0dc377d305de09269f901826d.gif)
 
 -   Once the player 'stays', break the loop.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F229019d8-b604-41cb-8c34-e5f811cbc687?alt=media&token=39e43558-e61e-4e4e-bc11-8aa097f95d2c)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-17-57-03e2d36dcf6cd6dad26729dcbac48c12.gif)
 
 ## Task 9
 ------
 
 While the player is hitting, if they go bust (total exceeds 21) print: `"Bust! Player loses"`. Then, shut down the game with `System.exit(0)` (`System.exit(0)` terminates execution).
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F997ca750-bd0a-45e5-b490-3fbb34fedad3?alt=media&token=b0bf8ad9-9788-4c53-a179-dd1a6bbb307a)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-17-58-b11cc3d38b602519a05ef527974897cb.gif)
 
 ## Task 10
 -------
@@ -90,7 +90,7 @@ Print:
 
 - `(new line) The dealer's cards are (new line) <dealer card 1> (new line) and a (new line) <dealer card 2>`
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F0b530327-85a8-4898-bf05-b32db51b8f4c?alt=media&token=6545478f-ff33-481b-aed5-70691677a117)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-17-58-ea836c69c95c61d095ec92a1301e7001.gif)
 
 ## Task 11
 -------
@@ -104,16 +104,14 @@ Every time the dealer hits, print:
 
 At 17 points or higher, end the dealer's turn.
 
-
-
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F240e9da8-ade9-416f-bfab-4e410b80e0b6?alt=media&token=0387b555-cbe2-4468-9a56-5e457cac50c9)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-17-58-bc1020afffe1565237aa3799458b7d38.gif)
 
 ## Task 12
 -------
 
 If the dealer's total is higher than 21, print: `"Bust! Dealer loses"` and end the game with `System.exit(0)`.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F9fa97e5c-0c34-453c-9e57-636e75b1d6a1?alt=media&token=ce799ff8-8c20-4d98-93e2-b0aab4798f72)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-17-58-cd1534b9e77c31c0bc391c2a5a68b589.gif)
 
 ## Task 13
 -------
@@ -126,11 +124,11 @@ If at this point, the program didn't terminate, compare the dealer and player's 
 
 **Final output:**
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F3f3d6c9e-c7b2-48dc-97e7-2a895ff6b654?alt=media&token=4af2bff2-880b-4184-bfca-1928f4adf473)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-17-58-eae6a245eba0e4c3f440167680b9b718.gif)
 
 ## Good luck!
 ----------
 ##### Your Path to Cloud-Native Engineering (After Learning Java)
-###### 1. Create Enterprise Java Apps With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
-###### 2. Ship Code Like A Tech Giant With Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
-###### 3. Build Production-Grade Cloud Systems → [Kubernetes Bootcamp](https://kubernetestraining.io/)
+###### 1. Develop Java Web Applications With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
+###### 2. Containerize and Deploy Web Applications with Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
+###### 3. Orchestrate Cloud Native Applications with Kubernetes → [Kubernetes Bootcamp](https://kubernetestraining.io/)

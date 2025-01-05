@@ -1,13 +1,13 @@
 # **Rock paper scissors**
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F7b884cfe-1f4e-4c0d-8bc6-eb825ead8eeb?alt=media&token=91f1af42-bbf9-4be9-ada0-ca1d44662f48)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-04-28-72828fadc53aeb47032cc694bb0bf76e.gif)
 
 ## Open the challenge
 ------------------
 
 From `Java Bootcamp Resources`, open the **`Challenge 4`** folder.
 
-![Screen Shot 2022-10-20 at 9.59.00 PM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F2741fff1-5a2f-4038-89b1-e8860c25ac7d?alt=media&token=de17aafa-6ab7-4805-a89e-63c5c4fe1656)
+![Screen Shot 2022-10-20 at 9.59.00 PM.png](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-04-29-837ae6fb6f36e27de6854974f95ea98c.png)
 
 
 ## Task 1: See if the user wants to play
@@ -33,9 +33,9 @@ Use `Scanner` to pick up the user's response.
    -- pick up user's choice.
    -- get the computer choice (can be done after task 3).
    -- get the result (can only be done after task 4)
-   -- print everything (can only ﻿b﻿e done after task 5).
+   -- print everything (can only be done after task 5).
 - else:
-   -- print: Darn, some﻿ other time...!
+   -- print: Darn, some other time...!
 ```
 
 Here, the user would enter rock paper or scissors. Using `Scanner`, pick up their choice.
@@ -48,7 +48,7 @@ Here, the user would enter rock paper or scissors. Using `Scanner`, pick up thei
    -- get the computer choice (can be done after task 3).
    -- get the result (can only be done after task 4)
    -- print everything (can only be done after task 5).
-- els﻿e﻿:
+- else:
    -- print: Darn, some other time...
 ```
 There are more instructions for the if statement. You cannot do them until you finish tasks 3, 4, and 5.
@@ -61,7 +61,7 @@ There are more instructions for the if statement. You cannot do them until you f
    -- get the computer choice (can be done after task 3). <------
    -- get the result (can only be done after task 4) <-------
    -- print everything (can only be done after task 5). <--------
-- els﻿e﻿:
+- else:
    -- print: Darn, some other time...
 ```
 
@@ -72,11 +72,11 @@ So, you're left with the `else` block. If the user doesn't enter "yes", print: *
    -- print: Great!
    -- print: rock -- paper -- scissors, shoot!
    -- pick up user's choice.
-   -- get the computer choice (can be done after task 3﻿)﻿.
-   -- get the result (can only be done after task 4﻿)
-   -- print everything (can only be done after task 5﻿)﻿.
+   -- get the computer choice (can be done after task 3).
+   -- get the result (can only be done after task 4)
+   -- print everything (can only be done after task 5).
 - else﻿: <---------------
-   -- print: Darn, some other time...        ﻿
+   -- print: Darn, some other time...
 ```
 
 ## **Task 3: Generate a random choice**
@@ -168,13 +168,13 @@ Add two temporary print statements.
 
 The end result should print your choice and the computer's choice.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F3930fb22-fcae-4a00-b6ad-01b8d3ed43db?alt=media&token=70d8386d-2443-46a4-a7f3-cfcb31b7600f)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-04-29-798ea8c5cfe6765b1105de37149a34fe.gif)
 
 Run it a few more times, and make sure the computer is picking randomly.
 
 ## Good luck!
 ----------
 ##### Your Path to Cloud-Native Engineering (After Learning Java)
-###### 1. Create Enterprise Java Apps With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
-###### 2. Ship Code Like A Tech Giant With Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
-###### 3. Build Production-Grade Cloud Systems → [Kubernetes Bootcamp](https://kubernetestraining.io/)
+###### 1. Develop Java Web Applications With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
+###### 2. Containerize and Deploy Web Applications with Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
+###### 3. Orchestrate Cloud Native Applications with Kubernetes → [Kubernetes Bootcamp](https://kubernetestraining.io/)

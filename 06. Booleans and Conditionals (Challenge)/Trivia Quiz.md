@@ -2,13 +2,13 @@
 
 The quiz will ask multiple-choice questions about common trivia. It tracks the user's answers and prints their final score.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Feea146f3-f410-495d-904e-2e05917bad8b?alt=media&token=7b5decbe-64ea-4deb-8420-795e0ff871b9)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-26-32-2385e223461c2c1b226c98dd0577e560.gif)
 
 ## Open the challenge
 
 From `Java Bootcamp Resources`, launch `Challenge 3`.
 
-![Screen Shot 2022-10-16 at 7.18.41 PM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fb13da05c-82d6-4d42-84c1-734dc0a4dda9?alt=media&token=6e3254de-84a6-4761-9377-3671d5d4f594)
+![Screen Shot 2022-10-16 at 7.18.41 PM.png](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-26-32-aa312d19f7b1508d332ec2e375df32c9.png)
 
 ## 1\. Store each answer.
 ----------------------
@@ -16,9 +16,9 @@ From `Java Bootcamp Resources`, launch `Challenge 3`.
 Add code that picks up the user's answer. Use the comments to guide your code.
 
 ```
-        System.out.﻿println﻿(﻿"1. Which country held the 2016 Summer Olympics?"﻿)﻿;
-        System.out.﻿println﻿(﻿"\ta) China\n\tb) Ireland\n\tc) Brazil\n\td) Italy\n"﻿)﻿;
-        //store ans﻿wer 1
+        System.out.println("1. Which country held the 2016 Summer Olympics?");
+        System.out.println("\ta) China\n\tb) Ireland\n\tc) Brazil\n\td) Italy\n");
+        //store answer 1
 ```
 
 
@@ -138,6 +138,6 @@ Your output should reflect a score of 0/20. It should also print:
 ## Good luck!
 ----------
 ##### Your Path to Cloud-Native Engineering (After Learning Java)
-###### 1. Create Enterprise Java Apps With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
-###### 2. Ship Code Like A Tech Giant With Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
-###### 3. Build Production-Grade Cloud Systems → [Kubernetes Bootcamp](https://kubernetestraining.io/)
+###### 1. Develop Java Web Applications With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
+###### 2. Containerize and Deploy Web Applications with Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
+###### 3. Orchestrate Cloud Native Applications with Kubernetes → [Kubernetes Bootcamp](https://kubernetestraining.io/)

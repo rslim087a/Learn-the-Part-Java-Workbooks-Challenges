@@ -2,7 +2,7 @@
 
 From the `Java Bootcamp Resources`, launch **`Part 2`**.
 
-![2.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F9f9bb74e-8e83-4d10-916c-9cc3684f78a4?alt=media&token=c944ed62-a28e-4e9f-9c47-c224f13970a5)
+![2.png](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-03_22-30-00-e670f6ff3d72c0a18b468f1ae9baa972.png)
 
 
 ## Task 0
@@ -133,6 +133,6 @@ The method `promptForRating` will return the rating they choose.
 ----------
 
 ##### Your Path to Cloud-Native Engineering (After Learning Java)
-###### 1. Create Enterprise Java Apps With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
-###### 2. Ship Code Like A Tech Giant With Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
-###### 3. Build Production-Grade Cloud Systems → [Kubernetes Bootcamp](https://kubernetestraining.io/)
+###### 1. Develop Java Web Applications With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
+###### 2. Containerize and Deploy Web Applications with Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
+###### 3. Orchestrate Cloud Native Applications with Kubernetes → [Kubernetes Bootcamp](https://kubernetestraining.io/)

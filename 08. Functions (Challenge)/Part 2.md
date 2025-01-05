@@ -91,7 +91,7 @@ Call the function and print the result.
 
 Before you move to task 5, this is a good place to test your code. The end result should print your choice, the computer's choice, and the result.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F91169998-c75d-4134-b91c-560e5a85ebfd?alt=media&token=794d92c5-1547-4195-9f3b-5b5ecea5794c)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-02-54-858c903e326b26540c6b07f5f4b95ee0.gif)
 
 Run it a few more times. It should keep returning the correct result.
 
@@ -170,13 +170,13 @@ Back in the `if` statement, call `printResult()` and you're done!
 ## Run your code
 -------------
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fdd2570dc-cb51-4b5d-8d60-567413c367f5?alt=media&token=99fc526b-a267-40fd-a1ab-72b1cc76ab61)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-02-54-6ae56e3b12b1efb6e535251fe4f63cd4.gif)
 
 If it feels like you're playing a real game of rock-paper-scissors, then you're finished!
 
 ## Good luck!
 ----------
 ##### Your Path to Cloud-Native Engineering (After Learning Java)
-###### 1. Create Enterprise Java Apps With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
-###### 2. Ship Code Like A Tech Giant With Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
-###### 3. Build Production-Grade Cloud Systems → [Kubernetes Bootcamp](https://kubernetestraining.io/)
+###### 1. Develop Java Web Applications With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
+###### 2. Containerize and Deploy Web Applications with Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
+###### 3. Orchestrate Cloud Native Applications with Kubernetes → [Kubernetes Bootcamp](https://kubernetestraining.io/)

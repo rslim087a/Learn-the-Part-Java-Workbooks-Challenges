@@ -8,7 +8,7 @@ Hangman is a word-guessing game. It keeps asking the user to guess characters un
 
 **Example output**
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fd8b52dae-3a97-4c72-9add-b07bf7aa1a14?alt=media&token=b24fd192-87ec-4d76-89b5-d4e804f99811)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_00-09-05-c890d38b4e63a7bdc7bebd6fa9e422ae.gif)
 
 **Why is hangman your capstone project?**
 -----------------------------------------
@@ -24,9 +24,7 @@ Hangman is a word-guessing game. It keeps asking the user to guess characters un
 
 Your capstone project should contain the following folders:
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fff69f142-8e9d-442c-bb4a-7850cfd047ef?alt=media&token=d4fd607e-cd02-4379-bb57-c8bc44c8fe68)
-
-If you're missing one of the folders, download the updated resources from the [**Github Repo**](https://github.com/rslim087a/Java-Bootcamp-Resources).
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_00-09-05-692716c97b6ef93918dc1323df726ec1.png)
 
 ## Tips before you start
 -------------------------------
@@ -60,7 +58,7 @@ Your game must choose a random word from this list of words.
 
 The placeholders '`_`' in your game must reflect the number of characters in that word.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F0b84a717-bb03-4339-9181-643d905e3a7d?alt=media&token=bbc2ad5a-9a16-419f-ba60-5a2acb5b0a6d)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_00-09-05-2a8a2e5b3c5b9c0ef7f59907a235c25a.png)
 
 ## **c) Show the gallows**
 -----------------------
@@ -70,14 +68,14 @@ At every turn, you need to show the gallows.
 In your starter project, you'll find an array: `String[] gallows`. Each `String` in the array reflects the number of times the user guessed incorrectly.
 
 ```java
- public static String[﻿] gallows = {
+ public static String[] gallows = {
     "+---+\n" +
     "|   |\n" +
     "    |\n" +
     "    |\n" +   //if the user didn't miss any guesses.
     "    |\n" +
     "    |\n" +
-    "=========\n"﻿,
+    "=========\n",
 
     "+---+\n" +
     "|   |\n" +
@@ -85,7 +83,7 @@ In your starter project, you'll find an array: `String[] gallows`. Each `String`
     "    |\n" +
     "    |\n" +
     "    |\n" +
-    "=========\n"﻿,
+    "=========\n",
 
     "+---+\n" +
     "|   |\n" +
@@ -93,7 +91,7 @@ In your starter project, you'll find an array: `String[] gallows`. Each `String`
     "|   |\n" +
     "    |\n" +
     "    |\n" +
-    "=========\n"﻿,
+    "=========\n",
 
     " +---+\n" +
     " |   |\n" +
@@ -101,15 +99,15 @@ In your starter project, you'll find an array: `String[] gallows`. Each `String`
     "/|   |\n" +
     "     |\n" +
     "     |\n" +
-    " =========\n"﻿,
+    " =========\n",
 
     " +---+\n" +
     " |   |\n" +
     " O   |\n" +
-    "/|\\  |\n"﻿+   //if the user missed four guesses.
+    "/|\\  |\n"+   //if the user missed four guesses.
     "     |\n" +
     "     |\n" +
-    " =========\n"﻿,
+    " =========\n",
 
     " +---+\n" +
     " |   |\n" +
@@ -117,7 +115,7 @@ In your starter project, you'll find an array: `String[] gallows`. Each `String`
     "/|\\  |\n" +  //if the user missed five guesses.
     "/    |\n" +
     "     |\n" +
-    " =========\n"﻿,
+    " =========\n",
 
     " +---+\n" +
     " |   |\n" +
@@ -125,26 +123,26 @@ In your starter project, you'll find an array: `String[] gallows`. Each `String`
     "/|\\  |\n" +   //if the user missed six guesses.
     "/ \\  |\n" +
     "     |\n" +
-    " =========\n"﻿}﻿;
+    " =========\n"};
 ```
 
 You need to show the gallows at every turn. This should be your output when the user misses two guesses.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F50c85efb-9154-4b9c-a4cb-8b5fdc8428c5?alt=media&token=4d7d951d-74fd-4f3d-8b97-fe7bfc42a2af)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_00-09-05-6596ead0b07eaed3e006ba0e65476866.png)
 
 ## **d) Show the missed guesses**
 ------------------------------
 
 You need to keep track of every incorrect guess the user made. This helps the user not make the same mistake twice.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fa9d499b3-f8d4-4537-a101-a277c2c4bc9d?alt=media&token=3b80e0f0-9abe-4d47-a0c0-d1f9e6803cdf)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_00-09-05-58fae46740a8aaf69630ae556853dc83.png)
 
 ## **e) Replace placeholders with correct guesses**
 ------------------------------------------------
 
 When the user guesses correctly, replace the matching placeholders.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F0fa8f2d0-6d8f-4d7a-98a3-143da5d0c7a2?alt=media&token=43d50f19-5084-4f93-91a1-7789f289dd23)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_00-09-05-9868a525a32823051e499f4c484f053a.png)
 
 ## **f) If the user wins:**
 ------------------------
@@ -153,7 +151,7 @@ Stop the game.
 
 **Example output of a winning game:**
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fc452b407-23a8-4398-819b-ab380267e275?alt=media&token=1c0ddf2d-7ebf-42e0-b23e-5f81947583f0)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_00-09-06-4bbb4902928c42bf442a481c8cf61c2a.gif)
 
 ## **g) If the user loses:**
 -------------------------
@@ -162,7 +160,7 @@ Stop the game.
 
 **Example output of a losing game:**
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fa4f85720-1398-443d-bd3e-5dc67fd10a57?alt=media&token=5bde33a5-ee9f-4a8a-87bd-415f4b00c3d2)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_00-09-06-302b4aa0731a9b07700fdf062241b3b9.gif)
 
 ## **h) Aesthetics**
 -----------------
@@ -205,6 +203,6 @@ There are many ways to build Hangman. Here's a possible design for your function
 ## Good luck!
 ----------
 ##### Your Path to Cloud-Native Engineering (After Learning Java)
-###### 1. Create Enterprise Java Apps With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
-###### 2. Ship Code Like A Tech Giant With Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
-###### 3. Build Production-Grade Cloud Systems → [Kubernetes Bootcamp](https://kubernetestraining.io/)
+###### 1. Develop Java Web Applications With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
+###### 2. Containerize and Deploy Web Applications with Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
+###### 3. Orchestrate Cloud Native Applications with Kubernetes → [Kubernetes Bootcamp](https://kubernetestraining.io/)

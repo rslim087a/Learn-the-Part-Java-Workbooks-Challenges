@@ -2,29 +2,26 @@
 
  You're going to build an app that carries a simple conversation.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F4a54dc0a-bb71-4239-90b0-33aa2fe4e123?alt=media&token=0109dc14-ca2c-47fb-8448-79a6a2ac1958)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-56-05-d7d0f9b74d03a84115baf24b385e26c2.gif)
 
 ## Open the challenge
 ------------------
 
 From the `Java-Bootcamp-Resources`, open `Challenge 2`.
 
-![Screen Shot 2022-10-11 at 11.40.48 PM.png](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Ffb04a622-3205-4d01-983a-d79dd0b37543?alt=media&token=3eea4312-991b-4a5e-ad57-40a6190f1ed3)
+![Screen Shot 2022-10-11 at 11.40.48 PM.png](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-56-05-0e1b643f884a684d131bd360a746d2f2.png)
 
 ## 1\. Store each answer.
 ----------------------
 
 After each question, add code that picks up the user's answer and stores it.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Ff9ea05df-7ab7-4a40-9a98-688c86d90800?alt=media&token=28a23c0c-7336-4801-bdba-fd28d4cfbf9f)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-56-05-0e26e29534ef295ba048e065bfed8541.png)
 
 ## **Careful from the** `nextLine()` **trap**
 ----------------------------------------------
 
-|`nextLine()` Trap | |
-| --- | --- |
-| Pitfall  | `nextLine()` gets skipped when placed after `nextInt()` , `nextDouble()`, or `nextLong()`. 
-| Solution  |Add a throwaway `nextLine()` before the "real" `nextLine()`.
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-56-05-aec6a097fe5a9329647243cb6627f58b.png)
 
 
 ## 2\. Update each reply.
@@ -32,12 +29,12 @@ After each question, add code that picks up the user's answer and stores it.
 
 Update each reply with the user's answer.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F552e517f-df7e-45f7-855a-00d87b57ef9b?alt=media&token=a128b99e-10dd-40d6-b1ae-7a5012270387)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-56-05-5b55dc9b8ff25bb4ba86969615ffa359.png)
 
 ## 3\. Run your code.
 ------------------
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fbfe424ab-e8f5-4fc2-8baf-e56166a9d21c?alt=media&token=7400df03-5c04-4b6b-a32c-eefd11965602)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-56-05-7cb514bd1206ab9abf7715c9e8363f19.png)
 
 Why is the cat scared?
 
@@ -48,19 +45,19 @@ The screaming cat appears when something's wrong or looks bad. In this case, the
 
 Before every reply, add a **new line**.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F9596d12a-a533-4f51-b681-d284b796fa14?alt=media&token=bb73f014-e20e-4dc1-ac0e-51792239a8c9)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-56-05-d493dafd7604d7b78380f6cb9da337e3.png)
 
 Follow the comments to guide your code.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F7d4014e9-8b2e-4e37-ad66-fd2567f4739d?alt=media&token=78395093-bb2e-40ef-90c1-1a78d1cec451)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-56-05-78ed06d3bd2955cb7ae69f64571edd30.png)
 
 ## **Final output:**
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fc0b7c5bc-90b5-4d26-810a-cb3d7bc6f0db?alt=media&token=d031d2bc-eb28-4652-86fd-e021f5574694)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_03-56-05-a08c25022ce2a355b5bc7fbd0f2a673b.gif)
 
 ## Good luck!
 ----------
 ##### Your Path to Cloud-Native Engineering (After Learning Java)
-###### 1. Create Enterprise Java Apps With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
-###### 2. Ship Code Like A Tech Giant With Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
-###### 3. Build Production-Grade Cloud Systems → [Kubernetes Bootcamp](https://kubernetestraining.io/)
+###### 1. Develop Java Web Applications With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
+###### 2. Containerize and Deploy Web Applications with Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
+###### 3. Orchestrate Cloud Native Applications At Scale with Kubernetes → [Kubernetes Bootcamp](https://kubernetestraining.io/)

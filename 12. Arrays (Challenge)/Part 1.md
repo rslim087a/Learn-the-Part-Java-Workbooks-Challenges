@@ -2,21 +2,19 @@
 
 This is the most exciting challenge in this course. You're going to build a **two-player** game of Tic Tac Toe!
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F2e787600-d5f7-4855-b643-bee3714c9d96?alt=media&token=a9772676-799a-46f7-96ad-b38341e1d21d)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_00-58-46-bb2dbff93f21284fde67676dcf5c93c0.gif)
 
 Open the challenge
 ------------------
 
 From `Java Bootcamp Resources` -> `Module 1` -> `6. Array`, open `Challenge 6`.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fdb7a838d-1115-4e12-be18-c544b1a123f7?alt=media&token=2b117380-707e-43b2-a57c-bfc3bc7f83fb)
-
 ## Task 1: Create an array
 -----------------------
 
 The Tic Tac Toe board is a grid with three rows.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Ffbeb6251-acb8-4cfa-97be-bb9b1ddc333d?alt=media&token=73e5dfea-661f-498a-b27a-fcad47e4e5da)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_00-58-46-aa7145766e6cfc3a66a0b66f2032a0a5.png)
 
 Each row has three '`_`' characters. Your first task is to store these characters in an array.
 
@@ -27,7 +25,7 @@ Write a function that prints the board. Call the function after creating the boa
 
 ```java
 //Task 1: Create a board: char[][] board
-﻿//Task 2:  Call the function: printBoard(board);
+//Task 2:  Call the function: printBoard(board);
 ```
 ```java
 /**
@@ -46,17 +44,17 @@ Inside the function:
 
 -  Print a new line.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F1e251fe6-175f-48d7-a412-e280c3204e97?alt=media&token=10b15ceb-92a8-425f-a425-aa8a724c8f97)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_00-58-46-a81079dc30fc80e74cf8d139a1138a2b.png)
 
 
 -   add a tab of space before each row.
 -   add a space after printing each character.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Ff8c9dd4f-cb91-47fe-9a38-4b6b9db4b221?alt=media&token=990640dd-3478-4aff-b43d-db54e3aa5514)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_00-58-46-5b2f2b7d34e3f42925ce06dab7802d17.png)
 
 ## Good Luck!
 ----------
 ##### Your Path to Cloud-Native Engineering (After Learning Java)
-###### 1. Create Enterprise Java Apps With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
-###### 2. Ship Code Like A Tech Giant With Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
-###### 3. Build Production-Grade Cloud Systems → [Kubernetes Bootcamp](https://kubernetestraining.io/)
+###### 1. Develop Java Web Applications With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
+###### 2. Containerize and Deploy Web Applications with Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
+###### 3. Orchestrate Cloud Native Applications with Kubernetes → [Kubernetes Bootcamp](https://kubernetestraining.io/)

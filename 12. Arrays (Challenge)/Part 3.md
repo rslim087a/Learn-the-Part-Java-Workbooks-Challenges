@@ -2,11 +2,11 @@
 
 If you made it here, then your game lets a player pick a spot on the board:
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fcd16f8f8-3534-4caa-8b2d-29e9aff4caf3?alt=media&token=d05bb1e2-bb47-4c02-998c-22d2c71500ce)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-48-2a4d1739930f5cb75d49d481fa3e3980.gif)
 
 It also doesn't let them pick a spot that's already taken.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fc9dff6ad-e8f4-4a7a-919f-eea057008c52?alt=media&token=2f5e190b-89df-4d46-b59c-bd1b368e2953)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-48-be231d81b0447d3e8b6afc7b06ed6a5b.gif)
 
 Onto the most exciting part! You will write code that determines the winner.
 
@@ -15,19 +15,19 @@ The `checkWin()` function
 
 This function has to check for a win in every row:
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F624c34d7-6248-449a-8833-8996fe970907?alt=media&token=5677380f-b534-4203-94fc-4a0db35f9ce6)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-48-9a602fb71f0998494f7a1c39595c99a4.gif)
 
 every column:
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F455e475b-0681-4a2b-a024-15f957f77674?alt=media&token=193247f8-6694-41b2-a3e6-442ee611bd58)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-48-83feaa80412bea4c8de52068643bb281.gif)
 
 the left diagonal:
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F1c536df1-14a5-4394-8292-100448ace363?alt=media&token=0f72e92d-4ffe-4dbc-87f6-f5657309caba)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-48-a6fe3ae62d52667c56e43b47f512e1f4.png)
 
 and the right diagonal:
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F36a66a47-bafb-4fa8-b154-3aa779ddaf1d?alt=media&token=e66ed809-1df0-491b-a36c-0b6143321efe)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-49-d28d854173f3179d1522abb69ef9f371.png)
 
 ## Task 6: Write the function
 --------------------------
@@ -176,19 +176,19 @@ Tasks 7 - 10 are function calls that receive and return `int`.
     - The outer loop must run through each row while the inner loop runs through every character in that row.
     - In each row, add 1 to count if there's an X. Subtract 1 if there's an O.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fa6bf9e15-3738-466c-816a-dc7beefddf3b?alt=media&token=76aeac14-202e-4cca-b948-e58755109d84)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-49-97903ae06515871fe2600946097853a9.gif)
 
 If `count` isn't 3 or -3, reset it and move to the next row.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F44d2d787-bf89-4fc1-b88f-4733fc685843?alt=media&token=ad3c800f-fbcb-476f-b093-cf89678e54e3)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-49-b5231bed2a1210893e4dad1323e65255.gif)
 
 A count of 3 means X won (conversely, a count of -3 means O won).
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F22a7348f-bb85-4558-bb03-611aeb85517b?alt=media&token=e9d1d70b-afbc-4b76-b93a-85f6f0cfdc0e)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-49-8382b6d6ffe138562d2059b91b051cf8.gif)
 
 If `count` is 3 **OR** -3, break the `checkWin` function by returning `count`.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F9cad9f3a-2133-405f-8a82-542389285633?alt=media&token=a1441bc7-77e1-4b63-baf6-1d78a0bd401b)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-49-4ac7b2248f5b511ff450d5fad311045b.gif)
 
 Notice that the game stops after a win.
 
@@ -212,11 +212,11 @@ Notice that the game stops after a win.
 -   The outer loop picks a column. The inner loop will index each row for that column.
 -   When looking at the image below, think of `i` and `j`.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fab7708fb-fde2-4c0b-b431-1c8f076360dd?alt=media&token=323ef4d3-5a85-4000-9be4-266c7290f50f)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-49-19a404569b97fe3c9046c9dcf9f66f07.gif)
 
 A player wins if one of the columns results in a `count` of 3 or -3:
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F37b30b0f-cbc2-41ef-a119-ff62c51bc0fe?alt=media&token=d01fef80-a188-4225-9f12-4a2711c488e3)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-50-e6f52149196ab91929b68690dca1f2ad.gif)
 
 Test every column before you move to Task 9.
 
@@ -242,11 +242,11 @@ If none of the rows or columns result in a count of 3 or -3, reset the count to 
 -   Do you see a pattern in the indices?
 -   You don't need a nested loop. Use a single `for` loop.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fa300009e-ddb2-497a-a78a-bb31bc4ee5b6?alt=media&token=cbcba0e8-d872-4ca2-a0b9-7c451332f38b)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-50-1121224df3ddd1e4726e892263662dc0.gif)
 
 **Output**:
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F0a037bcc-3cae-4344-8347-80f1d2a86910?alt=media&token=9c96feb4-d9be-423e-9668-fbce66a5ea27)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-50-b01d3ecd2aeec6409ada660ecee03fdd.gif)
 
 ## Task 10: Checking the right diagonal
 ------------------------------------
@@ -280,11 +280,11 @@ Now, check the right diagonal for a straight X or O.
 
 Compare the bolded numbers from the hint to the indices below:
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F08641a78-c14b-44f7-97e4-59d3f55eba65?alt=media&token=d9d090bb-f92b-42f9-bbd0-dd0de185dd9c)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-50-ff95b15640449d5f18919b6ba30841e6.gif)
 
 **Output**:
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fc5a8d128-408b-43de-91c8-53bdfe8a0000?alt=media&token=141058d6-a1ee-4f71-bef7-22c47ccb40a3)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_01-22-50-4eae566ea2a3ea61f937136c46f4a8de.gif)
 
 ## Task 11: What if it's a tie?
 ----------------------------
@@ -312,6 +312,6 @@ If everything works, you have my sincere congratulations! Tic tac toe is not an 
 Good Luck!
 ----------
 ##### Your Path to Cloud-Native Engineering (After Learning Java)
-###### 1. Create Enterprise Java Apps With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
-###### 2. Ship Code Like A Tech Giant With Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
-###### 3. Build Production-Grade Cloud Systems → [Kubernetes Bootcamp](https://kubernetestraining.io/)
+###### 1. Develop Java Web Applications With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
+###### 2. Containerize and Deploy Web Applications with Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
+###### 3. Orchestrate Cloud Native Applications with Kubernetes → [Kubernetes Bootcamp](https://kubernetestraining.io/)

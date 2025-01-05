@@ -10,7 +10,7 @@ Blackjack is the most popular table game at casinos. You're going to build a sim
 
 -   The dealer also starts with two cards. But, only one of the dealer's cards is faceup. The other is facedown.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F49d4c97e-1a8e-4a9a-bd2a-030102212f91?alt=media&token=727ec955-62e1-4cfc-b074-07022eec4730)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-14-07-e2cd2da094cfeb1f9b86aec53075080d.gif)
 
 **Part 2: During the game**
 
@@ -34,7 +34,7 @@ Blackjack is the most popular table game at casinos. You're going to build a sim
 
 **Full output:**
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Fc81f4e58-142d-4747-8a98-c363480dcf07?alt=media&token=eaedf962-f3aa-4089-9f36-213562e1158a)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-14-07-146f4d5526e2d7b928888087b8f64cdc.gif)
 
 ## Launch the challenge
 --------------------
@@ -66,7 +66,7 @@ Make a function that receives a card number and returns the `String` drawing. Yo
 
 Write code that waits for the user to press enter.
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F27a6512b-c2ca-4541-919f-1bfb6ef57539?alt=media&token=1896e076-78ba-4813-9a3d-4247a1ba85b1)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-14-07-e98ebd84f5280a9070109f0a48b2a327.gif)
 
 ## Task 4
 ------
@@ -78,7 +78,7 @@ When the game starts, the dealer will give you two cards faceup. Get the code to
 -- Print them: (﻿new line﻿) You get a (﻿new line﻿) <random card> and a <random card>
 ```
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F7b49ec9b-774c-43cc-8962-5788a71d5df9?alt=media&token=75ccec2e-370f-432b-874c-dad2148c8f3b)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-14-08-4c04de312b2df64b72dce3d83cac1f89.gif)
 
 ## Task 5
 ------
@@ -95,7 +95,7 @@ In blackjack, the face cards (Jack, Queen, and King) have values of 10.
 
 **Example output:**
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2Ff2f3655b-bbe9-4d1b-9657-51dbbf4549e3?alt=media&token=4d6b8516-8860-4931-b0f0-6741b7eeed6d)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-14-08-6f1f435b4c2efd59b0bc0290b882b652.gif)
 
 ## Task 6
 ------
@@ -105,20 +105,20 @@ The dealer gets two cards as well. Print the dealer's first card, and print the 
 ```
 1. print:
 
- (﻿new line﻿) The dealer shows (﻿new line﻿) <random card> and
- has a card facing down (﻿new line﻿) <facedown card>﻿;
+ (new line) The dealer shows (new line) <random card> and
+ has a card facing down (new line) <facedown card>;
 
 2. print:
- (﻿new line﻿) The dealer's total is hidden
+ (new line) The dealer's total is hidden
 ```
 
 That's all for part 1. Your final output should appear as follows:
 
-![](https://firebasestorage.googleapis.com/v0/b/learnthepart-75aed.appspot.com/o/images%2F427749b6-4fd7-4cf3-824a-c72d6a28640c?alt=media&token=826ac8b9-47c9-42f5-9c31-f31312350f39)
+![](https://img-c.udemycdn.com/redactor/raw/article_lecture/2025-01-04_02-14-08-d8db3808d87937f2272208633a0b385e.gif)
 
 ## Good luck!
 ----------
 ##### Your Path to Cloud-Native Engineering (After Learning Java)
-###### 1. Create Enterprise Java Apps With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
-###### 2. Ship Code Like A Tech Giant With Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
-###### 3. Build Production-Grade Cloud Systems → [Kubernetes Bootcamp](https://kubernetestraining.io/)
+###### 1. Develop Java Web Applications With Spring Boot → [Spring Boot Bootcamp](https://www.udemy.com/course/the-complete-spring-boot-development-bootcamp/?couponCode=SPRING_BOOTCAMP)
+###### 2. Containerize and Deploy Web Applications with Docker → [Docker Bootcamp](https://www.udemy.com/course/docker-bootcamp-conquer-docker-with-real-world-projects/?couponCode=DOCKER_BOOTCAMP)
+###### 3. Orchestrate Cloud Native Applications with Kubernetes → [Kubernetes Bootcamp](https://kubernetestraining.io/)
