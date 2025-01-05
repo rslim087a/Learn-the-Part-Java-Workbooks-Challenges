@@ -162,4 +162,25 @@ ul.answers {
     margin: 0;
 }
 
-.back-button { position: fixed; top: 20px; left: 20px; padding: 10px 20px; background: #4a90e2; color: white; border: none; border-radius: 5px; text-decoration: none; }
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 12px 24px;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background: #1976d2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+}
