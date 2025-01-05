@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 60948392, "assessment_type": "multiple-choice", "prompt": {"question": "<p>What is a compile time exception in Java?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "", ""], "answers": ["<p>An exception that occurs when the application is executed. </p>", "<p>An exception that is checked by the compiler before the code is executed.</p>", "<p>An exception that is thrown during the development phase.</p>", "<p>An exception that is caught and handled at runtime.</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "What is a compile time exception in Java?", "related_lectures": []}, {"_class": "assessment", "id": 60948402, "assessment_type": "multiple-choice", "prompt": {"question": "<p>A runtime exception in Java is also known as a checked exception.</p>", "relatedLectureIds": "", "feedbacks": ["", "Runtime exceptions in Java are also known as unchecked exceptions. They are not checked at compile-time but at runtime. They typically represent defects in the program (bugs) "], "answers": ["<p>True</p>", "<p>False</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "A runtime exception in Java is also known as a checked exception.", "related_lectures": []}, {"_class": "assessment", "id": 60948434, "assessment_type": "multiple-choice", "prompt": {"question": "<p><strong>The </strong><code><strong>FileInputStream</strong></code><strong> constructor in Java is declared as follows:</strong></p><p><br></p><pre class=\"prettyprint linenums\">public FileInputStream(String name) throws FileNotFoundException {&nbsp;\n\n    // a bunch of code... \n\n}</pre><p><br></p><p>This constructor throws a checked exception, <code><strong>FileNotFoundException</strong></code>. Now, consider the following code snippet:</p><p><br></p><pre class=\"prettyprint linenums\">FileInputStream fis = new FileInputStream(\"example.txt\");</pre><p><br></p><p>Will this code compile without a try-catch block or a throws declaration?</p>", "relatedLectureIds": "", "feedbacks": ["", "The FileInputStream constructor throws a checked exception of type FileNotFoundException. In Java, checked exceptions are predictable failures that must be handled, otherwise, the code will not compile."], "answers": ["<p>Yes</p>", "<p>No</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "The FileInputStream constructor in Java is declared as follows:public FileInputStream(String name) throws FileNotFoundException {&nbsp;\n\n    // a bunch of code... \n\n}This constructor throws a checked exception, FileNotFoundException. Now, consider the following code snippet:FileInputStream fis = new FileInputStream(\"example.txt\");Will this code compile without a try-catch block or a throws declaration?", "related_lectures": []}, {"_class": "assessment", "id": 60948456, "assessment_type": "multiple-choice", "prompt": {"question": "<p><strong>Given this piece of code, what will be the output if the \"importantFile.txt\" does not exist?</strong></p><p><br></p><pre class=\"prettyprint linenums\">try {\n    FileInputStream file = new FileInputStream(\"importantFile.txt\");\n    System.out.println(\"File opened successfully!\");\n} catch (FileNotFoundException e) {\n    System.out.println(\"File not found!\");\n} finally {\n    System.out.println(\"End of process!\");\n}</pre>", "relatedLectureIds": "", "feedbacks": ["", "When the file does not exist, a FileNotFoundException is thrown. This exception is caught and the \"File not found!\" message is printed. After that, regardless of whether an exception occurred or not, the finally block is executed, and \"End of process!\" is printed. So, the total output will be \"File not found!\" followed by \"End of process!\".", "", ""], "answers": ["<p>\"File opened successfully!\" </p><p>\"End of process!\"</p>", "<p>\"File not found!\" </p><p>\"End of process!\"</p>", "<p>\"File not found!\"</p>", "<p>\"End of process!\"</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Given this piece of code, what will be the output if the \"importantFile.txt\" does not exist?try {\n    FileInputStream file = new FileInputStream(\"importantFile.txt\");\n    System.out.println(\"File opened successfully!\");\n} catch (FileNotFoundException e) {\n    System.out.println(\"File not found!\");\n} finally {\n    System.out.println(\"End of process!\");\n}", "related_lectures": []}, {"_class": "assessment", "id": 60948476, "assessment_type": "multiple-choice", "prompt": {"question": "<p>When the logic inside of a function may throw a compile time exception, what can be done to handle this? </p>", "relatedLectureIds": "", "feedbacks": ["", "", "", "When a method could potentially throw a checked exception, you can either handle it immediately with a try-catch block (Option A), or you can declare the method to throw that exception, passing the responsibility of exception handling to the method's caller (Option B)."], "answers": ["<p>Use a try-catch block inside the function.</p>", "<p>Propagate the exception by declaring that the function may throw the exception. </p>", "<p>Ignore the exception as it will be handled at runtime. </p>", "<p>Both A and B are correct.</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "When the logic inside of a function may throw a compile time exception, what can be done to handle this?", "related_lectures": []}, {"_class": "assessment", "id": 60948880, "assessment_type": "multiple-choice", "prompt": {"question": "<p><strong>The </strong><code><strong>URL</strong></code><strong> constructor in Java is declared as follows:</strong></p><p><br></p><pre class=\"prettyprint linenums\">public URL(String spec) throws MalformedURLException {\n\n    // a bunch of code...\n\n}</pre><p><br></p><p>This constructor throws a checked exception, <code><strong>MalformedURLException</strong></code>. Now, consider the following code snippet:</p><p><br></p><pre class=\"prettyprint linenums\">URL url = new URL(\"http://example.com\");</pre><p><br></p><p>Will this code compile without a try-catch block or a throws declaration?</p>", "relatedLectureIds": "", "feedbacks": ["", "The URL constructor can throw a MalformedURLException, which is a checked exception. Checked exceptions are predictable failure that must be handled, otherwise, the code will not compile.."], "answers": ["<p>Yes</p>", "<p>No</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "The URL constructor in Java is declared as follows:public URL(String spec) throws MalformedURLException {\n\n    // a bunch of code...\n\n}This constructor throws a checked exception, MalformedURLException. Now, consider the following code snippet:URL url = new URL(\"http://example.com\");Will this code compile without a try-catch block or a throws declaration?", "related_lectures": []}, {"_class": "assessment", "id": 60948610, "assessment_type": "multiple-choice", "prompt": {"question": "<p><strong>Given this piece of code, what will be the output if the URL is malformed?</strong></p><p><br></p><pre class=\"prettyprint linenums\">try {\n    URL url = new URL(\"htp://example.com\");\n    System.out.println(\"URL formed successfully!\");\n} catch (MalformedURLException e) {\n    System.out.println(\"Malformed URL!\");\n} finally {\n    System.out.println(\"End of process!\");\n}</pre>", "relatedLectureIds": "", "feedbacks": ["", "If the URL is malformed, a MalformedURLException will be thrown, and the \"Malformed URL!\" message will be printed in the catch block. Regardless of whether the exception was thrown or not, the finally block will be executed, printing \"End of process!\". So, the total output will be \"Malformed URL!\" followed by \"End of process!\".", "", ""], "answers": ["<p>\"URL formed successfully!\" </p><p>\"End of process!\"</p>", "<p>\"Malformed URL!\" </p><p>\"End of process!\"</p>", "<p>\"Malformed URL!\"</p>", "<p>\"End of process!\"</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Given this piece of code, what will be the output if the URL is malformed?try {\n    URL url = new URL(\"htp://example.com\");\n    System.out.println(\"URL formed successfully!\");\n} catch (MalformedURLException e) {\n    System.out.println(\"Malformed URL!\");\n} finally {\n    System.out.println(\"End of process!\");\n}", "related_lectures": []}, {"_class": "assessment", "id": 60948856, "assessment_type": "multiple-choice", "prompt": {"question": "<p>In the event of a compile time exception, the <code><strong>finally</strong></code> block will not get executed. </p><p><br></p>", "relatedLectureIds": "", "feedbacks": ["", "The finally block in Java is used to put important code that must be executed whether an exception is thrown or not. So, even if a compile-time exception occurs, the finally block will still get executed."], "answers": ["<p>True</p>", "<p>False</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "In the event of a compile time exception, the finally block will not get executed.", "related_lectures": []}, {"_class": "assessment", "id": 60948902, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Which messages will be outputted if \"nonExistentFile.txt\" doesn't exist?</p><p><br></p><pre class=\"prettyprint linenums\">try {\n    FileInputStream file = new FileInputStream(\"nonExistentFile.txt\");\n    System.out.println(\"File opened successfully!\");\n} catch (FileNotFoundException e) {\n    System.out.println(e.getMessage());\n} finally {\n    System.out.println(\"End of process!\");\n}</pre>", "relatedLectureIds": "", "feedbacks": ["", "", "", " If the \"nonExistentFile.txt\" does not exist, a FileNotFoundException will be thrown, and the catch block will print the error message associated with the exception (Option C). Regardless of whether the exception is thrown or not, the code within the finally block (\"End of process!\") will be executed (Option B)."], "answers": ["<p>\"File opened successfully!\"</p>", "<p>\"End of process!\"</p>", "<p>The error message related to the file not being found. </p>", "<p>Both B and C are correct.</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "Which messages will be outputted if \"nonExistentFile.txt\" doesn't exist?try {\n    FileInputStream file = new FileInputStream(\"nonExistentFile.txt\");\n    System.out.println(\"File opened successfully!\");\n} catch (FileNotFoundException e) {\n    System.out.println(e.getMessage());\n} finally {\n    System.out.println(\"End of process!\");\n}", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>

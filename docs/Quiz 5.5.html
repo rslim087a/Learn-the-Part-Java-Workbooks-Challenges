@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 30379376, "assessment_type": "multiple-choice", "prompt": {"relatedLectureIds": "", "feedbacks": ["The condition is false. ", ""], "question": "<pre class=\"prettyprint linenums\">         String message = \" \";\n         while (message.equals(\"stay\")) {\n             message = scan.nextLine();\n         }</pre><p>Will this <code>while</code> loop ever run? </p>", "answers": ["<p><strong>No</strong></p>", "<p><strong>Yes</strong></p>"]}, "correct_response": ["a"], "section": "", "question_plain": "String message = \" \";\n         while (message.equals(\"stay\")) {\n             message = scan.nextLine();\n         }Will this while loop ever run?", "related_lectures": []}, {"_class": "assessment", "id": 30379382, "assessment_type": "multiple-choice", "prompt": {"feedbacks": ["", "The condition is true, so the while loop will keep running until the user enters stay. "], "relatedLectureIds": "", "answers": ["<p><strong>No</strong></p>", "<p><strong>Yes </strong></p>"], "question": "<pre class=\"prettyprint linenums\">         String message = \" \";\n         while (!message.equals(\"stay\")) {\n             message = scan.nextLine();\n         }</pre><p>Will this <code>while</code> loop ever run? </p>"}, "correct_response": ["b"], "section": "", "question_plain": "String message = \" \";\n         while (!message.equals(\"stay\")) {\n             message = scan.nextLine();\n         }Will this while loop ever run?", "related_lectures": []}, {"_class": "assessment", "id": 30380318, "assessment_type": "multiple-choice", "prompt": {"relatedLectureIds": "", "answers": ["<p>Yes</p>"], "question": "<p>The previous code will run as follows:</p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2021-03-11_01-39-13-70340427bb712ca00abc98e59d891e6c.gif\"><p>Click 'Yes' when you're ready for the next question.</p>", "feedbacks": [""]}, "correct_response": ["a"], "section": "", "question_plain": "The previous code will run as follows:Click 'Yes' when you're ready for the next question.", "related_lectures": []}, {"_class": "assessment", "id": 30380554, "assessment_type": "multiple-choice", "prompt": {"relatedLectureIds": "", "question": "<pre class=\"prettyprint linenums\">String greet = greeting();\n\npublic static String greeting() {\n    String greeting = \" \";\n    while (greeting.equals(\"Hi\")) {\n        greeting = scan.nextLine();\n     }\n     return greeting;      \n}         </pre><p>What is the value of greet?</p>", "answers": ["<p>It depends on the user input. </p>", "<p>A blank String. </p>"], "feedbacks": ["Read the conditions carefully", "The while loop will never run. So, the function returns a blank String. "]}, "correct_response": ["b"], "section": "", "question_plain": "String greet = greeting();\n\npublic static String greeting() {\n    String greeting = \" \";\n    while (greeting.equals(\"Hi\")) {\n        greeting = scan.nextLine();\n     }\n     return greeting;      \n}         What is the value of greet?", "related_lectures": []}, {"_class": "assessment", "id": 30380574, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">String greet = greeting();\n\npublic static String greeting() {\n    String greeting = \" \";\n    while (!greeting.equals(\"Hi\")) {\n        greeting = scan.nextLine();\n     }\n     return greeting;   \n}         </pre><p>What is the value of <code>greet</code>?</p>", "relatedLectureIds": "", "feedbacks": ["The while loop will not stop running until the user enters Hi.", ""], "answers": ["<p>\"Hi\"</p>", "<p>A blank String. </p>"]}, "correct_response": ["a"], "section": "", "question_plain": "String greet = greeting();\n\npublic static String greeting() {\n    String greeting = \" \";\n    while (!greeting.equals(\"Hi\")) {\n        greeting = scan.nextLine();\n     }\n     return greeting;   \n}         What is the value of greet?", "related_lectures": []}, {"_class": "assessment", "id": 30380584, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p>Yes</p>"], "question": "<p>The previous code will run as follows:</p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2021-03-11_06-46-09-c54b432ced049d56891545205c2c133d.gif\"><p>Click 'Yes' when you're ready for the next question.</p>", "feedbacks": [""], "relatedLectureIds": ""}, "correct_response": ["a"], "section": "", "question_plain": "The previous code will run as follows:Click 'Yes' when you're ready for the next question.", "related_lectures": []}, {"_class": "assessment", "id": 30380620, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">String greet = greeting();\n\npublic static String greeting() {\n    while (true) {\n         return \"hi\";\n    }\n     return \"  \";                               \n}         </pre><p>1. How many times will the while loop run?</p><p>2. Will line 7 ever get reached?</p><p>3. What is the value of greet?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "1. return \"hi\" immediately stops execution of the function. 2. line 7 will never get reached because return \"hi\" would have already terminated the function. 3. The value returned is \"hi\".  "], "answers": ["<p>1. Forever</p><p>2. No</p><p>3. <code>hi</code> </p>", "<p>1. Forever </p><p>2. Yes</p><p>3. <code>hi </code> </p>", "<p>1. Once </p><p>2. No</p><p>3. <code>hi</code> </p>"]}, "correct_response": ["c"], "section": "", "question_plain": "String greet = greeting();\n\npublic static String greeting() {\n    while (true) {\n         return \"hi\";\n    }\n     return \"  \";                               \n}         1. How many times will the while loop run?2. Will line 7 ever get reached?3. What is the value of greet?", "related_lectures": []}, {"_class": "assessment", "id": 30380636, "assessment_type": "multiple-choice", "prompt": {"relatedLectureIds": "", "feedbacks": [""], "question": "<p>Animation of the code in the last question:</p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2021-03-11_06-53-17-e318aac268bc1186eee39be983734116.gif\"><p>Press Yes when you're ready for the next question. </p>", "answers": ["<p>Yes</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "Animation of the code in the last question:Press Yes when you're ready for the next question.", "related_lectures": []}, {"_class": "assessment", "id": 30380658, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Based on this output, which code would be used to produce it?</p><p><code>User Input: Somepassword</code></p><p><code>User Input: Python</code></p><p><code>User Input: Javascript</code></p><p><code>User Input: Java</code></p><p><code>&gt;&gt;: Correct</code> </p>", "relatedLectureIds": "", "feedbacks": ["", "1. The condition is true, so the while loop runs and prompts the user to keep guessing a password. Once the user writes Java, the while loop breaks and println runs. ", "Read the condition carefully. "], "answers": ["<pre class=\"prettyprint linenums\">String password = \" \";\n\nwhile (!password.equals(\"Java\")) {\n  password = scan.nextLine(); \n  System.out.println(\"Correct\");\n}</pre>", "<pre class=\"prettyprint linenums\">String password = \" \";\n\nwhile (!password.equals(\"Java\")) {\n  password = scan.nextLine(); \n}\n\nSystem.out.println(\"Correct\");</pre>", "<pre class=\"prettyprint linenums\">String password = \" \";\n\nwhile (password.equals(\"Java\")) {\n  password = scan.nextLine(); \n}\n\nSystem.out.println(\"Correct\");</pre>"]}, "correct_response": ["b"], "section": "", "question_plain": "Based on this output, which code would be used to produce it?User Input: SomepasswordUser Input: PythonUser Input: JavascriptUser Input: Java&gt;&gt;: Correct", "related_lectures": []}, {"_class": "assessment", "id": 30380662, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p>Yes</p>"], "question": "<p>Animation of the code in the last question:</p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2021-03-11_07-12-36-6a7698d1df7b37da125cfd2f17e26f49.gif\"><p>Press Yes when you're ready for the next workbook. </p>", "feedbacks": [""], "relatedLectureIds": ""}, "correct_response": ["a"], "section": "", "question_plain": "Animation of the code in the last question:Press Yes when you're ready for the next workbook.", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>

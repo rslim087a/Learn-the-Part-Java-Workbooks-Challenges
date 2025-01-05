@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 52459742, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">    System.out.println(\"1 foot equals \" + feetToMeters(1) + \" meters\");\n\n\n    public double feetToMeters(double measurement) {\n        return measurement * 0.3048;\n    }</pre><p>What is the output?</p>", "relatedLectureIds": "", "feedbacks": ["", "feetToMeters(1) returns a final result of 0.3048, which is then printed as part of a larger text.", ""], "answers": ["<p>1 foot equals 1 meters</p>", "<p>1 foot equals 0.3048 meters</p>", "<p>1 foot equals 0 meters</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "System.out.println(\"1 foot equals \" + feetToMeters(1) + \" meters\");\n\n\n    public double feetToMeters(double measurement) {\n        return measurement * 0.3048;\n    }What is the output?", "related_lectures": []}, {"_class": "assessment", "id": 52459758, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">    if (feetToMeters(6) &gt; 5) {\n        System.out.println(\"Hello!\");\n    } else {\n         System.out.println(\"Goodbye!\");\n    }\n\n\n    public double feetToMeters(double measurement) {\n        return measurement * 0.3048;\n    }</pre><p>What is the output?</p>", "relatedLectureIds": "", "feedbacks": ["", "feetToMeters(6) returns a value of 1.8288. 1.8288 is not greater than 5, so else gets executed."], "answers": ["<p>Hello!</p>", "<p>Goodbye!</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "if (feetToMeters(6) &gt; 5) {\n        System.out.println(\"Hello!\");\n    } else {\n         System.out.println(\"Goodbye!\");\n    }\n\n\n    public double feetToMeters(double measurement) {\n        return measurement * 0.3048;\n    }What is the output?", "related_lectures": []}, {"_class": "assessment", "id": 52459782, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">    function1(4);\n\n\n    public void function1(int number) {\n        function2(number);\n    }\n\n    public void function2(int number) {\n        function3(number);\n    }\n\n    public void function3(int number) {\n        function4(number);\n    }\n\n    public void function4(int number) {\n        function5(number);\n    }\n\n    public void function5(int number) {\n        System.out.println(number &gt; 3.14159);\n    }\n\n</pre><p>What is the final output?</p>", "relatedLectureIds": "", "feedbacks": ["", "We're calling function1, passing in a value of 4. function1 calls function2, passing in the same value. function2 calls function3, passing in the same value. function3 calls function4, passing in the same value. function4 calls function5, passing in the same value. function5 prints the comparison of 4 being greater than 3.14159, which is true.", "", ""], "answers": ["<p>0</p>", "<p>true</p>", "<p>false</p>", "<p>error</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "function1(4);\n\n\n    public void function1(int number) {\n        function2(number);\n    }\n\n    public void function2(int number) {\n        function3(number);\n    }\n\n    public void function3(int number) {\n        function4(number);\n    }\n\n    public void function4(int number) {\n        function5(number);\n    }\n\n    public void function5(int number) {\n        System.out.println(number &gt; 3.14159);\n    }\n\nWhat is the final output?", "related_lectures": []}, {"_class": "assessment", "id": 52461954, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">    printMeasurements(10);    \n\n    public void printMeasurements(double feet) {\n        System.out.println(\"Feet: \" + feet);\n        System.out.println(\"Meters: \" + feetToMeters(feet));\n    }\n\n    public double feetToMeters(double feet) {\n        return feet * 0.3048;\n    }</pre><p>What is the output?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "The first line calls the function printMeasurements and passes in a value of 10. printMeasurements starts by printing the feet value that was passed in. The second line in printMeasurements prints the return value of feetToMeters for a value of 10, which ends up being 3.048. "], "answers": ["<p><code>&gt;&gt;: Feet: 10.0</code></p><p><code>&gt;&gt;: Meters: 10.0</code></p>", "<p><code>&gt;&gt;: Feet: 3.048</code></p><p><code>&gt;&gt;: Meters: 10.0</code></p>", "<p><code>&gt;&gt;: Feet: 10.0</code></p><p><code>&gt;&gt;: Meters: 3.048</code> </p>"]}, "correct_response": ["c"], "section": "", "question_plain": "printMeasurements(10);    \n\n    public void printMeasurements(double feet) {\n        System.out.println(\"Feet: \" + feet);\n        System.out.println(\"Meters: \" + feetToMeters(feet));\n    }\n\n    public double feetToMeters(double feet) {\n        return feet * 0.3048;\n    }What is the output?", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>

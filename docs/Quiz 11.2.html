@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 59984000, "assessment_type": "multiple-choice", "prompt": {"question": "<p><code>HashMap</code> is generally faster at retrieving data than <code>TreeMap</code> </p>", "relatedLectureIds": "", "feedbacks": ["", ""], "answers": ["<p>True</p>", "<p>False</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "HashMap is generally faster at retrieving data than TreeMap", "related_lectures": []}, {"_class": "assessment", "id": 59984018, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Choose the correct answer</p>", "relatedLectureIds": "", "feedbacks": ["", "", "", ""], "answers": ["<p>The HashMap is fast at retrieving data because: it maintains data in sorted order.</p>", "<p>The HashMap is fast at retrieving data because: it compresses data for quick access.</p>", "<p>The HashMap is fast at retrieving data because: it uses a hashing mechanism for keys.</p>", "<p>The HashMap is fast at retrieving data because: it saves data in a circular list.</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "Choose the correct answer", "related_lectures": []}, {"_class": "assessment", "id": 59984318, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Choose the correct answer:</p>", "relatedLectureIds": "", "feedbacks": ["", "", "", ""], "answers": ["<p>The TreeMap is slower at retrieving data because: it uses a circular buffer for storage.</p>", "<p>The TreeMap is slower at retrieving data because: it compresses data which slows retrieval.</p>", "<p>The TreeMap is slower at retrieving data because: it implements a hash function.</p>", "<p>The TreeMap is slower at retrieving data because: retrieval depends on the depth of the tree.</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "Choose the correct answer:", "related_lectures": []}, {"_class": "assessment", "id": 59984882, "assessment_type": "multiple-choice", "prompt": {"question": "<p>At a high level, this code inserts the entry at a random spot in the HashMap:</p><p><br></p><pre class=\"prettyprint linenums\">hashmap.put(\"bananas\", 3.99); </pre><p><br></p><p>But what happens behind the scenes?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "", "", ""], "answers": ["<p>The HashMap is scanned from start to end.</p><p>The first free index is determined.</p><p>The entry \"bananas\" is stored at the first free index.</p>", "<p>The HashMap converts \"bananas\" to binary data.</p><p>The binary data is then stored sequentially in the next available space.</p><p>The value 3.99 is linked to the binary data for retrieval.</p>", "<p>A hash is produced from the key \"bananas\".</p><p>An operation on the hash determines the index where the entry will be stored.</p><p>The entry will get stored as a node at that index.</p>", "<p>A hash is created from the value 3.99.</p><p>The hash is used to find a free space in the HashMap.</p><p>The \"bananas\" entry is stored in the found space.</p>", "<p>The entry \"bananas\" is searched in the HashMap.</p><p>If not found, a random index is generated.</p><p>The entry is stored at the random index.</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "At a high level, this code inserts the entry at a random spot in the HashMap:hashmap.put(\"bananas\", 3.99); But what happens behind the scenes?", "related_lectures": []}, {"_class": "assessment", "id": 59985388, "assessment_type": "multiple-choice", "prompt": {"question": "<p>At a high level, the TreeMap inserts the entry and keeps everything sorted:</p><p><br></p><pre class=\"prettyprint linenums\">treemap.put(\"bananas\", 3.99); </pre><p><br></p><p>But what happens behind the scenes?</p>", "relatedLectureIds": "", "feedbacks": ["", "The red-black-tree algorithm was not discussed (because this is not a data structures course), but just know that it's used behind the scenes to keep the entries sorted.", "", ""], "answers": ["<p>It uses the 'bubble sort' algorithm to keep the entries sorted.</p>", "<p>It uses the 'red-black-tree' algorithm to keep the entries sorted.</p>", "<p>It uses the 'quick sort' algorithm to keep the entries sorted.</p>", "<p>It uses the 'hashing' algorithm to keep the entries sorted.</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "At a high level, the TreeMap inserts the entry and keeps everything sorted:treemap.put(\"bananas\", 3.99); But what happens behind the scenes?", "related_lectures": []}, {"_class": "assessment", "id": 59985408, "assessment_type": "multiple-choice", "prompt": {"question": "<p>At a high level, <code>map.get(10)</code> will simply retrieve the value <strong>50</strong>.</p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-17_14-36-04-6585a5000af457c5b9378022039f805d.png\"><p>But behind the scenes, the red-black-tree algorithm produces the following tree:</p><p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-17_14-20-32-3ce3b6f617cee4d193f83764cbbc33de.png\"></p><p>With this information, how many steps does it actually take to retrieve the value?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "", "The root node happens to be 4. 10 is higher 4 so we go to the right. 10 is higher than 6 so we go to the right. 10 is higher than 8 so we go to the right. 10 is higher than 9 so we go to the right. 10 == 10.", ""], "answers": ["<p>1</p>", "<p>2</p>", "<p>3</p>", "<p>4</p>", "<p>5</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "At a high level, map.get(10) will simply retrieve the value 50.But behind the scenes, the red-black-tree algorithm produces the following tree:With this information, how many steps does it actually take to retrieve the value?", "related_lectures": []}, {"_class": "assessment", "id": 59985452, "assessment_type": "multiple-choice", "prompt": {"question": "<p>At a high level, <code>map.get(4)</code> will simply retrieve the value <strong>20</strong>.</p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-17_14-35-49-67d4913b2edab10916f1d02c326d16bd.png\"><p>But behind the scenes, the red-black-tree algorithm produces the following tree:</p><p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-17_14-20-32-3ce3b6f617cee4d193f83764cbbc33de.png\"></p><p>With this information, how many steps does it actually take to retrieve the value?</p>", "relatedLectureIds": "", "feedbacks": ["The entry with a key of 4 happens to occupy the root node.", "", "", "", ""], "answers": ["<p>1</p>", "<p>2</p>", "<p>3</p>", "<p>4</p>", "<p>5</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "At a high level, map.get(4) will simply retrieve the value 20.But behind the scenes, the red-black-tree algorithm produces the following tree:With this information, how many steps does it actually take to retrieve the value?", "related_lectures": []}, {"_class": "assessment", "id": 59985458, "assessment_type": "multiple-choice", "prompt": {"question": "<p>At a high level, <code>map.get(5)</code> will simply retrieve the value <strong>25</strong>.</p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-17_14-36-29-fab36fb1884170a59fbc9598714d15ff.png\"><p>But behind the scenes, the red-black-tree algorithm produces the following tree:</p><p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-17_14-20-32-3ce3b6f617cee4d193f83764cbbc33de.png\"></p><p>With this information, how many steps does it actually take to retrieve the value?</p>", "relatedLectureIds": "", "feedbacks": ["", "Starting from the root node, 5 is higher than 4 so we go to the right. 5 is lower than 6 so we go to the left. 5 == 5.", "", "", ""], "answers": ["<p>1</p>", "<p>2</p>", "<p>3</p>", "<p>4</p>", "<p>5</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "At a high level, map.get(5) will simply retrieve the value 25.But behind the scenes, the red-black-tree algorithm produces the following tree:With this information, how many steps does it actually take to retrieve the value?", "related_lectures": []}, {"_class": "assessment", "id": 59985476, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Regardless of how many entries there are in a HashMap, how many steps does it take to locate the index of an entry?</p>", "relatedLectureIds": "", "feedbacks": ["We can use the hash from a key to quickly locate the index.", "", "", "", ""], "answers": ["<p>1</p>", "<p>2</p>", "<p>3</p>", "<p>4</p>", "<p>5</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "Regardless of how many entries there are in a HashMap, how many steps does it take to locate the index of an entry?", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>

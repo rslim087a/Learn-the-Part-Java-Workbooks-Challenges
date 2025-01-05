@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 52399290, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">double number = Math.random(); </pre><p><code>number</code> equals</p>", "relatedLectureIds": "", "feedbacks": ["", "Math.random returns a decimal between 0 and 0.9999999999999999", ""], "answers": ["<p>anything between 0 and 1. </p>", "<p>anything between 0 and less than 1</p>", "<p>anything between 0 and 10.</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "double number = Math.random(); number equals", "related_lectures": []}, {"_class": "assessment", "id": 52400114, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Choose a code that will produce a random number between 0 and 2.9999999999999.</p>", "relatedLectureIds": "", "feedbacks": ["", "", "Assuming Math.random() returns the lowest possible value (0), multiplying that by 3 is still 0.  Assuming Math.random() returns the highest possible decimal (0.999999999999), multiplying that by 3 is 2.999999999999999.        ", ""], "answers": ["<pre class=\"prettyprint linenums\">double number = Math.random() * 1; </pre>", "<pre class=\"prettyprint linenums\">double number = Math.random() * 2; </pre>", "<pre class=\"prettyprint linenums\">double number = Math.random() * 3; </pre>", "<pre class=\"prettyprint linenums\">double number = Math.random() * 4; </pre>"]}, "correct_response": ["c"], "section": "", "question_plain": "Choose a code that will produce a random number between 0 and 2.9999999999999.", "related_lectures": []}, {"_class": "assessment", "id": 52400118, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">double number = Math.random() * 4; </pre><p>Is it possible for this code to produce a value of 4.4?</p>", "relatedLectureIds": "", "feedbacks": ["", "The maximum possible value that it can return is 3.9999999999999"], "answers": ["<p>Yes</p>", "<p>No</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "double number = Math.random() * 4; Is it possible for this code to produce a value of 4.4?", "related_lectures": []}, {"_class": "assessment", "id": 52400560, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">double number = Math.random() * 2 + 1; </pre><p>What is the lowest possible value that this code can produce?</p>", "relatedLectureIds": "", "feedbacks": ["", "Assuming Math.random() returns the minimum (0), multiplying that by 2 is still 0. But then add 1, and the lowest value that can be produced is 1. ", ""], "answers": ["<p>0</p>", "<p>1</p>", "<p>2</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "double number = Math.random() * 2 + 1; What is the lowest possible value that this code can produce?", "related_lectures": []}, {"_class": "assessment", "id": 52400784, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">double number = (int)(Math.random() * 2 + 1); </pre><p>What is the highest possible value that this code can produce?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "Assuming Math.random() returns the highest possible decimal (0.999999999999); multiplied by 2 is 1.999999999999999; add 1 and it's 2.999999999999, typecast it and it's 2. ", "", ""], "answers": ["<p>0</p>", "<p>1</p>", "<p>2</p>", "<p>3</p>", "<p>4</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "double number = (int)(Math.random() * 2 + 1); What is the highest possible value that this code can produce?", "related_lectures": []}, {"_class": "assessment", "id": 52400786, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">double number = (int)Math.random() * 6; </pre><p>What will the result be?</p>", "relatedLectureIds": "", "feedbacks": ["Order Matters. Whatever Math.random returns \u2013 let's say it's 0.9999999999 \u2013 typecasting that to an integer will equal 0. Then, 0 multiplied by 6 is still 0. Whoever wrote this code forgot to add brackets.", "", "", ""], "answers": ["<p>The result is always 0.</p>", "<p>0 \u2013 4</p>", "<p>0 \u2013 5</p>", "<p>0 \u2013 6</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "double number = (int)Math.random() * 6; What will the result be?", "related_lectures": []}, {"_class": "assessment", "id": 52400790, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">double number = (int) (Math.random() * 6); </pre><p>What will the result be?</p>", "relatedLectureIds": "", "feedbacks": ["", "First the result from Math.random() is multiplied by 6. Let's say Math.random returns 0.9999999, multiplying that by 6 equals 5.999999999, and THEN typecasting that returns 5.", "", ""], "answers": ["<p>The result will always be 0</p>", "<p>0 - 5</p>", "<p>0 - 4</p>", "<p>0 - 6</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "double number = (int) (Math.random() * 6); What will the result be?", "related_lectures": []}, {"_class": "assessment", "id": 52400912, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">a) (int) (Math.random() * 2 + 1);    //Math.random returned 0\nb)&nbsp;(int) (Math.random() * 2 + 1);    //Math.random returned 0.2\nc)&nbsp;(int) (Math.random() * 2 + 1);    //Math.random returned 0.4\nd) (int) (Math.random() * 2 + 1);    //Math.random returned 0.6\ne) (int) (Math.random() * 2 + 1);    //Math.random returned 0.8</pre><p>Take out your calculator. What will the result be in each scenario?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "", ""], "answers": ["<p>a) 1</p><p>b) 1.4</p><p>c) 1.8</p><p>d) 2.2</p><p>e) 2.6</p>", "<p>a) 1</p><p>b) 1</p><p>c) 2</p><p>d) 2</p><p>e) 2</p>", "<p>a) 1</p><p>b) 1.4</p><p>c) 2.8</p><p>d) 2.2</p><p>e) 2.6</p>", "<p>a) 1</p><p>b) 1</p><p>c) 1</p><p>d) 2</p><p>e) 2</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "a) (int) (Math.random() * 2 + 1);    //Math.random returned 0\nb)&nbsp;(int) (Math.random() * 2 + 1);    //Math.random returned 0.2\nc)&nbsp;(int) (Math.random() * 2 + 1);    //Math.random returned 0.4\nd) (int) (Math.random() * 2 + 1);    //Math.random returned 0.6\ne) (int) (Math.random() * 2 + 1);    //Math.random returned 0.8Take out your calculator. What will the result be in each scenario?", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>

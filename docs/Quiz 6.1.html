@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 30897016, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">int[] numbers = { \"how\", \"are\", \"you?\" };</pre><p>What's wrong with this code?</p>", "feedbacks": ["", "To store an array of String values, the variable should have been declared String[]", "", ""], "relatedLectureIds": "", "answers": ["<p>You can't define an array and store its values in one line. </p>", "<p>Type mismatch between integer and String. </p>", "<p>The wrong brackets are used. </p>", "<p>Perfectly fine. Nothing to see here...</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "int[] numbers = { \"how\", \"are\", \"you?\" };What's wrong with this code?", "related_lectures": []}, {"_class": "assessment", "id": 30897210, "assessment_type": "multiple-choice", "prompt": {"relatedLectureIds": "", "answers": ["<p>This code runs fine.</p>", "<p>There is a type mismatch. </p>", "<p>Missing square brackets<code> []</code> </p>", "<p>Incorrect syntax</p>"], "question": "<pre class=\"prettyprint linenums\">        String words = {\"how\", \"are\", \"you?\"};</pre><p>Is there anything wrong with this code?</p>", "feedbacks": ["", "", "", ""]}, "correct_response": ["c"], "section": "", "question_plain": "String words = {\"how\", \"are\", \"you?\"};Is there anything wrong with this code?", "related_lectures": []}, {"_class": "assessment", "id": 30897220, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">        String[] words = { \"how\", 123 , \"you?\"};</pre><p>Is there anything wrong with this code?</p>", "relatedLectureIds": "", "feedbacks": ["", "Every value must share the same type", "", ""], "answers": ["<p>This code is fine. </p>", "<p>Type mismatch.</p>", "<p>Incorrect syntax. </p>", "<p>Missing brackets.</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "String[] words = { \"how\", 123 , \"you?\"};Is there anything wrong with this code?", "related_lectures": []}, {"_class": "assessment", "id": 30897232, "assessment_type": "multiple-choice", "prompt": {"feedbacks": ["", "", "", "The first index starts at 0. "], "question": "<p>How do I grab the value: <code>Jane</code></p><pre class=\"prettyprint linenums\">        String[] names = { \"Jane\", \"Joe\" , \"Jill\"};</pre>", "relatedLectureIds": "", "answers": ["<p>names[1]</p>", "<p>names[2]</p>", "<p>names[3]</p>", "<p>none of the above</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "How do I grab the value: Jane        String[] names = { \"Jane\", \"Joe\" , \"Jill\"};", "related_lectures": []}, {"_class": "assessment", "id": 30897234, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p><code>names[0]</code> </p>", "<p><code>names[1]</code> </p>", "<p><code>names[2]</code> </p>", "<p><code>names[3]</code> </p>", "<p>none of the above</p>"], "relatedLectureIds": "", "question": "<p>How do I grab the value: <code>Jill</code></p><pre class=\"prettyprint linenums\">        String[] names = { \"Jane\", \"Joe\" , \"Jill\"};</pre>", "feedbacks": ["", "", "", "", ""]}, "correct_response": ["c"], "section": "", "question_plain": "How do I grab the value: Jill        String[] names = { \"Jane\", \"Joe\" , \"Jill\"};", "related_lectures": []}, {"_class": "assessment", "id": 30897738, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p>Jane</p>", "<p>Joe</p>", "<p>Jill</p>", "<p>Index out of bounds</p>"], "relatedLectureIds": "", "question": "<pre class=\"prettyprint linenums\">        String[] names = { \"Jane\", \"Joe\" , \"Jill\"};</pre><p>Which value will this index:</p><p><code>names[3-1]</code> </p>", "feedbacks": ["", "", "Absolutely. Jill is at index 2, and 3-1 is 2. ", ""]}, "correct_response": ["c"], "section": "", "question_plain": "String[] names = { \"Jane\", \"Joe\" , \"Jill\"};Which value will this index:names[3-1]", "related_lectures": []}, {"_class": "assessment", "id": 30897742, "assessment_type": "multiple-choice", "prompt": {"relatedLectureIds": "", "answers": ["<p>Jane</p>", "<p>Joe</p>", "<p>Jill</p>", "<p>Index out of bounds</p>"], "feedbacks": ["", "", "", "There is no index 3. The last index is always one smaller than the array's length"], "question": "<pre class=\"prettyprint linenums\">        String[] names = { \"Jane\", \"Joe\" , \"Jill\"};</pre><p>Which value will this index:</p><p><code>names[3]</code> </p>"}, "correct_response": ["d"], "section": "", "question_plain": "String[] names = { \"Jane\", \"Joe\" , \"Jill\"};Which value will this index:names[3]", "related_lectures": []}, {"_class": "assessment", "id": 30898244, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">        String[] names = { \"Jane\", \"Joe\" , \"Jill\"};</pre><p>Which value will this index:</p><p><code>names[10%2]</code> </p>", "feedbacks": ["Jane is at index 0, and 10 % 2 is zero.", "", "", ""], "answers": ["<p>Jane</p>", "<p>Joe</p>", "<p>Jill</p>", "<p>Index out of bounds</p>"], "relatedLectureIds": ""}, "correct_response": ["a"], "section": "", "question_plain": "String[] names = { \"Jane\", \"Joe\" , \"Jill\"};Which value will this index:names[10%2]", "related_lectures": []}, {"_class": "assessment", "id": 30898750, "assessment_type": "multiple-choice", "prompt": {"question": "<p>The length of a certain array is 5 elements. What is the index of the:</p><p>1. first element</p><p>2. last element</p>", "relatedLectureIds": "", "answers": ["<p>1.&nbsp; &nbsp; &nbsp;1</p><p>2.&nbsp; &nbsp; 5</p>", "<p>1.&nbsp; &nbsp; &nbsp;1</p><p>2.&nbsp; &nbsp; 4</p>", "<p>1.&nbsp; &nbsp; &nbsp; 0</p><p>2.&nbsp; &nbsp;&nbsp; 4</p>", "<p>1.&nbsp; &nbsp; &nbsp; 0</p><p>2.&nbsp; &nbsp;&nbsp; 5</p>"], "feedbacks": ["", "", "", ""]}, "correct_response": ["c"], "section": "", "question_plain": "The length of a certain array is 5 elements. What is the index of the:1. first element2. last element", "related_lectures": []}, {"_class": "assessment", "id": 30898752, "assessment_type": "multiple-choice", "prompt": {"question": "<p>The length of a certain array is <strong>n</strong>. What is the index of the:</p><p>1. first element</p><p>2. last element</p>", "feedbacks": ["", "", "", "The first element starts at 0. The last element is one less the length. "], "relatedLectureIds": "", "answers": ["<p>1.&nbsp; &nbsp; &nbsp;1</p><p>2.&nbsp; &nbsp; n</p>", "<p>1.&nbsp; &nbsp; &nbsp;1</p><p>2.&nbsp; &nbsp; n-1</p>", "<p>1.&nbsp; &nbsp; &nbsp;0</p><p>2.&nbsp; &nbsp; n</p>", "<p>1.&nbsp; &nbsp; &nbsp;0</p><p>2.&nbsp; &nbsp; n-1</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "The length of a certain array is n. What is the index of the:1. first element2. last element", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>

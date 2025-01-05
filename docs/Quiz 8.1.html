@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 34615994, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">public class Car {\n    private String make;\n\n    public Car(String make) {\n        this.make = make;\n    }\n\n    public Car(Car source) {\n        this.make = source.make;\n    }\n\n    public String getMake() {\n        return make;\n    }\n\n    public void setMake(String make) {\n        this.make = make;\n    }\n\n}</pre><p><br></p><p>Would the <code>Car</code> be mutable or immutable?</p>", "relatedLectureIds": "", "feedbacks": ["It's possible to update the fields of a Car object.", ""], "answers": ["<p>mutable</p>", "<p>immutable</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "public class Car {\n    private String make;\n\n    public Car(String make) {\n        this.make = make;\n    }\n\n    public Car(Car source) {\n        this.make = source.make;\n    }\n\n    public String getMake() {\n        return make;\n    }\n\n    public void setMake(String make) {\n        this.make = make;\n    }\n\n}Would the Car be mutable or immutable?", "related_lectures": []}, {"_class": "assessment", "id": 34616066, "assessment_type": "multiple-choice", "prompt": {"feedbacks": ["", "Both variables share a reference to a mutable object. Updating the object through one variable affects the state of the other variable."], "relatedLectureIds": "", "answers": ["<p>Yes</p>", "<p>No</p>"], "question": "<pre class=\"prettyprint linenums\">public class Car {\n    private String make;\n\n    public Car(String make) {\n        this.make = make;\n    }\n\n    public Car(Car source) {\n        this.make = source.make;\n    }\n\n    public String getMake() {\n        return make;\n    }\n\n    public void setMake(String make) {\n        this.make = make;\n    }\n\n}</pre><p><br></p><p>Is this okay?</p><pre class=\"prettyprint linenums\">    public static void main(String[] args) {\n\n        Car car = new Car(\"Honda\");\n        Car car2 = car;\n    \n    }</pre>"}, "correct_response": ["b"], "section": "", "question_plain": "public class Car {\n    private String make;\n\n    public Car(String make) {\n        this.make = make;\n    }\n\n    public Car(Car source) {\n        this.make = source.make;\n    }\n\n    public String getMake() {\n        return make;\n    }\n\n    public void setMake(String make) {\n        this.make = make;\n    }\n\n}Is this okay?    public static void main(String[] args) {\n\n        Car car = new Car(\"Honda\");\n        Car car2 = car;\n    \n    }", "related_lectures": []}, {"_class": "assessment", "id": 34616076, "assessment_type": "multiple-choice", "prompt": {"answers": ["<p>Got it!</p>"], "feedbacks": [""], "question": "<p>Reminder: the reference trap only applies to mutable objects.</p><p><br></p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2021-06-17_21-51-00-0e82c987087643c490bb07b1cc0fa697.png\">", "relatedLectureIds": ""}, "correct_response": ["a"], "section": "", "question_plain": "Reminder: the reference trap only applies to mutable objects.", "related_lectures": []}, {"_class": "assessment", "id": 34616108, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">        int[] numbers = new int[] {1, 2, 3};\n\n        long[] bigNumbers = new long[] {100000000000L, 20000000000000L, 30000000000L};\n        \n        char[] characters = new char[] {'a', 'b', 'c'};\n        \n        boolean[] bools = new boolean[] {true, false, true};</pre><p>1. <code>numbers</code> is an object of the <code>int[]</code> class</p><p>2. <code>bigNumbers</code> is an object of the <code>long[]</code> class</p><p>3. <code>characters</code> is an object of the <code>char[]</code> class</p><p>4. <code>bools</code> is an object of the <code>boolean[]</code> class</p><p><br></p><p><strong>true</strong> or <strong>false</strong>?</p>", "feedbacks": ["", "", "", ""], "relatedLectureIds": "", "answers": ["<p>1. false</p><p>2. false</p><p>3. false</p><p>4. false</p>", "<p>1. true</p><p>2. false</p><p>3. true</p><p>4. false</p>", "<p>1. true</p><p>2. true</p><p>3. true</p><p>4. true</p>", "<p>1. false</p><p>2. true</p><p>3. true</p><p>4. false</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "int[] numbers = new int[] {1, 2, 3};\n\n        long[] bigNumbers = new long[] {100000000000L, 20000000000000L, 30000000000L};\n        \n        char[] characters = new char[] {'a', 'b', 'c'};\n        \n        boolean[] bools = new boolean[] {true, false, true};1. numbers is an object of the int[] class2. bigNumbers is an object of the long[] class3. characters is an object of the char[] class4. bools is an object of the boolean[] classtrue or false?", "related_lectures": []}, {"_class": "assessment", "id": 34616276, "assessment_type": "multiple-choice", "prompt": {"feedbacks": [""], "answers": ["<p>Got it!</p>"], "question": "<p><strong>Reminder</strong>: every array is a <strong>mutable</strong> object of a <code>type[]</code> class.</p><p><br></p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2021-06-17_21-59-25-d8d46c2c4f3efead8552a44d93ebaa2d.png\">", "relatedLectureIds": ""}, "correct_response": ["a"], "section": "", "question_plain": "Reminder: every array is a mutable object of a type[] class.", "related_lectures": []}, {"_class": "assessment", "id": 34616298, "assessment_type": "multiple-choice", "prompt": {"question": "<pre class=\"prettyprint linenums\">        int[] numbers = new int[] {1, 2, 3};\n        int[] moreNumbers = numbers;</pre><p>Is this ok?</p>", "answers": ["<p>No</p>", "<p>Yes</p>"], "relatedLectureIds": "", "feedbacks": ["Both variables share a reference to a mutable object. Updating the object through one variable affects the state of the other.", ""]}, "correct_response": ["a"], "section": "", "question_plain": "int[] numbers = new int[] {1, 2, 3};\n        int[] moreNumbers = numbers;Is this ok?", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>

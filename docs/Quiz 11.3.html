@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 60194692, "assessment_type": "multiple-choice", "prompt": {"question": "<p>This quiz will review equals and hashCode. It will also explain why overriding them is necessary to retrieve data from a HashMap whose keys are custom objects. For example:</p><p><br></p><pre class=\"prettyprint linenums\">HashMap&lt;Car, Double&gt; \nHashMap&lt;Person, String&gt;\nHashMap&lt;Truck, Integer&gt;</pre>", "relatedLectureIds": "", "feedbacks": [""], "answers": ["<p>I'm ready!</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "This quiz will review equals and hashCode. It will also explain why overriding them is necessary to retrieve data from a HashMap whose keys are custom objects. For example:HashMap&lt;Car, Double&gt; \nHashMap&lt;Person, String&gt;\nHashMap&lt;Truck, Integer&gt;", "related_lectures": []}, {"_class": "assessment", "id": 60194674, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the following class:</p><p><br></p><pre class=\"prettyprint linenums\">class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n}</pre><p><br></p><pre class=\"prettyprint linenums\">public static void main(String[] args) {\n    Student student1 = new Student(\"Alice\", 20);\n    Student student2 = student1;\n        \n    System.out.println(student1.hashCode());\n    System.out.println(student2.hashCode());\n}</pre><p><br></p><p>What is the expected output?</p>", "relatedLectureIds": "", "feedbacks": ["", "The two hashcodes will always be the same. This is because student1 and student2 are referring to the exact same object, so their hashcodes will be identical.", "", ""], "answers": ["<p>The two hashcodes will likely be different</p>", "<p>The two hashcodes will be the same</p><p><br></p>", "<p>The hashcodes will be the same only if <code><strong>student1</strong></code> and <code><strong>student2</strong></code> have the same <code><strong>name</strong></code> and <code><strong>age</strong></code></p>", "<p>It will result in a compile-time error</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Consider the following class:class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n}public static void main(String[] args) {\n    Student student1 = new Student(\"Alice\", 20);\n    Student student2 = student1;\n        \n    System.out.println(student1.hashCode());\n    System.out.println(student2.hashCode());\n}What is the expected output?", "related_lectures": []}, {"_class": "assessment", "id": 60194702, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the following class:</p><p><br></p><pre class=\"prettyprint linenums\">class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n}</pre><p><br></p><pre class=\"prettyprint linenums\">public static void main(String[] args) {\n    Student student1 = new Student(\"Alice\", 20);\n    Student student2 = student1;\n        \n    System.out.println(student1.equals(student2));\n}</pre><p><br></p><p>What is the expected output?</p>", "relatedLectureIds": "", "feedbacks": ["true. This is because student1 and student2 are referring to the exact same object, so the default equals() method, which checks for reference equality, will return true.", "", "", ""], "answers": ["<p><code>true</code> </p>", "<p><code>false</code> </p>", "<p>It depends on the values of <code><strong>name</strong></code> and <code><strong>age</strong></code> in the <code><strong>Student</strong></code> objects</p>", "<p>It will result in a compile-time error</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "Consider the following class:class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n}public static void main(String[] args) {\n    Student student1 = new Student(\"Alice\", 20);\n    Student student2 = student1;\n        \n    System.out.println(student1.equals(student2));\n}What is the expected output?", "related_lectures": []}, {"_class": "assessment", "id": 60194728, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the following class:</p><p><br></p><pre class=\"prettyprint linenums\">class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public boolean equals(Object o) {\n        if (o == this)\n            return true;\n        if (!(o instanceof Student)) {\n            return false;\n        }\n        Student student = (Student) o;\n        return age == student.age &amp;&amp; Objects.equals(name, student.name);\n    }\n\n}</pre><p><br></p><pre class=\"prettyprint linenums\">public static void main(String[] args) {\n    Student student1 = new Student(\"Alice\", 20);\n    Student student2 = new Student(\"Alice\", 20);\n        \n    System.out.println(student1.equals(student2));\n    System.out.println(student1.hashCode());\n    System.out.println(student2.hashCode());\n}</pre><p><br></p><p>What is the expected output?</p>", "relatedLectureIds": "", "feedbacks": ["", "equals returns true, the hashcodes are different. This is because while student1 and student2 have the same name and age, the hashCode method hasn't been overridden, so it still uses the default implementation, which generates a unique hashcode based on the reference (object's memory address).", "", ""], "answers": ["<p><code><strong>equals</strong></code> returns <code><strong>true</strong></code>, the hashcodes are the same</p>", "<p><code><strong>equals</strong></code> returns <code><strong>true</strong></code>, the hashcodes are different</p>", "<p><code><strong>equals</strong></code> returns <code><strong>false</strong></code>, the hashcodes are the same</p>", "<p><code><strong>equals</strong></code> returns <code><strong>false</strong></code>, the hashcodes are different</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Consider the following class:class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public boolean equals(Object o) {\n        if (o == this)\n            return true;\n        if (!(o instanceof Student)) {\n            return false;\n        }\n        Student student = (Student) o;\n        return age == student.age &amp;&amp; Objects.equals(name, student.name);\n    }\n\n}public static void main(String[] args) {\n    Student student1 = new Student(\"Alice\", 20);\n    Student student2 = new Student(\"Alice\", 20);\n        \n    System.out.println(student1.equals(student2));\n    System.out.println(student1.hashCode());\n    System.out.println(student2.hashCode());\n}What is the expected output?", "related_lectures": []}, {"_class": "assessment", "id": 60195250, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the following class:</p><p><br></p><pre class=\"prettyprint linenums\">class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public int hashCode() {\n        return Objects.hash(name, age);\n    }\n\n}</pre><p><br></p><pre class=\"prettyprint linenums\">public static void main(String[] args) {\n    Student student1 = new Student(\"Alice\", 20);\n    Student student2 = new Student(\"Alice\", 20);\n        \n    System.out.println(student1.equals(student2));\n    System.out.println(student1.hashCode());\n    System.out.println(student2.hashCode());\n}</pre><p><br></p><p>What is the expected output?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "equals returns false, the hashcodes are the same. This is because the equals method hasn't been overridden, so it uses the default implementation, which checks for reference equality. Since student1 and student2 are different objects, equals will return false. However, the hashCode method has been overridden to compute the hashcode based on the name and age fields, so for student1 and student2, which have the same name and age, the hashcodes will be the same.", ""], "answers": ["<p><code><strong>equals</strong></code> returns <code><strong>true</strong></code>, the hashcodes are the same</p>", "<p><code><strong>equals</strong></code> returns <code><strong>true</strong></code>, the hashcodes are different</p>", "<p><code><strong>equals</strong></code> returns <code><strong>false</strong></code>, the hashcodes are the same</p>", "<p><code><strong>equals</strong></code> returns <code><strong>false</strong></code>, the hashcodes are different</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "Consider the following class:class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public int hashCode() {\n        return Objects.hash(name, age);\n    }\n\n}public static void main(String[] args) {\n    Student student1 = new Student(\"Alice\", 20);\n    Student student2 = new Student(\"Alice\", 20);\n        \n    System.out.println(student1.equals(student2));\n    System.out.println(student1.hashCode());\n    System.out.println(student2.hashCode());\n}What is the expected output?", "related_lectures": []}, {"_class": "assessment", "id": 60195500, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the following class:</p><p><br></p><pre class=\"prettyprint linenums\">class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public boolean equals(Object o) {\n        if (o == this)\n            return true;\n        if (!(o instanceof Student)) {\n            return false;\n        }\n        Student student = (Student) o;\n        return age == student.age &amp;&amp; Objects.equals(name, student.name);\n    }\n\n    public int hashCode() {\n        return Objects.hash(name, age);\n    }\n\n}</pre><p><br></p><pre class=\"prettyprint linenums\">public static void main(String[] args) {\n    Student student1 = new Student(\"Alice\", 20);\n    Student student2 = new Student(\"Alice\", 20);\n        \n    System.out.println(student1.equals(student2));\n    System.out.println(student1.hashCode());\n    System.out.println(student2.hashCode());\n}</pre><p><br></p><p>What is the expected output?</p>", "relatedLectureIds": "", "feedbacks": ["equals returns true, the hashcodes are the same. This is because both equals and hashCode have been overridden to check name and age. Since student1 and student2 have the same name and age, they are considered equal by the equals method, and their hashcodes, computed based on name and age, are also the same.", "", "", ""], "answers": ["<p><code><strong>equals</strong></code> returns <code><strong>true</strong></code>, the hashcodes are the same</p>", "<p><code><strong>equals</strong></code> returns <code><strong>true</strong></code>, the hashcodes are different</p>", "<p><code><strong>equals</strong></code> returns <code><strong>false</strong></code>, the hashcodes are the same</p>", "<p><code><strong>equals</strong></code> returns <code><strong>false</strong></code>, the hashcodes are different</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "Consider the following class:class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public boolean equals(Object o) {\n        if (o == this)\n            return true;\n        if (!(o instanceof Student)) {\n            return false;\n        }\n        Student student = (Student) o;\n        return age == student.age &amp;&amp; Objects.equals(name, student.name);\n    }\n\n    public int hashCode() {\n        return Objects.hash(name, age);\n    }\n\n}public static void main(String[] args) {\n    Student student1 = new Student(\"Alice\", 20);\n    Student student2 = new Student(\"Alice\", 20);\n        \n    System.out.println(student1.equals(student2));\n    System.out.println(student1.hashCode());\n    System.out.println(student2.hashCode());\n}What is the expected output?", "related_lectures": []}, {"_class": "assessment", "id": 60196818, "assessment_type": "multiple-choice", "prompt": {"question": "<p><code>hashCode()</code> and <code>equals()</code> play an important role in retrieving data from a HashMap:</p><p><br></p><p><strong>- The </strong><code><strong>hashCode()</strong></code><strong> method is relied upon to produce a hash from your key.</strong></p><p><strong>- The resulting hash value determines the index where the entry is stored.</strong></p><p><strong>- The </strong><code><strong>equals()</strong></code><strong> method is used to compare the target key against the node key at that index.</strong></p><p><br></p><p>This information is necessary to answer the next set of questions. Are you ready?</p>", "relatedLectureIds": "", "feedbacks": [""], "answers": ["<p>Yes</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "hashCode() and equals() play an important role in retrieving data from a HashMap:- The hashCode() method is relied upon to produce a hash from your key.- The resulting hash value determines the index where the entry is stored.- The equals() method is used to compare the target key against the node key at that index.This information is necessary to answer the next set of questions. Are you ready?", "related_lectures": []}, {"_class": "assessment", "id": 60197034, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the following class:</p><p><br></p><pre class=\"prettyprint linenums\">class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public boolean equals(Object o) {\n        if (o == this)\n            return true;\n        if (!(o instanceof Student)) {\n            return false;\n        }\n        Student student = (Student) o;\n        return age == student.age &amp;&amp; Objects.equals(name, student.name);\n    }\n\n}</pre><p><br></p><p>&nbsp; </p><pre class=\"prettyprint linenums\">    public static void main(String[] args) {\n        Student alice = new Student(\"Alice\", 20);\n        Student bob = new Student(\"Bob\", 18);\n        Student charlie = new Student(\"Charlie\", 22);\n\n        HashMap&lt;Student, Integer&gt; map = new HashMap&lt;&gt;();\n        map.put(alice, 1);\n        map.put(bob, 2);\n        map.put(charlie, 3);\n\n        Student aliceQuery = new Student(\"Alice\", 20);\n\n        System.out.println(map.get(aliceQuery));\n    }</pre><p><br></p><p>What is the expected output of the above program?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "", "Despite aliceQuery and alice being equal according to the overridden equals method, the default hashCode method, which operates on references, produces unique hash values for each object. Consequently, the get method will not be able to locate the correct index where the entry is stored."], "answers": ["<p>1</p>", "<p>2</p>", "<p>3</p>", "<p>null</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "Consider the following class:class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public boolean equals(Object o) {\n        if (o == this)\n            return true;\n        if (!(o instanceof Student)) {\n            return false;\n        }\n        Student student = (Student) o;\n        return age == student.age &amp;&amp; Objects.equals(name, student.name);\n    }\n\n}&nbsp;     public static void main(String[] args) {\n        Student alice = new Student(\"Alice\", 20);\n        Student bob = new Student(\"Bob\", 18);\n        Student charlie = new Student(\"Charlie\", 22);\n\n        HashMap&lt;Student, Integer&gt; map = new HashMap&lt;&gt;();\n        map.put(alice, 1);\n        map.put(bob, 2);\n        map.put(charlie, 3);\n\n        Student aliceQuery = new Student(\"Alice\", 20);\n\n        System.out.println(map.get(aliceQuery));\n    }What is the expected output of the above program?", "related_lectures": []}, {"_class": "assessment", "id": 60197076, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the following class:</p><p><br></p><pre class=\"prettyprint linenums\">class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public int hashCode() {\n        return Objects.hash(name, age);\n    }\n\n}</pre><p><br></p><pre class=\"prettyprint linenums\">    public static void main(String[] args) {\n        Student alice = new Student(\"Alice\", 20);\n        Student bob = new Student(\"Bob\", 18);\n        Student charlie = new Student(\"Charlie\", 22);\n\n        HashMap&lt;Student, Integer&gt; map = new HashMap&lt;&gt;();\n        map.put(alice, 1);\n        map.put(bob, 2);\n        map.put(charlie, 3);\n\n        Student aliceQuery = new Student(\"Alice\", 20);\n\n        System.out.println(map.get(aliceQuery));\n    }</pre><p><br></p><p>What is the expected output?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "", "aliceQuery and alice have the same name and age values, producing the same hash value due to the overridden hashCode method. So the get method will successfully determine the index where the entry is located, however aliceQuery and alice are not considered equal according to the default equals method, which checks for reference equality. Since aliceQuery and alice are different objects, equals will return false when comparing the target key against the existing node key at the same index. So null is returned because a match wasn't found at that index."], "answers": ["<p>1</p>", "<p>2</p>", "<p>3</p>", "<p>null</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "Consider the following class:class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public int hashCode() {\n        return Objects.hash(name, age);\n    }\n\n}    public static void main(String[] args) {\n        Student alice = new Student(\"Alice\", 20);\n        Student bob = new Student(\"Bob\", 18);\n        Student charlie = new Student(\"Charlie\", 22);\n\n        HashMap&lt;Student, Integer&gt; map = new HashMap&lt;&gt;();\n        map.put(alice, 1);\n        map.put(bob, 2);\n        map.put(charlie, 3);\n\n        Student aliceQuery = new Student(\"Alice\", 20);\n\n        System.out.println(map.get(aliceQuery));\n    }What is the expected output?", "related_lectures": []}, {"_class": "assessment", "id": 60197118, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the following class:</p><p><br></p><pre class=\"prettyprint linenums\">class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public boolean equals(Object o) {\n        if (o == this)\n            return true;\n        if (!(o instanceof Student)) {\n            return false;\n        }\n        Student student = (Student) o;\n        return age == student.age &amp;&amp; Objects.equals(name, student.name);\n    }\n\n    public int hashCode() {\n        return Objects.hash(name, age);\n    }\n\n}</pre><p><br></p><p><br></p><pre class=\"prettyprint linenums\">    public static void main(String[] args) {\n        Student alice = new Student(\"Alice\", 20);\n        Student bob = new Student(\"Bob\", 18);\n        Student charlie = new Student(\"Charlie\", 22);\n\n        HashMap&lt;Student, Integer&gt; map = new HashMap&lt;&gt;();\n        map.put(alice, 1);\n        map.put(bob, 2);\n        map.put(charlie, 3);\n\n        Student aliceQuery = new Student(\"Alice\", 20);\n\n        System.out.println(map.get(aliceQuery));\n    }</pre><p><br></p><p>What is the expected output of the above program?</p>", "relatedLectureIds": "", "feedbacks": ["Both hashCode and equals methods have been overridden in this case. The hashCode method is relied upon to produce a hash from the key. As aliceQuery and alice have the same name and age values, they generate the same hash, determining the same index where the entry is stored in the HashMap. The equals method is then used to compare the aliceQuery key against the alice key at that index, and as they have the same name and age, equals returns true. Therefore, the HashMap can correctly retrieve the value associated with aliceQuery, leading to 1 being returned.", "", "", ""], "answers": ["<p>1</p>", "<p>2</p>", "<p>3</p>", "<p>null</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "Consider the following class:class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public boolean equals(Object o) {\n        if (o == this)\n            return true;\n        if (!(o instanceof Student)) {\n            return false;\n        }\n        Student student = (Student) o;\n        return age == student.age &amp;&amp; Objects.equals(name, student.name);\n    }\n\n    public int hashCode() {\n        return Objects.hash(name, age);\n    }\n\n}    public static void main(String[] args) {\n        Student alice = new Student(\"Alice\", 20);\n        Student bob = new Student(\"Bob\", 18);\n        Student charlie = new Student(\"Charlie\", 22);\n\n        HashMap&lt;Student, Integer&gt; map = new HashMap&lt;&gt;();\n        map.put(alice, 1);\n        map.put(bob, 2);\n        map.put(charlie, 3);\n\n        Student aliceQuery = new Student(\"Alice\", 20);\n\n        System.out.println(map.get(aliceQuery));\n    }What is the expected output of the above program?", "related_lectures": []}, {"_class": "assessment", "id": 60197210, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the following class:</p><p><br></p><pre class=\"prettyprint linenums\">class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n}</pre><p><br></p><pre class=\"prettyprint linenums\">    public static void main(String[] args) {\n        Student alice = new Student(\"Alice\", 20);\n        Student bob = new Student(\"Bob\", 18);\n        Student charlie = new Student(\"Charlie\", 22);\n\n        HashMap&lt;Student, Integer&gt; map = new HashMap&lt;&gt;();\n        map.put(alice, 1);\n        map.put(bob, 2);\n        map.put(charlie, 3);\n\n        Student aliceQuery = alice;\n\n        System.out.println(map.get(aliceQuery));\n    }</pre><p><br></p><p>What is the expected output of the above program?</p>", "relatedLectureIds": "", "feedbacks": ["In this case, neither hashCode nor equals methods are overridden. The hashCode method produces a unique hash from the memory address of the key. Since aliceQuery and alice refer to the same object, they generate the same hash, determining the same index where the entry is stored in the HashMap. The equals method, which checks for reference equality, is then used to compare aliceQuery against alice at that index. As they refer to the same object, equals returns true. Therefore, the HashMap can correctly retrieve the value associated with aliceQuery, leading to 1 being returned.", "", "", ""], "answers": ["<p>1</p>", "<p>2</p>", "<p>3</p>", "<p>null</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "Consider the following class:class Student {\n\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n}    public static void main(String[] args) {\n        Student alice = new Student(\"Alice\", 20);\n        Student bob = new Student(\"Bob\", 18);\n        Student charlie = new Student(\"Charlie\", 22);\n\n        HashMap&lt;Student, Integer&gt; map = new HashMap&lt;&gt;();\n        map.put(alice, 1);\n        map.put(bob, 2);\n        map.put(charlie, 3);\n\n        Student aliceQuery = alice;\n\n        System.out.println(map.get(aliceQuery));\n    }What is the expected output of the above program?", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>

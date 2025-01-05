@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 54109040, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider this code snippet: </p><pre class=\"prettyprint linenums\">City paris = new City(\"Paris\", 2161000);\nCity paris2 = paris;</pre><p>If you performed an equality check, where would the runtime stop?</p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2022-12-20_02-26-07-58f3754b902e1c59644221843d7fc883.png\"><p><br></p>", "relatedLectureIds": "", "feedbacks": ["The references are equal.", "", "", ""], "answers": ["<p>1</p>", "<p>2</p>", "<p>3 and it returns false</p>", "<p>3 and it returns true</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "Consider this code snippet: City paris = new City(\"Paris\", 2161000);\nCity paris2 = paris;If you performed an equality check, where would the runtime stop?", "related_lectures": []}, {"_class": "assessment", "id": 54109044, "assessment_type": "multiple-choice", "prompt": {"question": "<p>1. Consider this code snippet: </p><pre class=\"prettyprint linenums\">City paris = new City(\"Paris\", 2161000);\nPerson person = new Person(\"John\", 26);\n\nparis.equals(person) </pre><p>Where would the equality check end?</p><p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2022-12-20_02-33-43-6192c5296aec4a6bcefb7c0e7c8fae47.png\"></p><p><br></p>", "relatedLectureIds": "", "feedbacks": ["", "1. The first condition is not satisfied because the references will not be equal. 2. The second condition is satisfied because the object being passed is not an instance of City. Try this in Visual Studio Code and visualize the runtime!", "", ""], "answers": ["<p>1</p>", "<p>2</p>", "<p>3 and it returns false</p>", "<p>3 and it returns true</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "1. Consider this code snippet: City paris = new City(\"Paris\", 2161000);\nPerson person = new Person(\"John\", 26);\n\nparis.equals(person) Where would the equality check end?", "related_lectures": []}, {"_class": "assessment", "id": 54109048, "assessment_type": "multiple-choice", "prompt": {"question": "<p>1. Consider this code snippet: </p><pre class=\"prettyprint linenums\">City city = new City(\"Paris\", 2161000);\nCity city2 = new City(\"Oslo\", 1234000);</pre><p>Where would the runtime stop if you perform an equality check? <img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2022-12-20_02-33-43-6192c5296aec4a6bcefb7c0e7c8fae47.png\"></p><p><br></p>", "relatedLectureIds": "", "feedbacks": ["", "", "1. The first condition is not satisfied because the references will not be equal. 2. The second condition is not satisfied because the object being passed is an instance of City. 3. The final return keyword returns false because the field values are not equal", ""], "answers": ["<p>1</p>", "<p>2</p>", "<p>3 and it returns false</p>", "<p>3 and it returns true</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "1. Consider this code snippet: City city = new City(\"Paris\", 2161000);\nCity city2 = new City(\"Oslo\", 1234000);Where would the runtime stop if you perform an equality check?", "related_lectures": []}, {"_class": "assessment", "id": 54109054, "assessment_type": "multiple-choice", "prompt": {"question": "<p>1. Consider this code snippet: </p><pre class=\"prettyprint linenums\">City city = new City(\"Paris\", 2161000);\nCity city2 = new City(city);</pre><p>Where would the runtime stop if you perform an equality check? <img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2022-12-20_02-33-43-6192c5296aec4a6bcefb7c0e7c8fae47.png\"></p><p><br></p>", "relatedLectureIds": "", "feedbacks": ["", "", "", "1. The first condition is not satisfied because the references will not be equal. 2. The second condition is not satisfied because the object being passed is an instance of City. 3. The final return keyword returns true because the field values are identical."], "answers": ["<p>1</p>", "<p>2</p>", "<p>3 and it returns false</p>", "<p>3 and it returns true</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "1. Consider this code snippet: City city = new City(\"Paris\", 2161000);\nCity city2 = new City(city);Where would the runtime stop if you perform an equality check?", "related_lectures": []}, {"_class": "assessment", "id": 59749610, "assessment_type": "multiple-choice", "prompt": {"question": "<p>In the equals method, what purpose does the <code><strong>Object</strong></code> parameter-type serve?</p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-10_06-30-07-4fee542d26fdfc89f9ef7eb2f8a41e97.png\">", "relatedLectureIds": "", "feedbacks": ["", "", "", "", "", ""], "answers": ["<p>It ensures that only instances of the City class can be passed to the equals method.</p>", "<p>It allows any type of object to be passed as a parameter to the equals method.</p>", "<p>It provides a specific implementation for comparing City objects.</p>", "<p>It represents the most basic type in Java, enabling objects of any class to be passed as a parameter</p>", "<p>B and D are correct</p>", "<p>A B and D are correct</p>"]}, "correct_response": ["e"], "section": "", "question_plain": "In the equals method, what purpose does the Object parameter-type serve?", "related_lectures": []}, {"_class": "assessment", "id": 59631688, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the <code>City</code> class:</p><p><br></p><pre class=\"prettyprint linenums\"> public class City {\n\n    private String name;\n    private long population;\n\n\n    public City(String name, long population) {\n        this.name = name;\n        this.population = population;\n    }\n\n    public City(City source) {\n        this.name = source.name;\n        this.population = source.population;\n    }\n\n    public String getName() {\n        return this.name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public long getPopulation() {\n        return this.population;\n    }\n\n    public void setPopulation(long population) {\n        this.population = population;\n    }\n\n}</pre><p> </p><p>Will the contains method return <code>true</code> or <code>false</code>? </p><p><br></p><pre class=\"prettyprint linenums\">        City paris = new City(\"Paris\", 2161000);\n\n        List&lt;City&gt; cities = new ArrayList&lt;&gt;();\n        cities.add(new City(\"London\", 8982000));\n        cities.add(paris);\n        cities.add(new City(\"Florence\", 382258));\n\n        System.out.println(cities.contains(paris));</pre>", "relatedLectureIds": "", "feedbacks": ["The contains method will loop through every object inside the list. It will use the default equals method to compare each element against the `paris` target. The first element will not share the same reference as the paris target, so the defaults equals method returns false. The second element shares a reference to the exact same object as the target, so the default equals method returns true, which means the contains method stops and returns true as well.", ""], "answers": ["<p>true</p>", "<p>false</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "Consider the City class: public class City {\n\n    private String name;\n    private long population;\n\n\n    public City(String name, long population) {\n        this.name = name;\n        this.population = population;\n    }\n\n    public City(City source) {\n        this.name = source.name;\n        this.population = source.population;\n    }\n\n    public String getName() {\n        return this.name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public long getPopulation() {\n        return this.population;\n    }\n\n    public void setPopulation(long population) {\n        this.population = population;\n    }\n\n} Will the contains method return true or false?         City paris = new City(\"Paris\", 2161000);\n\n        List&lt;City&gt; cities = new ArrayList&lt;&gt;();\n        cities.add(new City(\"London\", 8982000));\n        cities.add(paris);\n        cities.add(new City(\"Florence\", 382258));\n\n        System.out.println(cities.contains(paris));", "related_lectures": []}, {"_class": "assessment", "id": 59631700, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the <code>City</code> class:</p><p><br></p><pre class=\"prettyprint linenums\"> public class City {\n\n    private String name;\n    private long population;\n\n\n    public City(String name, long population) {\n        this.name = name;\n        this.population = population;\n    }\n\n    public City(City source) {\n        this.name = source.name;\n        this.population = source.population;\n    }\n\n    public String getName() {\n        return this.name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public long getPopulation() {\n        return this.population;\n    }\n\n    public void setPopulation(long population) {\n        this.population = population;\n    }\n\n}</pre><p> </p><p>Will the contains method return <code>true</code> or <code>false</code>? </p><p><br></p><pre class=\"prettyprint linenums\">        City paris = new City(\"Paris\", 2161000);\n\n        List&lt;City&gt; cities = new ArrayList&lt;&gt;();\n        cities.add(new City(\"London\", 8982000));\n        cities.add(new City(\"Paris\", 2161000));\n        cities.add(new City(\"Florence\", 382258));\n\n        System.out.println(cities.contains(paris));</pre>", "relatedLectureIds": "", "feedbacks": ["", "The contains method will loop through every object inside the list. It will use the default equals method to compare each element against the `paris` target. The first element will not share the same reference as the paris target, so the defaults equals method returns false. The second element will not share the same reference as the paris target, so the defaults equals method returns false. The third element will not share the same reference as the paris target, so the defaults equals method returns false. There are no more elements inside the list, so the contains method returns false."], "answers": ["<p>true</p>", "<p>false</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Consider the City class: public class City {\n\n    private String name;\n    private long population;\n\n\n    public City(String name, long population) {\n        this.name = name;\n        this.population = population;\n    }\n\n    public City(City source) {\n        this.name = source.name;\n        this.population = source.population;\n    }\n\n    public String getName() {\n        return this.name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public long getPopulation() {\n        return this.population;\n    }\n\n    public void setPopulation(long population) {\n        this.population = population;\n    }\n\n} Will the contains method return true or false?         City paris = new City(\"Paris\", 2161000);\n\n        List&lt;City&gt; cities = new ArrayList&lt;&gt;();\n        cities.add(new City(\"London\", 8982000));\n        cities.add(new City(\"Paris\", 2161000));\n        cities.add(new City(\"Florence\", 382258));\n\n        System.out.println(cities.contains(paris));", "related_lectures": []}, {"_class": "assessment", "id": 59631734, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the <code>City</code> class:</p><p><br></p><pre class=\"prettyprint linenums\"> public class City {\n\n    private String name;\n    private long population;\n\n\n    public City(String name, long population) {\n        this.name = name;\n        this.population = population;\n    }\n\n    public City(City source) {\n        this.name = source.name;\n        this.population = source.population;\n    }\n\n    public String getName() {\n        return this.name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public long getPopulation() {\n        return this.population;\n    }\n\n    public void setPopulation(long population) {\n        this.population = population;\n    }\n   \n    public boolean equals(Object obj) {\n        if (this == obj)\n            return true;\n\n        if (!(obj instanceof City))\n            return false;\n\n        City city = (City)obj;\n        return Objects.equals(this.name, city.name) &amp;&amp; this.getPopulation() == city.population;\n    }\n\n}</pre><p> </p><p>Will the contains method return <code>true</code> or <code>false</code>? </p><p><br></p><pre class=\"prettyprint linenums\">        City paris = new City(\"Paris\", 2161000);\n\n        List&lt;City&gt; cities = new ArrayList&lt;&gt;();\n        cities.add(new City(\"London\", 8982000));\n        cities.add(new City(\"Paris\", 2161000));\n        cities.add(new City(\"Florence\", 382258));\n\n        System.out.println(cities.contains(paris));</pre>", "relatedLectureIds": "", "feedbacks": ["This time we overrode an equals method for objects of the City class. The contains method will loop through every object inside the list. Because all of them are City objects, it will perform comparisons using your equals method. The first element is not equal to the target, so your equals method will return false. The second element has identical fields to the target, so your equals method will return true. The contains method stops here and returns true as well.  ", ""], "answers": ["<p>true</p>", "<p>false</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "Consider the City class: public class City {\n\n    private String name;\n    private long population;\n\n\n    public City(String name, long population) {\n        this.name = name;\n        this.population = population;\n    }\n\n    public City(City source) {\n        this.name = source.name;\n        this.population = source.population;\n    }\n\n    public String getName() {\n        return this.name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public long getPopulation() {\n        return this.population;\n    }\n\n    public void setPopulation(long population) {\n        this.population = population;\n    }\n   \n    public boolean equals(Object obj) {\n        if (this == obj)\n            return true;\n\n        if (!(obj instanceof City))\n            return false;\n\n        City city = (City)obj;\n        return Objects.equals(this.name, city.name) &amp;&amp; this.getPopulation() == city.population;\n    }\n\n} Will the contains method return true or false?         City paris = new City(\"Paris\", 2161000);\n\n        List&lt;City&gt; cities = new ArrayList&lt;&gt;();\n        cities.add(new City(\"London\", 8982000));\n        cities.add(new City(\"Paris\", 2161000));\n        cities.add(new City(\"Florence\", 382258));\n\n        System.out.println(cities.contains(paris));", "related_lectures": []}, {"_class": "assessment", "id": 59631744, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the <code>City</code> class:</p><p><br></p><pre class=\"prettyprint linenums\"> public class City {\n\n    private String name;\n    private long population;\n\n\n    public City(String name, long population) {\n        this.name = name;\n        this.population = population;\n    }\n\n    public City(City source) {\n        this.name = source.name;\n        this.population = source.population;\n    }\n\n    public String getName() {\n        return this.name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public long getPopulation() {\n        return this.population;\n    }\n\n    public void setPopulation(long population) {\n        this.population = population;\n    }\n   \n    public boolean equals(Object obj) {\n        if (this == obj)\n            return true;\n\n        if (!(obj instanceof City))\n            return false;\n\n        City city = (City)obj;\n        return Objects.equals(this.name, city.name) &amp;&amp; this.getPopulation() == city.population;\n    }\n\n}</pre><p> </p><p>Will the contains method return <code>true</code> or <code>false</code>? </p><p><br></p><pre class=\"prettyprint linenums\">        City paris = new City(\"Paris\", 2161000);\n\n        List&lt;City&gt; cities = new ArrayList&lt;&gt;();\n        cities.add(new City(\"London\", 8982000));\n        cities.add(new City(\"Versailles\", 85771));\n        cities.add(new City(\"Florence\", 382258));\n\n        System.out.println(cities.contains(paris));</pre>", "relatedLectureIds": "", "feedbacks": ["", "The contains method will loop through every object inside the list. Because all of them are City objects, it will perform comparisons using the equals method that you overrode for objects of the City class. The first element is not equal to the target, so your equals method returns false. The second element is not equal to the target, so your equals method returns false. The third element is not equal to the target, so your equals method returns false. There are no more elements inside the list, so the contains method returns false."], "answers": ["<p>true</p>", "<p>false</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Consider the City class: public class City {\n\n    private String name;\n    private long population;\n\n\n    public City(String name, long population) {\n        this.name = name;\n        this.population = population;\n    }\n\n    public City(City source) {\n        this.name = source.name;\n        this.population = source.population;\n    }\n\n    public String getName() {\n        return this.name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public long getPopulation() {\n        return this.population;\n    }\n\n    public void setPopulation(long population) {\n        this.population = population;\n    }\n   \n    public boolean equals(Object obj) {\n        if (this == obj)\n            return true;\n\n        if (!(obj instanceof City))\n            return false;\n\n        City city = (City)obj;\n        return Objects.equals(this.name, city.name) &amp;&amp; this.getPopulation() == city.population;\n    }\n\n} Will the contains method return true or false?         City paris = new City(\"Paris\", 2161000);\n\n        List&lt;City&gt; cities = new ArrayList&lt;&gt;();\n        cities.add(new City(\"London\", 8982000));\n        cities.add(new City(\"Versailles\", 85771));\n        cities.add(new City(\"Florence\", 382258));\n\n        System.out.println(cities.contains(paris));", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>

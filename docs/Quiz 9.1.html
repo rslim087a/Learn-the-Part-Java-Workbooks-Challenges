@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 59521942, "assessment_type": "multiple-choice", "prompt": {"question": "<p>When creating an <code><strong>new ArrayList</strong></code>, the constructor provides the underlying array with an <strong>empty</strong> capacity.</p><p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-04_19-49-16-2464d812ffee1d6e26887546305ffa11.png\"></p><p>Which image represents the current state of your ArrayList?</p><p>a)</p><p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-04_19-49-16-c7121be3d11886edf0e7930a852c654c.png\"></p><p><br></p><p>b)</p><p><br></p><p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-04_19-49-16-bc1eb9c23a78a987bc80a6278a12460b.png\"></p><p>c)</p><p><br></p><p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-04_19-49-16-85a0465444626a7b5a0cc30de0060bd5.png\"></p><p><br></p>", "relatedLectureIds": "", "feedbacks": ["The size is 0 because the underlying array doesn't have any elements. The capacity is 0 because it also doesn't have the capacity to store any elements.", "", ""], "answers": ["<p>The first one.</p>", "<p>The second one.</p>", "<p>The third one.</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "When creating an new ArrayList, the constructor provides the underlying array with an empty capacity.Which image represents the current state of your ArrayList?a)b)c)", "related_lectures": []}, {"_class": "assessment", "id": 59522108, "assessment_type": "multiple-choice", "prompt": {"question": "<p>After creating the ArrayList, the size and capacity are initially 0.</p><p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-04_20-43-43-fcbbd513e02b73c25fecb1f8109d8838.png\"></p><p><br></p><p>The first element being added is <strong>Paris</strong>:</p><p><br></p><pre class=\"prettyprint linenums\">cities.add(\"Paris\");</pre><p><br></p><p>Which line of code is going to execute first: <strong>454</strong>, or <strong>455</strong>?</p><p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-04_19-58-08-e1edc4068216f061221ae8b3f5780e22.png\"></p><p>Consider that <code>s</code> represents the <strong>size</strong>, and <code>elementData.length</code> represents the <strong>capacity</strong>. </p>", "relatedLectureIds": "", "feedbacks": ["Size is the number of elements inside the underlying array. Capacity is the overall length of the array. When size equals capacity (in this case they are both zero), the first step is to 'grow' the underlying array.", ""], "answers": ["<p>454</p>", "<p>455</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "After creating the ArrayList, the size and capacity are initially 0.The first element being added is Paris:cities.add(\"Paris\");Which line of code is going to execute first: 454, or 455?Consider that s represents the size, and elementData.length represents the capacity.", "related_lectures": []}, {"_class": "assessment", "id": 59522174, "assessment_type": "multiple-choice", "prompt": {"question": "<p>After adding the first element, which image best represents the state of your <code>ArrayList</code>?</p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-04_20-07-28-6520af61670d37b23cf726de3f058ae5.png\"><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-04_20-07-28-37d6f8eae335b2a2fd7dc1d0824a08ef.png\"><p><br></p>", "relatedLectureIds": "", "feedbacks": ["", "As seen in the previous question, the underlying array must 'grow' to a larger capacity before it can accomodate new elements. It would be EXTREMELY inefficient to only grow it by one, since that implies growing the underlying array every single time we add a new element."], "answers": ["<p>The first one</p>", "<p>The second one</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "After adding the first element, which image best represents the state of your ArrayList?", "related_lectures": []}, {"_class": "assessment", "id": 59522218, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Four elements have been added to an ArrayList.</p><p><br></p><pre class=\"prettyprint linenums\">        List&lt;String&gt; cities = new ArrayList&lt;&gt;();\n        cities.add(\"Paris\");\n        cities.add(\"Florence\");\n        cities.add(\"Venice\");\n        cities.add(\"Versailles\");\n        cities.add(\"London\");</pre><p><br></p><p>If we look behind the curtain, we can get a sneak peek at how the ArrayList is managing the complexities of resizing its underlying array.</p><p><br></p><p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-04_20-13-22-80143ac1f026d1124cf831f2b8719557.png\"></p><p><br></p><p>What is the size and capacity?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "Size represents the number of elements that were actually stored. There are 5. Capacity represents how many elements can be stored before the next resize. There is room for 10.  ", ""], "answers": ["<p>Size: 9</p><p>Capacity: 4</p>", "<p>Size: 4</p><p>Capacity: 9</p>", "<p>Size: 5</p><p>Capacity: 10</p>", "<p>Size: 10</p><p>Capacity: 4</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "Four elements have been added to an ArrayList.        List&lt;String&gt; cities = new ArrayList&lt;&gt;();\n        cities.add(\"Paris\");\n        cities.add(\"Florence\");\n        cities.add(\"Venice\");\n        cities.add(\"Versailles\");\n        cities.add(\"London\");If we look behind the curtain, we can get a sneak peek at how the ArrayList is managing the complexities of resizing its underlying array.What is the size and capacity?", "related_lectures": []}, {"_class": "assessment", "id": 59522240, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the size and capacity of the ArrayList's underlying array:</p><p><br></p><p><img src=\"https://img-c.udemycdn.com/redactor/raw/quiz_question/2023-05-04_20-16-23-781e93d18cff7cd30c8537153f2a4470.png\"></p><p><br></p><p>Which element addition will trigger the next resize?</p><p><br></p><pre class=\"prettyprint linenums\">        cities.add(\"Petra\");\n        cities.add(\"Oslo\");\n        cities.add(\"Rome\");\n        cities.add(\"Madrid\");\n        cities.add(\"Tokyo\");\n        cities.add(\"Prague\");\n        cities.add(\"Dublin\");\n        cities.add(\"Athens\");</pre><p><br></p>", "relatedLectureIds": "", "feedbacks": ["", "", "", "After adding Tokyo, the size will be 10 and the capacity will be 10. Before we can add Prague, the ArrayList must 'grow' its underlying array to have a larger capacity. What's beautiful is that all of this happens behind the scenes!", "", ""], "answers": ["<p>Rome</p>", "<p>Madrid</p>", "<p>Tokyo</p>", "<p>Prague</p>", "<p>Dublin</p>", "<p>Athens</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "Consider the size and capacity of the ArrayList's underlying array:Which element addition will trigger the next resize?        cities.add(\"Petra\");\n        cities.add(\"Oslo\");\n        cities.add(\"Rome\");\n        cities.add(\"Madrid\");\n        cities.add(\"Tokyo\");\n        cities.add(\"Prague\");\n        cities.add(\"Dublin\");\n        cities.add(\"Athens\");", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>

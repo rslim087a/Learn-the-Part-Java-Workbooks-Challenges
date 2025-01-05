@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 58661092, "assessment_type": "multiple-choice", "prompt": {"question": "<p>When you encounter a challenging quiz question, it's a good idea to apply the same logic in Visual Studio Code. Use breakpoints to step through the code and visualize the process line by line. Keep in mind, code isn't mysterious \u2013 every action can be traced and understood.</p>", "relatedLectureIds": "", "feedbacks": [""], "answers": ["<p>Got It!</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "When you encounter a challenging quiz question, it's a good idea to apply the same logic in Visual Studio Code. Use breakpoints to step through the code and visualize the process line by line. Keep in mind, code isn't mysterious \u2013 every action can be traced and understood.", "related_lectures": []}, {"_class": "assessment", "id": 32293870, "assessment_type": "multiple-choice", "prompt": {"question": "<p>What is the expected output?</p><p><br></p><p><code><strong>Main.java</strong></code><strong> </strong></p><p><br></p><pre class=\"prettyprint linenums\">public class Main {\n    public static void main(String[] args) {\n\n        ...\n\n        Store store = new Store();\n        store.setDessert(cake, 1);\n\n    }\n}</pre><p><br></p><p><code><strong>Store.java</strong></code> </p><p><br></p><pre class=\"prettyprint linenums\">public class Store {\n\n\n    ...\n\n    public void setDessert(Dessert dessert, int index) {\n        this.desserts[index] = new Dessert(dessert);\n    }\n}</pre><p><br></p><p><code><strong>Dessert.java</strong></code> </p><p><br></p><pre class=\"prettyprint linenums\">public class Dessert {\n\n    ...\n\n    public Dessert(double price, String[] ingredients) {\n        System.out.println(\"Hello!\");\n        ...\n    }\n\n    public Dessert(Dessert source) {\n        System.out.println(\"Goodbye!\");\n        ...\n    }\n}</pre>", "relatedLectureIds": "", "feedbacks": ["", ""], "answers": ["<p><code>&gt;&gt;: Hello!</code> </p>", "<p><code>&gt;&gt;: Goodbye!</code> </p>"]}, "correct_response": ["b"], "section": "", "question_plain": "What is the expected output?Main.java public class Main {\n    public static void main(String[] args) {\n\n        ...\n\n        Store store = new Store();\n        store.setDessert(cake, 1);\n\n    }\n}Store.java public class Store {\n\n\n    ...\n\n    public void setDessert(Dessert dessert, int index) {\n        this.desserts[index] = new Dessert(dessert);\n    }\n}Dessert.java public class Dessert {\n\n    ...\n\n    public Dessert(double price, String[] ingredients) {\n        System.out.println(\"Hello!\");\n        ...\n    }\n\n    public Dessert(Dessert source) {\n        System.out.println(\"Goodbye!\");\n        ...\n    }\n}", "related_lectures": []}, {"_class": "assessment", "id": 32294004, "assessment_type": "multiple-choice", "prompt": {"question": "<p>What is the expected output?</p><p><br></p><p><code><strong>Main.java</strong></code><strong> </strong></p><p><br></p><pre class=\"prettyprint linenums\">public class Main {\n    public static void main(String[] args) {\n\n        ...\n\n        Store store = new Store();\n        store.setDessert(cake, 1);\n\n    }\n}</pre><p><br></p><p><code><strong>Store.java</strong></code> </p><p><br></p><pre class=\"prettyprint linenums\">public class Store {\n\n\n    ...\n\n    public void setDessert(Dessert dessert, int index) {\n        this.desserts[index] = new Dessert(dessert.getPrice(), dessert.getIngredients());\n    }\n}</pre><p><br></p><p><code><strong>Dessert.java</strong></code> </p><p><br></p><pre class=\"prettyprint linenums\">public class Dessert {\n\n    ...\n\n    public Dessert(double price, String[] ingredients) {\n        System.out.println(\"Hello!\");\n        ...\n    }\n\n    public Dessert(Dessert source) {\n        System.out.println(\"Goodbye!\");\n        ...\n    }\n\n    public double getPrice() {\n        return this.price;\n    }\n\n    public String[] getIngredients() {\n        return Arrays.copyOf(this.ingredients, this.ingredients.length);\n    }\n\n}</pre>", "relatedLectureIds": "", "feedbacks": ["", ""], "answers": ["<p><code>&gt;&gt;: Hello!</code> </p>", "<p><code>&gt;&gt;: Goodbye!</code> </p>"]}, "correct_response": ["a"], "section": "", "question_plain": "What is the expected output?Main.java public class Main {\n    public static void main(String[] args) {\n\n        ...\n\n        Store store = new Store();\n        store.setDessert(cake, 1);\n\n    }\n}Store.java public class Store {\n\n\n    ...\n\n    public void setDessert(Dessert dessert, int index) {\n        this.desserts[index] = new Dessert(dessert.getPrice(), dessert.getIngredients());\n    }\n}Dessert.java public class Dessert {\n\n    ...\n\n    public Dessert(double price, String[] ingredients) {\n        System.out.println(\"Hello!\");\n        ...\n    }\n\n    public Dessert(Dessert source) {\n        System.out.println(\"Goodbye!\");\n        ...\n    }\n\n    public double getPrice() {\n        return this.price;\n    }\n\n    public String[] getIngredients() {\n        return Arrays.copyOf(this.ingredients, this.ingredients.length);\n    }\n\n}", "related_lectures": []}, {"_class": "assessment", "id": 32294008, "assessment_type": "multiple-choice", "prompt": {"question": "<p>What is the expected output?</p><p><br></p><p><code><strong>Main.java</strong></code><strong> </strong></p><p><br></p><pre class=\"prettyprint linenums\">public class Main {\n    public static void main(String[] args) {\n\n        ...\n\n        Store store = new Store();\n        store.getDessert(1);\n\n    }\n}</pre><p><br></p><p><code><strong>Store.java</strong></code> </p><p><br></p><pre class=\"prettyprint linenums\">public class Store {\n\n\n    ...\n\n    public Dessert getDessert(int index) {\n        return new Dessert(this.desserts[index]);\n    }\n\n}</pre><p><br></p><p><code><strong>Dessert.java</strong></code> </p><p><br></p><pre class=\"prettyprint linenums\">public class Dessert {\n\n    ...\n\n    public Dessert(double price, String[] ingredients) {\n        System.out.println(\"Hello!\");\n        ...\n    }\n\n    public Dessert(Dessert source) {\n        System.out.println(\"Goodbye!\");\n        ...\n    }\n\n    public double getPrice() {\n        return this.price;\n    }\n\n    public String[] getIngredients() {\n        return Arrays.copyOf(this.ingredients, this.ingredients.length);\n    }\n\n}</pre>", "relatedLectureIds": "", "feedbacks": ["", ""], "answers": ["<p><code>&gt;&gt;: Hello!</code> </p>", "<p><code>&gt;&gt;: Goodbye!</code> </p>"]}, "correct_response": ["b"], "section": "", "question_plain": "What is the expected output?Main.java public class Main {\n    public static void main(String[] args) {\n\n        ...\n\n        Store store = new Store();\n        store.getDessert(1);\n\n    }\n}Store.java public class Store {\n\n\n    ...\n\n    public Dessert getDessert(int index) {\n        return new Dessert(this.desserts[index]);\n    }\n\n}Dessert.java public class Dessert {\n\n    ...\n\n    public Dessert(double price, String[] ingredients) {\n        System.out.println(\"Hello!\");\n        ...\n    }\n\n    public Dessert(Dessert source) {\n        System.out.println(\"Goodbye!\");\n        ...\n    }\n\n    public double getPrice() {\n        return this.price;\n    }\n\n    public String[] getIngredients() {\n        return Arrays.copyOf(this.ingredients, this.ingredients.length);\n    }\n\n}", "related_lectures": []}, {"_class": "assessment", "id": 32294014, "assessment_type": "multiple-choice", "prompt": {"question": "<p>What is the expected output?</p><p><br></p><p><code><strong>Main.java</strong></code><strong> </strong></p><p><br></p><pre class=\"prettyprint linenums\">public class Main {\n    public static void main(String[] args) {\n\n        ...\n\n        Store store = new Store();\n        store.getDessert(1);\n\n    }\n}</pre><p><br></p><p><code><strong>Store.java</strong></code> </p><p><br></p><pre class=\"prettyprint linenums\">public class Store {\n\n\n    ...\n\n    public Dessert getDessert(int index) {\n        return new Dessert(this.desserts[index].getPrice(), this.desserts[index].getIngredients());\n    }\n\n}</pre><p><br></p><p><code><strong>Dessert.java</strong></code> </p><p><br></p><pre class=\"prettyprint linenums\">public class Dessert {\n\n    ...\n\n    public Dessert(double price, String[] ingredients) {\n        System.out.println(\"Hello!\");\n        ...\n    }\n\n    public Dessert(Dessert source) {\n        System.out.println(\"Goodbye!\");\n        ...\n    }\n\n    public double getPrice() {\n        return this.price;\n    }\n\n    public String[] getIngredients() {\n        return Arrays.copyOf(this.ingredients, this.ingredients.length);\n    }\n}</pre>", "relatedLectureIds": "", "feedbacks": ["", ""], "answers": ["<p><code>&gt;&gt;: Hello!</code> </p>", "<p><code>&gt;&gt;: Goodbye!</code> </p>"]}, "correct_response": ["a"], "section": "", "question_plain": "What is the expected output?Main.java public class Main {\n    public static void main(String[] args) {\n\n        ...\n\n        Store store = new Store();\n        store.getDessert(1);\n\n    }\n}Store.java public class Store {\n\n\n    ...\n\n    public Dessert getDessert(int index) {\n        return new Dessert(this.desserts[index].getPrice(), this.desserts[index].getIngredients());\n    }\n\n}Dessert.java public class Dessert {\n\n    ...\n\n    public Dessert(double price, String[] ingredients) {\n        System.out.println(\"Hello!\");\n        ...\n    }\n\n    public Dessert(Dessert source) {\n        System.out.println(\"Goodbye!\");\n        ...\n    }\n\n    public double getPrice() {\n        return this.price;\n    }\n\n    public String[] getIngredients() {\n        return Arrays.copyOf(this.ingredients, this.ingredients.length);\n    }\n}", "related_lectures": []}, {"_class": "assessment", "id": 32320116, "assessment_type": "multiple-choice", "prompt": {"question": "<p>What would print at <code>BREAKPOINT 1</code></p><p><code><strong>Main.java</strong></code><strong> </strong></p><p><br></p><pre class=\"prettyprint linenums\">public class Main {\n    public static void main(String[] args) {\n\n        Dessert[] desserts = new Dessert[] {\n            new Dessert(\"Cake\", 4.99),\n            new Dessert(\"Pie\", 2.99),\n            new Dessert(\"Brownie\", 1.99),\n            new Dessert(\"Sundae\", 2.49),\n        };\n        \n        Store store = new Store();\n        \n        for (int i = 0; i &lt; desserts.length; i++) {\n            store.setDessert(desserts[i], i);\n        }\n\n\n        System.out.println(store.getDessert(1));          \u2013\u2013\u2013\u2013-BREAKPOINT 1----- \n   \n    }\n}</pre><p><br></p><p><code><strong>Dessert.java</strong></code></p><p><br></p><pre class=\"prettyprint linenums\">public class Dessert {\n\n    private String name;\n    private double price;\n\n    public Dessert(String name, double price) {\n        this.name = name;\n        this.price = price;\n    }\n\n    public Dessert(Dessert source) {\n        this.name = source.name;\n        this.price = source.price;\n    }\n\n    public String toString() {\n        return \"Name: \" + this.name + \". Price: \" + this.price + \".\\n\";\n    }\n\n}</pre><p><br></p><p><code><strong>Store.java</strong></code> </p><p><br></p><pre class=\"prettyprint linenums\">public class Store {\n\n    Dessert[] desserts;\n\n    public Store() {\n        desserts = new Dessert[4];\n    }\n\n    public Dessert getDessert(int index) {\n          return new Dessert(this.desserts[index]);\n    }\n\n    public void setDessert(Dessert dessert, int index) {\n          this.desserts[index] = new Dessert(dessert);\n    }\n\n}</pre>", "relatedLectureIds": "", "feedbacks": ["", "", "", ""], "answers": ["<p><code>&gt;&gt;: null</code></p>", "<p><code>&gt;&gt;: Name: Pie. Price: 2.99.</code> </p>", "<p><code>&gt;&gt;: reference@j4kd43fw</code> </p>", "<p><code>&gt;&gt;: Name: null. Price: 0.0</code> </p>"]}, "correct_response": ["b"], "section": "", "question_plain": "What would print at BREAKPOINT 1Main.java public class Main {\n    public static void main(String[] args) {\n\n        Dessert[] desserts = new Dessert[] {\n            new Dessert(\"Cake\", 4.99),\n            new Dessert(\"Pie\", 2.99),\n            new Dessert(\"Brownie\", 1.99),\n            new Dessert(\"Sundae\", 2.49),\n        };\n        \n        Store store = new Store();\n        \n        for (int i = 0; i &lt; desserts.length; i++) {\n            store.setDessert(desserts[i], i);\n        }\n\n\n        System.out.println(store.getDessert(1));          \u2013\u2013\u2013\u2013-BREAKPOINT 1----- \n   \n    }\n}Dessert.javapublic class Dessert {\n\n    private String name;\n    private double price;\n\n    public Dessert(String name, double price) {\n        this.name = name;\n        this.price = price;\n    }\n\n    public Dessert(Dessert source) {\n        this.name = source.name;\n        this.price = source.price;\n    }\n\n    public String toString() {\n        return \"Name: \" + this.name + \". Price: \" + this.price + \".\\n\";\n    }\n\n}Store.java public class Store {\n\n    Dessert[] desserts;\n\n    public Store() {\n        desserts = new Dessert[4];\n    }\n\n    public Dessert getDessert(int index) {\n          return new Dessert(this.desserts[index]);\n    }\n\n    public void setDessert(Dessert dessert, int index) {\n          this.desserts[index] = new Dessert(dessert);\n    }\n\n}", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>

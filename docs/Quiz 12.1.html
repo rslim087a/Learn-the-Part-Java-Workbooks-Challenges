@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 71164479, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Given the following code snippet:</p><p><br></p><pre class=\"prettyprint linenums\"> class BankPayment {\n    public void process(double amount) {\n        System.out.println(\"Processed bank payment of: \" + amount);\n    }\n}\n\nclass Main {\n    public static void main(String[] args) {\n        BankPayment bankPayment = new BankPayment();\n        bankPayment.process(100.0);\n    }\n}</pre><p>What's wrong with the code above?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "", "", "A.  As mentioned in the lesson, an interface is a contract that dictates a specific set of methods that a class must implement. The BankPayment class \u2013 containing business logic \u2013 doesn't implement any such interface, which would be beneficial for promoting loose coupling. B. The Main class directly depends on the BankPayment class. If we decide to switch to a different payment method, the Main class would need modifications. This shows that the Main class is tightly coupled to the BankPayment class.", ""], "answers": ["<p>The <code><strong>BankPayment</strong></code> class doesn't implement any interface.</p>", "<p>The <code><strong>Main</strong></code> class is tightly coupled to the <code><strong>BankPayment</strong></code> class.</p>", "<p>The <code><strong>process</strong></code> method in the <code><strong>BankPayment</strong></code> class should be static.</p>", "<p>The code snippet is related to Abstract Classes.</p>", "<p>A and B</p>", "<p>All of the above</p>"]}, "correct_response": ["e"], "section": "", "question_plain": "Given the following code snippet: class BankPayment {\n    public void process(double amount) {\n        System.out.println(\"Processed bank payment of: \" + amount);\n    }\n}\n\nclass Main {\n    public static void main(String[] args) {\n        BankPayment bankPayment = new BankPayment();\n        bankPayment.process(100.0);\n    }\n}What's wrong with the code above?", "related_lectures": []}, {"_class": "assessment", "id": 71164503, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Given the following code snippet:</p><pre class=\"prettyprint linenums\"> public interface PaymentProcessor {\n    void process(double amount);\n}\n\nclass BankPayment implements PaymentProcessor {\n    @Override\n    public void process(double amount) {\n        System.out.println(\"Processed bank payment of: \" + amount);\n    }\n}\n\nclass Main {\n    public static void main(String[] args) {\n        BankPayment bankPayment = new BankPayment();\n        bankPayment.process(100.0);\n    }\n}</pre><p>What's the primary issue with the code above, even though the <code><strong>BankPayment</strong></code> class implements an interface?</p>", "relatedLectureIds": "", "feedbacks": ["The BankPayment class does provide a proper method implementation for the process method, as required by the PaymentProcessor interface.", "Even though the BankPayment class implements the PaymentProcessor interface, the Main class is directly initializing and using the BankPayment class. Thus, if we were to introduce another payment method and wanted to use it in the Main class, we'd still have to modify the Main class. This indicates that the Main class remains tightly coupled to the BankPayment class.", "The PaymentProcessor interface isn't redundant. It's meant to ensure consistent behavior across different payment methods. However, its benefits aren't fully utilized in this code snippet.", "It's advantageous for the BankPayment class to implement an interface. This provides a consistent contract for payment processing, but the issue is how the interface is being used (or not used) in the Main class."], "answers": ["<p>The <code><strong>BankPayment</strong></code> class doesn't have a proper method implementation.</p>", "<p>The <code><strong>Main</strong></code> class is still tightly coupled to the <code><strong>BankPayment</strong></code> class.</p>", "<p>The <code><strong>PaymentProcessor</strong></code> interface is redundant and can be removed.</p>", "<p>The <code><strong>BankPayment</strong></code> class shouldn't implement any interface.</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Given the following code snippet: public interface PaymentProcessor {\n    void process(double amount);\n}\n\nclass BankPayment implements PaymentProcessor {\n    @Override\n    public void process(double amount) {\n        System.out.println(\"Processed bank payment of: \" + amount);\n    }\n}\n\nclass Main {\n    public static void main(String[] args) {\n        BankPayment bankPayment = new BankPayment();\n        bankPayment.process(100.0);\n    }\n}What's the primary issue with the code above, even though the BankPayment class implements an interface?", "related_lectures": []}, {"_class": "assessment", "id": 71164531, "assessment_type": "multiple-choice", "prompt": {"question": "<p>The application decided to <strong>replace</strong> Bank for Crypto payments.</p><pre class=\"prettyprint linenums\">public interface PaymentProcessor {\n    void process(double amount);\n}\n\nclass BankPayment implements PaymentProcessor {\n    @Override\n    public void process(double amount) {\n        System.out.println(\"Processed bank payment of: \" + amount);\n    }\n}\n\nclass CryptoPayment implements PaymentProcessor {\n    @Override\n    public void process(double amount) {\n        System.out.println(\"Processed crypto payment of: \" + amount);\n    }\n}\n\nclass Main {                                         //now using Crypto to pay\n    private static PaymentProcessor paymentProcessor = new CryptoPayment();\n\n    public static void main(String[] args) {\n        paymentProcessor.process(100.0);\n    }\n\n    public static void setPaymentProcessor(PaymentProcessor processor) {\n        paymentProcessor = processor;\n    }\n}</pre><p>How does the code above make good use of interfaces to promote loose coupling?</p>", "relatedLectureIds": "", "feedbacks": ["This statement is incorrect. The Main class is utilizing the PaymentProcessor interface and isn't directly relying on concrete classes for its main functionality.", "The setPaymentProcessor method allows for changing the payment processor to any class that implements the PaymentProcessor interface, not just bank payments.", "Both BankPayment and CryptoPayment implement the same PaymentProcessor interface, not separate ones.", "The Main class uses the PaymentProcessor interface for its payment processing, and thanks to the setPaymentProcessor method, it can easily switch between BankPayment and CryptoPayment or any other class implementing the PaymentProcessor interface, without having to modify the core logic of the Main class. This demonstrates loose coupling."], "answers": ["<p>The <code><strong>Main</strong></code> class relies directly on concrete classes for payment processing.</p>", "<p>The <code><strong>setPaymentProcessor</strong></code> method in the <code><strong>Main</strong></code> class ensures that only bank payments can be processed.</p>", "<p>Both <code><strong>BankPayment</strong></code> and <code><strong>CryptoPayment</strong></code> classes implement their own separate interfaces.</p>", "<p>The <code><strong>Main</strong></code> class utilizes the <code><strong>PaymentProcessor</strong></code> interface, making it easier to switch between different payment methods without modifying much of its internal code.</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "The application decided to replace Bank for Crypto payments.public interface PaymentProcessor {\n    void process(double amount);\n}\n\nclass BankPayment implements PaymentProcessor {\n    @Override\n    public void process(double amount) {\n        System.out.println(\"Processed bank payment of: \" + amount);\n    }\n}\n\nclass CryptoPayment implements PaymentProcessor {\n    @Override\n    public void process(double amount) {\n        System.out.println(\"Processed crypto payment of: \" + amount);\n    }\n}\n\nclass Main {                                         //now using Crypto to pay\n    private static PaymentProcessor paymentProcessor = new CryptoPayment();\n\n    public static void main(String[] args) {\n        paymentProcessor.process(100.0);\n    }\n\n    public static void setPaymentProcessor(PaymentProcessor processor) {\n        paymentProcessor = processor;\n    }\n}How does the code above make good use of interfaces to promote loose coupling?", "related_lectures": []}, {"_class": "assessment", "id": 71164601, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Both <code><strong>HashMap</strong></code> and <code><strong>TreeMap</strong></code> in Java implement the <code><strong>Map</strong></code> interface. What does this imply?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "", "", "", "A. Correct. Given that both HashMap and TreeMap implement the Map interface, they provide the same public interface methods. This means that if you're using a Map reference in your code, transitioning between HashMap and TreeMap implementations can be quite seamless. D. Correct. Since both HashMap and TreeMap implement the Map interface, they must provide concrete implementations for its methods. Methods like put(K key, V value), get(Object key), and remove(Object key) are some of the common methods they are bound to implement. "], "answers": ["<p>It's easy to transition between <code><strong>HashMap</strong></code> and <code><strong>TreeMap</strong></code> in code due to the shared <code><strong>Map</strong></code> interface methods.</p>", "<p>Both <code><strong>HashMap</strong></code> and <code><strong>TreeMap</strong></code> can only store keys and not values.</p>", "<p>The underlying data structure for both <code><strong>HashMap</strong></code> and <code><strong>TreeMap</strong></code> is a hash table.</p>", "<p>Both <code><strong>HashMap</strong></code> and <code><strong>TreeMap</strong></code> are guaranteed to have methods like <code><strong>put(K key, V value)</strong></code>, <code><strong>get(Object key)</strong></code>, and <code><strong>remove(Object key)</strong></code>.</p>", "<p>A and B</p>", "<p>A and D</p>"]}, "correct_response": ["f"], "section": "", "question_plain": "Both HashMap and TreeMap in Java implement the Map interface. What does this imply?", "related_lectures": []}, {"_class": "assessment", "id": 71164777, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Given that <code><strong>HashMap</strong></code> implements the <code><strong>Map</strong></code> interface:</p><pre class=\"prettyprint linenums\">public interface Map {\n    void put(String key, int value);\n    int get(String key);\n}\n\nclass HashMap implements Map {\n    @Override\n    public void put(String key, int value) {\n        // Implementation details\n    }\n\n    @Override\n    public int get(String key) {\n        // Implementation details\n        return 0;\n    }\n}\n\nclass Main {\n    public static void main(String[] args) {\n        HashMap map = new HashMap();\n        map.put(\"one\", 1);\n        System.out.println(map.get(\"one\"));\n    }\n}</pre><p>Considering the code above, which of the following statements is true regarding the use of interfaces and loose coupling?</p>", "relatedLectureIds": "", "feedbacks": ["This statement is misleading. Even though the HashMap class implements the Map interface, the Main class is directly using HashMap. Thus, it's still tightly coupled.", "Incorrect. The Map interface isn't redundant. It provides a consistent contract for any class representing a map data structure. However, in this code snippet, its benefits aren't fully leveraged.", "Correct. The Main class directly uses the HashMap class without any reference to the Map interface, indicating a tight coupling between them.", "Incorrect. The Map interface only ensures certain behaviors (methods) without specifying any order maintenance. The specifics are left to the implementing class."], "answers": ["<p>The <code><strong>Main</strong></code> class is decoupled from <code><strong>HashMap</strong></code> since <code><strong>HashMap</strong></code> implements the <code><strong>Map</strong></code> interface.</p>", "<p>The <code><strong>Map</strong></code> interface is redundant because the <code><strong>Main</strong></code> class directly instantiates <code><strong>HashMap</strong></code>.</p>", "<p>The <code><strong>Main</strong></code> class is tightly coupled to the <code><strong>HashMap</strong></code> class.</p>", "<p>The <code><strong>Map</strong></code> interface ensures that <code><strong>HashMap</strong></code> maintains the order of insertion.</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "Given that HashMap implements the Map interface:public interface Map {\n    void put(String key, int value);\n    int get(String key);\n}\n\nclass HashMap implements Map {\n    @Override\n    public void put(String key, int value) {\n        // Implementation details\n    }\n\n    @Override\n    public int get(String key) {\n        // Implementation details\n        return 0;\n    }\n}\n\nclass Main {\n    public static void main(String[] args) {\n        HashMap map = new HashMap();\n        map.put(\"one\", 1);\n        System.out.println(map.get(\"one\"));\n    }\n}Considering the code above, which of the following statements is true regarding the use of interfaces and loose coupling?", "related_lectures": []}, {"_class": "assessment", "id": 71164871, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Considering the following code snippet:</p><p> </p><pre class=\"prettyprint linenums\">public interface Map {\n    void put(String key, int value);\n    int get(String key);\n}\n\nclass HashMap implements Map {\n    @Override\n    public void put(String key, int value) {\n        // Implementation specific to HashMap\n    }\n\n    @Override\n    public int get(String key) {\n        // Implementation specific to HashMap\n        return 0;\n    }\n}\n\nclass TreeMap implements Map {\n    @Override\n    public void put(String key, int value) {\n        // Implementation specific to TreeMap\n    }\n\n    @Override\n    public int get(String key) {\n        // Implementation specific to TreeMap\n        return 0;\n    }\n}\n\nclass Main {\n    public static void processMap(Map map) {\n        map.put(\"one\", 1);\n        System.out.println(map.get(\"one\"));\n    }\n\n    public static void main(String[] args) {\n        Map hashMap = new HashMap();\n        Map treeMap = new TreeMap();\n\n        processMap(hashMap);\n        processMap(treeMap);\n    }\n}</pre><p>Given that both <code><strong>HashMap</strong></code> and <code><strong>TreeMap</strong></code> implement the <code><strong>Map</strong></code> interface, how does this code benefit?</p>", "relatedLectureIds": "", "feedbacks": ["Correct. The processMap method is designed to operate on any object that implements the Map interface. As both HashMap and TreeMap implement this interface, they can be passed as arguments to this method, enabling its reuse.", "Incorrect. The performance of HashMap and TreeMap can vary based on their respective implementations and use cases. Implementing the Map interface doesn't guarantee identical performance.", "Incorrect. The Map interface ensures a consistent contract for methods, not the internal structure or data storage mechanism of the implementing classes.", "Incorrect. As both HashMap and TreeMap implement the Map interface, they can indeed be used interchangeably in contexts that expect a Map type, as demonstrated in the processMap method."], "answers": ["<p>The <code><strong>processMap</strong></code> method can be reused for different map implementations without any modification.</p>", "<p><code><strong>HashMap</strong></code> and <code><strong>TreeMap</strong></code> will have identical performances as they both implement the <code><strong>Map</strong></code> interface.</p>", "<p>The <code><strong>Main</strong></code> class can guarantee that <code><strong>HashMap</strong></code> and <code><strong>TreeMap</strong></code> have the exact same internal structure.</p>", "<p>The code does not benefit since <code><strong>HashMap</strong></code> and <code><strong>TreeMap</strong></code> are different implementations and cannot be used interchangeably.</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "Considering the following code snippet: public interface Map {\n    void put(String key, int value);\n    int get(String key);\n}\n\nclass HashMap implements Map {\n    @Override\n    public void put(String key, int value) {\n        // Implementation specific to HashMap\n    }\n\n    @Override\n    public int get(String key) {\n        // Implementation specific to HashMap\n        return 0;\n    }\n}\n\nclass TreeMap implements Map {\n    @Override\n    public void put(String key, int value) {\n        // Implementation specific to TreeMap\n    }\n\n    @Override\n    public int get(String key) {\n        // Implementation specific to TreeMap\n        return 0;\n    }\n}\n\nclass Main {\n    public static void processMap(Map map) {\n        map.put(\"one\", 1);\n        System.out.println(map.get(\"one\"));\n    }\n\n    public static void main(String[] args) {\n        Map hashMap = new HashMap();\n        Map treeMap = new TreeMap();\n\n        processMap(hashMap);\n        processMap(treeMap);\n    }\n}Given that both HashMap and TreeMap implement the Map interface, how does this code benefit?", "related_lectures": []}, {"_class": "assessment", "id": 71165011, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Consider the following code snippet:</p><pre class=\"prettyprint linenums\">public interface List {\n    void add(String element);\n    String get(int index);\n}\n\nclass ArrayList implements List {\n    @Override\n    public void add(String element) {\n        // Implementation specific to ArrayList\n    }\n\n    @Override\n    public String get(int index) {\n        // Implementation specific to ArrayList\n        return null;\n    }\n}\n\nclass LinkedList implements List {\n    @Override\n    public void add(String element) {\n        // Implementation specific to LinkedList\n    }\n\n    @Override\n    public String get(int index) {\n        // Implementation specific to LinkedList\n        return null;\n    }\n}\n\nclass Main {\n    public static void processList(List list) {\n        list.add(\"element\");\n        System.out.println(list.get(0));\n    }\n\n    public static void main(String[] args) {\n        List arrayList = new ArrayList();\n        List linkedList = new LinkedList();\n\n        processList(arrayList);\n        processList(linkedList);\n    }\n}</pre><p>Given this code, what benefits are achieved by having both <code><strong>ArrayList</strong></code> and <code><strong>LinkedList</strong></code> implement the <code><strong>List</strong></code> interface?</p><p><br></p>", "relatedLectureIds": "", "feedbacks": ["Correct. As both ArrayList and LinkedList implement the List interface, they can be passed as arguments to the processList method, highlighting code reusability.", "Incorrect. The performance characteristics of ArrayList and LinkedList differ due to their distinct internal data structures.", "Incorrect. The List interface ensures consistent methods but does not dictate the internal structure of implementing classes.", "Incorrect. The ArrayList and LinkedList can be used interchangeably in contexts that expect a List type, as shown in the processList method."], "answers": ["<p>The <code><strong>processList</strong></code> method can be reused for different list implementations without any modification.</p>", "<p><code><strong>ArrayList</strong></code> and <code><strong>LinkedList</strong></code> will have identical performances since they both implement the <code><strong>List</strong></code> interface.</p>", "<p>The <code><strong>Main</strong></code> class can guarantee that <code><strong>ArrayList</strong></code> and <code><strong>LinkedList</strong></code> have the exact same internal structure.</p>", "<p>The code does not benefit since <code><strong>ArrayList</strong></code> and <code><strong>LinkedList</strong></code> are different implementations and cannot be used interchangeably.</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "Consider the following code snippet:public interface List {\n    void add(String element);\n    String get(int index);\n}\n\nclass ArrayList implements List {\n    @Override\n    public void add(String element) {\n        // Implementation specific to ArrayList\n    }\n\n    @Override\n    public String get(int index) {\n        // Implementation specific to ArrayList\n        return null;\n    }\n}\n\nclass LinkedList implements List {\n    @Override\n    public void add(String element) {\n        // Implementation specific to LinkedList\n    }\n\n    @Override\n    public String get(int index) {\n        // Implementation specific to LinkedList\n        return null;\n    }\n}\n\nclass Main {\n    public static void processList(List list) {\n        list.add(\"element\");\n        System.out.println(list.get(0));\n    }\n\n    public static void main(String[] args) {\n        List arrayList = new ArrayList();\n        List linkedList = new LinkedList();\n\n        processList(arrayList);\n        processList(linkedList);\n    }\n}Given this code, what benefits are achieved by having both ArrayList and LinkedList implement the List interface?", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>
