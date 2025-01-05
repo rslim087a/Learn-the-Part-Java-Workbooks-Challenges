@@ -156,7 +156,7 @@
       function updateScore() {
         var scoreElem = document.getElementById("score");
         const score = (correct / total) * 100;
-        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+        scoreElem.innerHTML = "Score: " + score.toFixed(0) + "/" + passPercent + "%";
       }
     </script>
   </body>
