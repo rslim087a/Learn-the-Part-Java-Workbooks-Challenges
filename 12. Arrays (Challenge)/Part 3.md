@@ -1,4 +1,4 @@
-# Tic Tac Toe -- Part 3
+# Tic Tac Toe - Part 3
 
 If you made it here, then your game lets a player pick a spot on the board:
 
